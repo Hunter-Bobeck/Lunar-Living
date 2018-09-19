@@ -1,0 +1,36 @@
+Date: Sep. 18, meet with the consumer and discuss the detailed requirement.
+Time: 15:00-15:40
+
+Detailed Features:
+
+Login feature: 
+	 dual authentication via email(or duo)
+
+Public view:
+	 Display description of the apartments, details, floor plans, photos, locations, availability (which are all editable by the manager).  
+	 Search/filter feature. Reviews(scores and text)/ranks.
+	 Request for visiting/leasing with a information form(can be accepted/rejected by the manager in the back end).
+
+Resident portal: 
+	login;
+	payment(one-time or auto) and email notification;
+	apply for coupon(one-time use); 
+	maintenance request and track; 
+	laundry monitor.
+
+Manager portal:
+	login; 
+	manually add/remove resident; 
+	edit public view pages;
+	access to the information form(submitted in the public view); 
+	view statistics,i.e. rent received this month, who missed the payment, the cost of maintenance, the profit of this month. 
+
+Chat:
+	resident can chat to a manager; 
+	the public can chat with the manager;
+
+Event planning: 
+	residents can post events and other residents can(publicly) mark it as “interested”, “will come”, “not interested” and etc.
+
+Oxygen supply:
+	resident can schedule their oxygen supply plan and generate monthly oxygen bill(included in the payment feature).
