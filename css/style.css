@@ -1,0 +1,16 @@
+body {
+	background-color: #dfdfe0 !important;
+}
+
+#logo {
+	text-align: center;
+	margin-top: 5%
+}
+
+#login-container {
+    width: 50%;
+}
+
+.login-label {
+	color: gray;
+}
