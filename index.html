@@ -12,17 +12,18 @@
     <title>Lunar Living | Login</title>		<!-- title -->
 
 	<!-- CSS -->
-	<link rel='stylesheet' href='css/style.css'>		<!-- custom CSS -->
 	<link rel='stylesheet' href='css/reset.css'>		<!-- Reset CSS -->
     <link rel='stylesheet' href='css/bootstrap.min.css'>		<!-- Bootstrap CSS -->
     <link rel='stylesheet' href='css/fontawesome.min.css'>		<!-- Font Awesome CSS -->
+	<link rel='stylesheet' href='css/style.css'>		<!-- custom CSS -->
 </head>
-<body>
+<body class='portal-background'>
 	<main>
-		<div id='logo'><img src='images\Logo.png' height='200' width='200' id='logo'></div>
+		<div class='spacer'></div>
 		<div class='container' id='login-container'>
 			<div class='row justify-content-center align-items-center'>
-				<div class='col-md-5' id='login-column'>
+				<div class='col-md-7' id='login-column'>
+					<div id='logo'><img src='images\Logo.png' id='logo'></div>
 					<form class='form' action=''>
 						<div class='form-group'>
 							<label class='login-label' for='username'>Username:</label><br>
@@ -33,7 +34,10 @@
 							<input class='form-control' type='password' name='password' id='password'>
 						</div>
 						<div class='form-group'>
-							<input class='btn btn-info btn-md' value='Login' type='submit' name='submit'>
+							<input class='btn btn-info btn-md' value='Login' type='submit' name='buttonLogin'>
+						</div>
+						<div class='form-group'>
+							<input class='btn btn-info btn-md' value='Register' type='submit' name='buttonRegister'>
 						</div>
 					</form>
 				</div>
