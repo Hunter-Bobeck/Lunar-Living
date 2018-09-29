@@ -1,0 +1,49 @@
+Github(Private):
+https://github.com/RuiyuZhu/Lunar-Living
+
+JIRA:
+Key: SICERS1
+
+System Design:
+
+Our software consists of two components: the front end and the back end.
+
+The front end is the website. It contains these divisions: pubic pages, manage pages and resident pages.
+Public pages are open to the public. There are login, registration(which serves as a form-submission feature) as long as display of apartment details.
+Manage pages are open to the manager. It contains five parts: public inquiries(view the forms submitted by the public, an alternative option might be sending all the forms to an email address), people management(add/remove resident), maintenance pages, oxygen supplies and statistics.
+
+The backend database would consist of these parts:
+
+1. Apartment information database; which stores the information of each apartment, i.e. floor plan, rent, payment history, oxygen supply and etc.
+2. Resident database; which stores the information of all the residents, i.e. who are they.
+3. Manager database; which stores the information of the managers, i.e. who are they.
+
+Test plan:
+
+Since we are making a website. We will test each feature by trial.
+
+
+Date: Sep. 18, meet with the consumer and discuss the detailed requirement.
+Time: 15:00-15:40
+
+Detailed Features:
+
+Login feature:  dual authentication via email(or duo)
+
+Public view: Display description of the apartments, details, floor plans, photos, locations(which are all editable by the manager).  Search/filter feature. Reviews(scores and text)/ranks. Request for visiting/leasing with a information form(can be accepted/rejected by the manager in the back end).
+
+Resident portal: login; payment(one-time or auto), apply for coupon(one-time use) and email notification; maintenance request and track; laundry monitor.
+
+Manager portal:login; manually add/remove resident; access to the information form(submitted in the public view); view statistics(i.e. rent received this month, who missed the payment, the cost of maintenance, the profit of this month. 
+
+Chat: resident can chat to a manager; the public can chat with the manager;
+
+Event planning: residents can post events and other residents can(publicly) mark it as “interested”, “will come”, “not interested” and etc.
+
+Oxygen supply: resident can schedule their oxygen supply plan and generate monthly oxygen bill(included in the payment feature).
+
+
+Current status:
+
+We have implement a login page and a registration page. We also have the front end pages for email verification ready.
+
