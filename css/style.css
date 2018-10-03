@@ -31,14 +31,14 @@ a {
 }
 
 .container-portal {
-	background-color: #dfdfe0;
+	background-color: rgba(223, 223, 224, .8);	/* this color in hex (without alpha) is #dfdfe0 */
 	border-radius: 25px;
     padding: 15px;
 	padding-top: 10px;
 }
 
 .portal-label {
-	color: gray;
+	color: white;
 }
 
 
