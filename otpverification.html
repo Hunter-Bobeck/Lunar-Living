@@ -9,7 +9,7 @@
     <meta name='keywords' content='Kidd, Living, space, rental, service, management, system, SpaceX, outer, Elon, Musk'>		<!-- keywords for searchengine optimization -->
     <meta name='author' content='IU SE G2'>		<!-- author name -->
     <link rel='icon' href='images\Icon.ico'>		<!-- favicon -->
-    <title>Lunar Living | Verification</title>		<!-- title -->
+    <title>Lunar Living | OTP Verification</title>		<!-- title -->
 
 	<!-- CSS -->
 	<link rel='stylesheet' href='css/reset.css'>		<!-- Reset CSS -->
@@ -19,14 +19,20 @@
 </head>
 <body class='moon-in-space-background'>
 	<main>
-		<div id='spacer-verification'></div>
-		<div class='container container-portal' id='container-verification'>
+		<div id='spacer-otpverification'></div>
+		<div class='container container-portal' id='container-otpverification'>
 			<div class='row justify-content-center align-items-center'>
 				<div class='col-md-7' id='login-column'>
 					<div id='logo' class='text-centered five-padding-bottom'><img src='images\Logo.png' class='logo'></div>
-					<h5 class='medium-gray'>Email address verified.</h5>
-					<br>
-					<div class='text-centered five-padding-bottom'><a href='login.html'><button class='btn btn-info' id='verification-button-login'>Login</button></a></div>
+					<h5 class='medium-gray text-centered'>OTP Verification</h5>
+					<form class='form' action=''>
+						<div class='form-group'>
+							<input class='form-control' type='text' id='otpverification-otp' name='otpverificationOTP' placeholder='One-time password'>
+						</div>
+						<div class='form-group text-centered'>
+							<input class='btn btn-info btn-md' value='Submit' type='submit' name='otpverificationButtonSubmit'>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>

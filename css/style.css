@@ -23,7 +23,7 @@ a {
 }
 
 
-/* portals (login.html, registration.html, verification.html) */
+/* portals (login.html, signup.html, otpverification.html) */
 
 .logo {
 	width: 100%;
@@ -45,7 +45,7 @@ a {
 /* login.html */
 
 #spacer-login {
-	height: 75px;
+	height: 40px;
 }
 
 #container-login {
@@ -63,43 +63,85 @@ a {
 }
 
 
-/* registration.html */
+/* otpverification.html */
 
-#spacer-registration {
-	height: 45px;
+#spacer-otpverification {
+	height: 90px;
 }
 
-#container-registration {
+#container-otpverification {
 	width: 250px;
 }
 
 @media only screen and (min-width: 700px) {
-	#spacer-registration {
-		height: 70px;
+	#spacer-otpverification {
+		height: 200px;
 	}
 
-	#container-registration {
+	#container-otpverification {
 		width: 400px;
 	}
 }
 
 
-/* verification.html */
+/* newuser.html */
 
-#spacer-verification {
-	height: 150px;
+#spacer-newuser {
+	height: 90px;
 }
 
-#container-verification {
+#container-newuser {
 	width: 250px;
 }
 
 @media only screen and (min-width: 700px) {
-	#spacer-verification {
-		height: 250px;
+	#spacer-newuser {
+		height: 200px;
 	}
 
-	#container-verification {
+	#container-newuser {
+		width: 400px;
+	}
+}
+
+
+/* signup.html */
+
+#spacer-signup {
+	height: 15px;
+}
+
+#container-signup {
+	width: 250px;
+}
+
+@media only screen and (min-width: 700px) {
+	#spacer-signup {
+		height: 200px;
+	}
+
+	#container-signup {
+		width: 400px;
+	}
+}
+
+
+/* profile.html */
+
+#spacer-profile {
+	height: 140px;
+}
+
+#container-profile {
+	width: 250px;
+}
+
+@media only screen and (min-width: 700px) {
+	#spacer-profile {
+		height: 200px;
+	}
+
+	#container-profile {
 		width: 400px;
 	}
 }
