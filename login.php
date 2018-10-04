@@ -24,7 +24,11 @@ $data = curl_exec($ch);
 // get info about the request
 $info = curl_getinfo($ch);
 
-echo $data;
+if($data == 'false'){
+  echo "User Not Found";
+}else {
+  echo "Welcome " . $username;
+}
 
 // close curl resource to free up system resources
 curl_close($ch);
