@@ -1,0 +1,25 @@
+body{
+  background: #eee;
+}
+
+#loginform{
+background: white;
+margin-left: 40%;
+border: 10px;
+border-radius: 20px;
+padding: 20px;
+margin-top: 20%;
+width: 20%;
+}
+
+#loginusername{
+margin-left: 50px auto;
+}
+
+#loginpassword{
+margin-left: 50px auto;
+}
+
+#loginsubmit{
+margin-left: 60px auto;
+}

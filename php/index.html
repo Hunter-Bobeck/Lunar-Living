@@ -1,0 +1,53 @@
+ <!DOCTYPE html>
+ <html lang="en" dir="ltr">
+   <head>
+     <meta charset="utf-8">
+     <title>Login</title>
+     <link rel="stylesheet" href="style.css">
+   </head>
+   <body>
+     <div id = "loginButton">
+       <form class="" action="login.html" method="post">
+         <input type="submit" id = "submitToLoginPage" value="Go To Login Page">
+       </form>
+     </div>
+
+     <div id="frm">
+     <form action="fetch.php" method="post">
+       <p>
+       <label id="firstnameLabel">First Name</label>
+       <input type="text" name="first_name" id = "fname" value="" placeholder="First Name">
+       </p>
+
+       <p>
+         <label id="lastnameLabel">Last Name</label>
+         <input type="text" name="last_name" id = "lname" value="" placeholder="Last Name">
+       </p>
+
+       <p>
+         <label id="usernameLabel">Username</label>
+         <input type="text" name="username" id = "uname" value="" placeholder="Username">
+       </p>
+       <p>
+         <label id="passwordLabel">Password</label>
+         <input type="password" name="password" id = "pwd" value="" placeholder="password">
+       </p>
+       <p>
+         <label id="confirmPasswordLabel">Confirm Password</label>
+         <input type="password" name="confirm_password" id= "cpass" value="" placeholder="Confirm password">
+       </p>
+
+       <p>
+         <label id="emailLabel">Email</label>
+         <input type="text" name="email" value="" id = "email" placeholder="Enter Email address">
+       </p>
+
+       <p>
+         <input type="submit" id="sbmt" value="Submit">
+       </p>
+
+     </form>
+     </div>
+
+   </body>
+ </html>

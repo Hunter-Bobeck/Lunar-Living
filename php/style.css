@@ -1,0 +1,103 @@
+body{
+  background: #eee;
+  background-image: url(cover.jpg);
+  background-size:cover;
+}
+#submitToLoginPage{
+  background: cyan;
+  padding: 10px;
+  margin-right: 5px;
+  border: 10px;
+  margin-top: 10px;
+  margin-left: 90%;
+  border-radius: 20px;
+}
+#submitToLoginPage:hover{
+  background: gray;
+}
+
+#frm{
+  /* background: gray; */
+  padding: 20px;
+  border: 10px;
+  align-content: center;
+  margin: 100px auto;
+  border-radius: 20px;
+  width: 20%;
+}
+
+#fname{
+  margin-left: 55px;
+  border-radius: 5px;
+}
+
+#lname{
+  margin-left: 57px;
+  border-radius: 5px;
+}
+
+#uname{
+  margin-left: 62px;
+  border-radius: 5px;
+}
+
+#pwd{
+  margin-left: 65px;
+  border-radius: 5px;
+}
+
+#cpass{
+  margin-left: 7px;
+  border-radius: 5px;
+}
+
+#email{
+  margin-left: 87px;
+  border-radius: 5px;
+}
+
+#sbmt{
+  width: 20%;
+  margin-left: 40%;
+  background-color: black;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+}
+#sbmt:hover{
+  background:gray;
+}
+
+#login{
+  margin-left: 35%;
+  padding: 100px;
+}
+
+
+#loginform{
+  background-color: white;
+  padding: 10px;
+  margin-left: 50%;
+  border-radius: 20px;
+  border: 10px;
+  width: 20%;
+
+}
+#firstnameLabel{
+  color: white;
+}
+#lastnameLabel{
+  color: white;
+}
+#usernameLabel{
+  color: white;
+}
+#passwordLabel{
+  color: white;
+}
+#confirmPasswordLabel{
+  color: white;
+}
+#emailLabel{
+  color:white;
+}

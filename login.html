@@ -24,7 +24,7 @@
 			<div class='row justify-content-center align-items-center'>
 				<div class='col-md-7' id='login-column'>
 					<div id='logo' class='text-centered five-padding-bottom'><img src='images\Logo - Login.png' class='logo'></div>
-					<form class='form' action=''>
+					<form class='form' action='login.php' method="post">
 						<div class='form-group'>
 							<label class='portal-label' for='login-username'>Username:</label>
 							<br>
@@ -36,12 +36,14 @@
 							<input class='form-control' type='loginPassword' id='login-password' name='loginPassword'>
 						</div>
 						<div class='form-group'>
-							<input class='btn btn-info btn-md' value='Login' type='submit' name='loginButtonLogin'>
-						</div>
-						<div class='form-group'>
-							<input class='btn btn-info btn-md' value='Register' type='submit' name='loginButtonRegister'>
+							<input class='btn btn-info btn-md' value='Login' type='submit' onclick="location.href = 'login.php'" name='loginButtonLogin'>
 						</div>
 					</form>
+          <form class="" action="registration.html">
+          <div class='form-group'>
+            <input class='btn btn-info btn-md' value='Register' type='submit' name='loginButtonRegister'>
+          </div>
+          </form>
 				</div>
 			</div>
 		</div>
