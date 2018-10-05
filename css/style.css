@@ -23,7 +23,7 @@ a {
 }
 
 
-/* portals (login.html, signup.html, otpverification.html) */
+/* portals */
 
 .logo {
 	width: 100%;
@@ -144,4 +144,67 @@ a {
 	#container-profile {
 		width: 400px;
 	}
+}
+
+
+/* newlease.html */
+
+#spacer-newlease {
+	height: 140px;
+}
+
+#container-newlease {
+	width: 250px;
+}
+
+@media only screen and (min-width: 700px) {
+	#spacer-newlease {
+		height: 200px;
+	}
+
+	#container-newlease {
+		width: 400px;
+	}
+}
+
+
+/* navbarscapes */
+
+.navbar {
+	background-color: rgba(223, 223, 224, .8) !important;	/* this color in hex (without alpha) is #dfdfe0 */
+}
+
+.title {
+	width: 200px;
+	height: auto;
+}
+
+.nav-link {
+	color: gray !important;
+}
+
+.current-lunar-living-nav-link {
+	color: black !important;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	background-color: rgba(223, 223, 224, .8);	/* this color in hex (without alpha) is #dfdfe0 */
+}
+
+.footer > .container {
+	padding-right: 15px;
+	padding-left: 15px;
+	color: black;
+}
+
+
+/* newlease.html */
+
+#button-add-text {
+	font-size: 20px;
 }
