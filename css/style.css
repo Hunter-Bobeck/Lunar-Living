@@ -22,19 +22,19 @@ a {
 	padding-bottom: 5px;
 }
 
+.container-form {
+	background-color: rgba(223, 223, 224, .8);	/* this color in hex (without alpha) is #dfdfe0 */
+	border-radius: 25px;
+    padding: 15px;
+	padding-top: 10px;
+}
+
 
 /* portals */
 
 .logo {
 	width: 100%;
 	height: auto;
-}
-
-.container-portal {
-	background-color: rgba(223, 223, 224, .8);	/* this color in hex (without alpha) is #dfdfe0 */
-	border-radius: 25px;
-    padding: 15px;
-	padding-top: 10px;
 }
 
 .portal-label {
@@ -147,27 +147,6 @@ a {
 }
 
 
-/* newlease.html */
-
-#spacer-newlease {
-	height: 140px;
-}
-
-#container-newlease {
-	width: 250px;
-}
-
-@media only screen and (min-width: 700px) {
-	#spacer-newlease {
-		height: 200px;
-	}
-
-	#container-newlease {
-		width: 400px;
-	}
-}
-
-
 /* navbarscapes */
 
 .navbar {
@@ -175,8 +154,15 @@ a {
 }
 
 .title {
-	width: 200px;
+	width: 120px;
 	height: auto;
+}
+
+@media only screen and (min-width: 700px) {
+	.title {
+		width: 200px;
+		height: auto;
+	}
 }
 
 .nav-link {
@@ -205,6 +191,75 @@ a {
 
 /* newlease.html */
 
+#spacer-newlease {
+	height: 65px;
+}
+
+#container-newlease {
+	width: 250px;
+}
+
+@media only screen and (min-width: 700px) {
+	#spacer-newlease {
+		height: 200px;
+	}
+
+	#container-newlease {
+		width: 400px;
+	}
+}
+
 #button-add-text {
 	font-size: 20px;
+}
+
+
+/* index.html */
+
+
+
+#spacer-index-before-banner {
+	height: 0px;
+}
+
+#banner-index-container {
+	text-align: center;
+}
+
+#banner-index {
+	width: 100%;
+	height: auto;
+	border-radius: 0px;
+}
+
+#spacer-index-after-banner {
+	height: 30px;
+}
+
+#container-index {
+	background-color: rgba(223, 223, 224, .8);	/* this color in hex (without alpha) is #dfdfe0 */
+	border-radius: 25px;
+    padding: 15px;
+	padding-top: 10px;
+	width: 100%;
+}
+
+@media only screen and (min-width: 700px) {
+	#spacer-index-before-banner {
+		height: 70px;
+	}
+
+	#banner-index {
+		width: 50%;
+		height: auto;
+		border-radius: 25px;
+	}
+
+	#spacer-index-after-banner {
+		height: 70px;
+	}
+
+	#container-index {
+		width: 50%;
+	}
 }

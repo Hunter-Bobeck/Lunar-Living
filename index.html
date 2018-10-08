@@ -9,7 +9,7 @@
     <meta name='keywords' content='Kidd, Living, space, rental, service, management, system, SpaceX, outer, Elon, Musk'>		<!-- keywords for searchengine optimization -->
     <meta name='author' content='IU SE G2'>		<!-- author name -->
     <link rel='icon' href='images\Icon.ico'>		<!-- favicon -->
-    <title>Lunar Living | New Lease</title>		<!-- title -->
+    <title>Lunar Living | Home</title>		<!-- title -->
 
 	<!-- CSS -->
 	<link rel='stylesheet' href='css/reset.css'>		<!-- Reset CSS -->
@@ -27,11 +27,11 @@
 
 			<div class='collapse navbar-collapse' id='navbarSupportedContent'>
 				<ul class='navbar-nav mr-auto'>
-					<li class='nav-item'>
-						<a class='nav-link' href='index.html'>Home</a>
-					</li>
 					<li class='nav-item active'>
-						<a class='nav-link current-lunar-living-nav-link' href='newlease.html'>New Lease <span class='sr-only'>(current)</span></a>
+						<a class='nav-link current-lunar-living-nav-link' href='index.html'>Home <span class='sr-only'>(current)</span></a>
+					</li>
+					<li class='nav-item'>
+						<a class='nav-link' href='newlease.html'>New Lease</a>
 					</li>
 				</ul>
 			</div>
@@ -50,34 +50,24 @@
 		</nav>
 
 
-		<div id='spacer-newlease'></div>
-		<div class='container container-form' id='container-newlease'>
-			<div class='row justify-content-center align-items-center'>
-				<div class='col-md-7' id='newlease-column'>
-					<br>
-					<h5 class='text-centered'>New Lease Agreement</h5>
-					<br>
-					<form class='form' action=''>
-						<div class='form-group'>
-							<input class='form-control' type='text' id='newlease-apartment-id' name='newleaseApartmentID' placeholder='Apartment ID'>
-						</div>
-						<div class='form-group'>
-							<input class='form-control' type='text' name='newleaseEmailID1' placeholder='Email ID #1'>
-						</div>
-						<div class='form-group text-centered'>
-							<button class='btn btn-primary'>
-								<span id='button-add-text'>+</span>
-							</button>
-						</div>
-						<div class='form-group text-centered'>
-							<input class='btn btn-info btn-md' value='Create Lease' type='submit' name='newleaseButtonCreateLease'>
-						</div>
-					</form>
-				</div>
+		<div id='spacer-index-before-banner'></div>
+		<div id="banner-index-container">
+			<img src="images/banner.jpg" id='banner-index'>
+		</div>
+		<div id='spacer-index-after-banner'></div>
+		<div class="container container-form" id='container-index'>
+			<div class="row">
+				<div class="col-6 col-md-4"><br><br>&nbsp;&nbsp;&nbsp;&nbsp;1 BHK</div>
+				<div class="col-6 col-md-4"><a href="#"><img src="images/example.jpg"></a></div>
+				<div class="col-6 col-md-4"><a href="#"><img src="images/example.jpg"></a></div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-6 col-md-4"><br><br>&nbsp;&nbsp;&nbsp;&nbsp;2 BHK</div>
+				<div class="col-6 col-md-4"><a href="#"><img src="images/example.jpg"></a></div>
+				<div class="col-6 col-md-4"><a href="#"><img src="images/example.jpg"></a></div>
 			</div>
 		</div>
-		<br>
-		<br>
 
 
 		<footer class='footer'>
@@ -91,26 +81,5 @@
     <script src='js/jquery-3.3.1.js'></script>		<!-- Jquery JS (necessary for dropdowns) -->
     <script src='js/bootstrap.bundle.min.js'></script>		<!-- Bootstrap Bundle JS (necessary for dropdowns) -->
     <!-- <script src='js/bootstrap.min.js'></script> -->		<!-- Bootstrap JS – disabled because when enabled it has a conflict with Bootstrap Bundle JS that makes dropdowns require two clicks to dropdown; it doesn't seem that any needed functionality is lacking when this is disabled -->
-	<script>
-		$(document).ready(function()
-		{
-			var index = 1;
-
-			$('#add').click(function()
-			{
-				/* add code for addition here */
-			});
-		
-			$(document).on('click', '.btn_remove', function()
-			{
-				/* add code for removal here */
-			});
-		
-			$('#newleaseButtonCreateLease').click(function()
-			{		
-				/* add code for lease creation here */
-			});
-		});
-	</script>
 </body>
 </html>
