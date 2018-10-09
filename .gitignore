@@ -14,3 +14,7 @@ ExportedObj/
 *.svd
 *.pdb
 *.dwlt
+
+# shortcuts and links
+*.lnk
+*.url
