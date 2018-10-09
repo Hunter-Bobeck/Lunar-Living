@@ -29,8 +29,7 @@ if($data == 'false'){
   echo "OTP not same";
 }else
  {
-  echo "Welcome Page" . $data;
-  session_destroy();
+  header("Location: signup.html");
 }
 
 // close curl resource to free up system resources
