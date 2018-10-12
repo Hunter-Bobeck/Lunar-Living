@@ -15,11 +15,12 @@
 	<link rel='stylesheet' href='css/reset.css'>		<!-- Reset CSS -->
     <link rel='stylesheet' href='css/bootstrap.min.css'>		<!-- Bootstrap CSS -->
     <link rel='stylesheet' href='css/fontawesome.min.css'>		<!-- Font Awesome CSS -->
+	<link rel='stylesheet' href='css/daterangepicker.css'>		<!-- Date Range Picker CSS -->
 	<link rel='stylesheet' href='css/style.css'>		<!-- custom CSS -->
 </head>
 <body>
 	<main>
-		<nav class='navbar navbar-expand-lg navbar-light bg-light'>
+		<nav class='navbar navbar-expand-lg navbar-light bg-light' style='overflow: hidden'>
 			<a class='navbar-brand' href='index.html'><img src='images\Title.png' class='title'></a>
 			<button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
 				<span class='navbar-toggler-icon'></span>
@@ -59,6 +60,12 @@
 					<br>
 					<form class='form' action=''>
 						<div class='form-group'>
+							<input class='form-control' type='text' id='newlease-start-date' name='newleaseDateRange' placeholder='Apartment ID'>
+						</div>
+						<div class='form-group'>
+							<input class='form-control' type='text' id='newlease-apartment-id' name='newleaseApartmentID' placeholder='Apartment ID'>
+						</div>
+						<div class='form-group'>
 							<input class='form-control' type='text' id='newlease-apartment-id' name='newleaseApartmentID' placeholder='Apartment ID'>
 						</div>
 						<div class='form-group'>
@@ -66,10 +73,10 @@
 						</div>
 						<div class='form-group text-centered'>
 							<button class='btn btn-primary'>
-								<span class='button-add-or-remove-text'>-</span>
+								<span id='newlease-remove-email-button' class='button-add-or-remove-text'>-</span>
 							</button>
 							<button class='btn btn-primary'>
-								<span class='button-add-or-remove-text'>+</span>
+								<span id='newlease-add-email-button' class='button-add-or-remove-text'>+</span>
 							</button>
 						</div>
 						<div class='form-group text-centered'>
@@ -94,19 +101,24 @@
     <script src='js/jquery-3.3.1.js'></script>		<!-- Jquery JS (necessary for dropdowns) -->
     <script src='js/bootstrap.bundle.min.js'></script>		<!-- Bootstrap Bundle JS (necessary for dropdowns) -->
     <!-- <script src='js/bootstrap.min.js'></script> -->		<!-- Bootstrap JS – disabled because when enabled it has a conflict with Bootstrap Bundle JS that makes dropdowns require two clicks to dropdown; it doesn't seem that any needed functionality is lacking when this is disabled -->
+    <script src='js/moment.min.js'></script>		<!-- Moment JS (necessary for Date Range Picker) -->
+    <script src='js/daterangepicker.min.js'></script>		<!-- Date Range Picker JS (http://www.daterangepicker.com/#usage) -->
+	<script type='text/javascript'>
+		$('input[name="newleaseDateRange"]').daterangepicker();
+	</script>
 	<script>
 		$(document).ready(function()
 		{
 			var index = 1;
-
-			$('#add').click(function()
-			{
-				/* add code for addition here */
-			});
 		
-			$(document).on('click', '.btn_remove', function()
+			$('#newlease-remove-email-button').click(function()
 			{
-				/* add code for removal here */
+				/* add code for email removal here */
+			});
+
+			$('#newlease-add-email-button').click(function()
+			{
+				/* add code for email addition here */
 			});
 		
 			$('#newleaseButtonCreateLease').click(function()
