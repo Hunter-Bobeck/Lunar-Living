@@ -213,6 +213,19 @@ a {
 	font-size: 20px;
 }
 
+#email-list{
+	display: inline;
+}
+
+#lease-form{
+	display: inline;
+}
+
+#lease-button{
+	display: inline;
+}
+
+
 
 /* index.html */
 
