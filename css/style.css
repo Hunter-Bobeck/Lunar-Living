@@ -1,9 +1,16 @@
 /* general */
 
-body {
+@import url('https://fonts.googleapis.com/css?family=Ramabhadra');
+
+.background {
 	background-color: black;
-	background-image: url('../images/Moon in Space.jpg');
 	background-size: cover;
+}
+.background-moon-in-space {
+	background-image: url('../images/Moon in Space.jpg');
+}
+.background-lunar-landed {
+	background-image: url('../images/Lunar Landed.jpg');
 }
 
 a {
@@ -27,6 +34,10 @@ a {
 	border-radius: 25px;
     padding: 15px;
 	padding-top: 10px;
+}
+
+.button-add-or-remove-text {
+	font-size: 20px;
 }
 
 
@@ -189,43 +200,6 @@ a {
 }
 
 
-/* newlease.html */
-
-#spacer-newlease {
-	height: 65px;
-}
-
-#container-newlease {
-	width: 250px;
-}
-
-@media only screen and (min-width: 700px) {
-	#spacer-newlease {
-		height: 200px;
-	}
-
-	#container-newlease {
-		width: 400px;
-	}
-}
-
-.button-add-or-remove-text {
-	font-size: 20px;
-}
-
-#email-list{
-	display: inline;
-}
-
-#lease-form{
-	display: inline;
-}
-
-#lease-button{
-	display: inline;
-}
-
-
 
 /* index.html */
 
@@ -274,5 +248,81 @@ a {
 
 	#container-index {
 		width: 50%;
+	}
+}
+
+
+/* newlease.html */
+
+#spacer-newlease {
+	height: 65px;
+}
+
+#container-newlease {
+	width: 250px;
+}
+
+@media only screen and (min-width: 700px) {
+	#spacer-newlease {
+		height: 200px;
+	}
+
+	#container-newlease {
+		width: 400px;
+	}
+}
+
+/* Nick's */
+#email-list{
+	display: inline;
+}
+#lease-form{
+	display: inline;
+}
+#lease-button{
+	display: inline;
+}
+
+
+/* maintenance.html */
+
+#spacer-maintenance {
+	height: 65px;
+}
+
+.container-maintenance-ticket {
+	width: 350px;
+	padding-top: 10px;
+    padding-bottom: 15px;
+	border-radius: 5px;
+	background-color: rgba(42, 43, 47, 1);	/* this color in hex (without alpha) is #2a2b2f */
+	color: rgba(171, 199, 215, 1);	/* this color in hex (without alpha) is #abc7d7 */
+}
+
+.maintenance-ticket-title {
+	padding-left: 15px;
+	font-size: 15px;
+	font-weight: bold;
+	font-family: 'Ramabhadra', sans-serif;
+}
+
+.container-maintenance-ticket-content {
+	padding-top: 10px;
+    padding-bottom: 15px;
+	margin-left: 0px;
+	margin-right: 0px;
+	border-radius: 5px;
+	background-color: rgba(38, 38, 40, 1);	/* this color in hex (without alpha) is #262628 */
+	color: rgba(171, 199, 215, 1);	/* this color in hex (without alpha) is #abc7d7 */
+}
+
+.container-maintenance-ticket-content > h6 {
+	font-size: 14px;
+	font-family: 'Ramabhadra', sans-serif;
+}
+
+@media only screen and (min-width: 700px) {
+	#spacer-maintenance {
+		height: 200px;
 	}
 }

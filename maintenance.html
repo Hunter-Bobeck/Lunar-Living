@@ -9,15 +9,16 @@
     <meta name='keywords' content='Kidd, Living, space, rental, service, management, system, SpaceX, outer, Elon, Musk'>		<!-- keywords for searchengine optimization -->
     <meta name='author' content='IU SE G2'>		<!-- author name -->
     <link rel='icon' href='images\Icon.ico'>		<!-- favicon -->
-    <title>Lunar Living | Home</title>		<!-- title -->
+    <title>Lunar Living | Maintenance</title>		<!-- title -->
 
 	<!-- CSS -->
 	<link rel='stylesheet' href='css/reset.css'>		<!-- Reset CSS -->
     <link rel='stylesheet' href='css/bootstrap.min.css'>		<!-- Bootstrap CSS -->
     <link rel='stylesheet' href='css/fontawesome.min.css'>		<!-- Font Awesome CSS -->
 	<link rel='stylesheet' href='css/style.css'>		<!-- custom CSS -->
+	<link rel='stylesheet' href='css/style-muuri.css'>		<!-- custom CSS for Muuri -->
 </head>
-<body class="background background-moon-in-space">
+<body class="background background-lunar-landed">
 	<main>
 		<nav class='navbar navbar-expand-lg navbar-light bg-light'>
 			<a class='navbar-brand' href='index.html'><img src='images\Title.png' class='title'></a>
@@ -27,14 +28,14 @@
 
 			<div class='collapse navbar-collapse' id='navbarSupportedContent'>
 				<ul class='navbar-nav mr-auto'>
-					<li class='nav-item active'>
-						<a class='nav-link current-lunar-living-nav-link' href='index.html'>Home <span class='sr-only'>(current)</span></a>
+					<li class='nav-item'>
+						<a class='nav-link' href='index.html'>Home</a>
 					</li>
 					<li class='nav-item'>
 						<a class='nav-link' href='newlease.html'>New Lease</a>
 					</li>
-					<li class='nav-item'>
-						<a class='nav-link' href='maintenance.html'>Maintenance</a>
+					<li class='nav-item active'>
+						<a class='nav-link current-lunar-living-nav-link' href='maintenance.html'>Maintenance <span class='sr-only'>(current)</span></a>
 					</li>
 				</ul>
 			</div>
@@ -53,24 +54,34 @@
 		</nav>
 
 
-		<div id='spacer-index-before-banner'></div>
-		<div id='banner-index-container'>
-			<img src='images/banner.jpg' id='banner-index'>
-		</div>
-		<div id='spacer-index-after-banner'></div>
-		<div class='container container-form' id='container-index'>
-			<div class='row'>
-				<div class='col-6 col-md-4'><br><br>&nbsp;&nbsp;&nbsp;&nbsp;1 BHK</div>
-				<div class='col-6 col-md-4'><a href='#'><img src='images/example.jpg'></a></div>
-				<div class='col-6 col-md-4'><a href='#'><img src='images/example.jpg'></a></div>
+		<div id='spacer-maintenance'></div>
+
+
+		<div class="grid">
+
+			<div class="item">
+				<div class="item-content">
+						This can be anything.
+				</div>
 			</div>
-			<br>
-			<div class='row'>
-				<div class='col-6 col-md-4'><br><br>&nbsp;&nbsp;&nbsp;&nbsp;2 BHK</div>
-				<div class='col-6 col-md-4'><a href='#'><img src='images/example.jpg'></a></div>
-				<div class='col-6 col-md-4'><a href='#'><img src='images/example.jpg'></a></div>
+
+			<div class="item">
+				<div class="item-content">
+					<div class="my-custom-content">
+						Yippee!
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!--
+		<div class='container container-maintenance-ticket'>
+			<h5 class='maintenance-ticket-title'>Patch up oxygen leak</h5>
+			<div class='container container-maintenance-ticket-content'>
+				<h6>This is an example task for the tenant's view</h6>
 			</div>
 		</div>
+		-->
 
 
 		<footer class='footer'>
@@ -84,5 +95,8 @@
     <script src='js/jquery-3.3.1.js'></script>		<!-- Jquery JS (necessary for dropdowns) -->
     <script src='js/bootstrap.bundle.min.js'></script>		<!-- Bootstrap Bundle JS (necessary for dropdowns) -->
     <!-- <script src='js/bootstrap.min.js'></script> -->		<!-- Bootstrap JS – disabled because when enabled it has a conflict with Bootstrap Bundle JS that makes dropdowns require two clicks to dropdown; it doesn't seem that any needed functionality is lacking when this is disabled -->
+	<script src='js/hammer.min.js'></script>		<!-- Hammer JS (required by Muuri for draggability) -->
+	<script src='js/muuri.min.js'></script>		<!-- Muuri JS -->
+	<script>var grid = new Muuri('.grid');</script>		<!-- initialize Muuri -->
 </body>
 </html>
