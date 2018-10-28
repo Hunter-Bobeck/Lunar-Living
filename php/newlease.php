@@ -29,7 +29,7 @@
 <body class="background background-moon-in-space">
 	<main>
 		<nav class='navbar navbar-expand-lg navbar-light bg-light' style='overflow: hidden'>
-			<a class='navbar-brand' href='index.php'><img src='../images\logo.png' class='title'></a>
+			<a class='navbar-brand' href='index.php'><img src='../images/Title.png' class='title'></a>
 			<button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
 				<span class='navbar-toggler-icon'></span>
 			</button>
@@ -118,25 +118,6 @@ Copyright 2018 IU-SE-G2
 		$('input[name="newleaseDateRange"]').daterangepicker();
 	</script>
 	<script>
-		$(document).ready(function()
-		{
-			var index = 1;
-
-			$('#newlease-remove-email-button').click(function()
-			{
-				/* add code for email removal here */
-			});
-
-			$('#newlease-add-email-button').click(function()
-			{
-				/* add code for email addition here */
-			});
-
-			$('#newleaseButtonCreateLease').click(function()
-			{
-				/* add code for lease creation here */
-			});
-		});
     function add_field()
     {
     document.getElementById("email-list").innerHTML=document.getElementById("email-list").innerHTML+
