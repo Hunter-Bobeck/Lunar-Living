@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5ccbb92-42c6-40da-876c-23d5a46b3155" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeaseSigned.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addLease.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/addLease.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintenance.html" beforeDir="false" afterPath="$PROJECT_DIR$/php/maintenance.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newlease.html" beforeDir="false" afterPath="$PROJECT_DIR$/php/newlease.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newuser.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/newuser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/otpverification.html" beforeDir="false" afterPath="$PROJECT_DIR$/php/otpverification.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/otpverification.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/user_lease.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/user_lease.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/user_lease_details.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/user_lease_details.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/maintenance.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/maintenance.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/signup.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +23,7 @@
         <counts>
           <entry key="css" value="2" />
           <entry key="html" value="11" />
-          <entry key="php" value="26" />
+          <entry key="php" value="27" />
           <entry key="png" value="1" />
           <entry key="txt" value="1" />
         </counts>
@@ -47,7 +33,7 @@
           <entry key="CSS" value="2" />
           <entry key="HTML" value="11" />
           <entry key="Image" value="1" />
-          <entry key="PHP" value="26" />
+          <entry key="PHP" value="27" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -69,11 +55,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php/newuser.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="470">
               <caret line="73" selection-start-line="73" selection-end-line="73" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/php/maintenance.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="507">
+              <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
             </state>
           </provider>
         </entry>
@@ -121,7 +116,6 @@
         <option value="$PROJECT_DIR$/maintenance.html" />
         <option value="$PROJECT_DIR$/newlease.html" />
         <option value="$PROJECT_DIR$/php/index.php" />
-        <option value="$PROJECT_DIR$/php/maintenance.php" />
         <option value="$PROJECT_DIR$/php/profile.php" />
         <option value="$PROJECT_DIR$/php/user_lease.php" />
         <option value="$PROJECT_DIR$/php/user_lease_details.php" />
@@ -132,6 +126,7 @@
         <option value="$PROJECT_DIR$/php/login.php" />
         <option value="$PROJECT_DIR$/php/newlease.php" />
         <option value="$PROJECT_DIR$/php/newuser.php" />
+        <option value="$PROJECT_DIR$/php/maintenance.php" />
       </list>
     </option>
   </component>
@@ -211,12 +206,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540683288792</updated>
-      <workItem from="1540683290839" duration="17220000" />
+      <workItem from="1540683290839" duration="17685000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17220000" />
+    <option name="totallyTimeSpent" value="17685000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -291,13 +286,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
           <caret line="72" column="50" lean-forward="true" selection-start-line="72" selection-start-column="50" selection-end-line="72" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/maintenance.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="34" column="62" selection-start-line="34" selection-start-column="62" selection-end-line="34" selection-end-column="62" />
         </state>
       </provider>
     </entry>
@@ -390,6 +378,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="470">
           <caret line="73" selection-start-line="73" selection-end-line="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/maintenance.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
         </state>
       </provider>
     </entry>

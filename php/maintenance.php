@@ -12,11 +12,18 @@
     <title>Lunar Living | Maintenance</title>		<!-- title -->
 
 	<!-- CSS -->
+<<<<<<< HEAD:php/maintenance.php
 	<link rel='stylesheet' href='../css/reset.css'>		<!-- Reset CSS -->
     <link rel='stylesheet' href='../css/bootstrap.min.css'>		<!-- Bootstrap CSS -->
     <link rel='stylesheet' href='../css/fontawesome.min.css'>		<!-- Font Awesome CSS -->
 	<link rel='stylesheet' href='../css/style.css'>		<!-- custom CSS -->
 	<link rel='stylesheet' href='../css/style-muuri.css'>		<!-- custom CSS for Muuri -->
+=======
+	<link rel='stylesheet' href='css/reset.css'>		<!-- Reset CSS -->
+    <link rel='stylesheet' href='css/bootstrap.min.css'>		<!-- Bootstrap CSS -->
+    <link rel='stylesheet' href='css/fontawesome.min.css'>		<!-- Font Awesome CSS -->
+	<link rel='stylesheet' href='css/style.css'>		<!-- custom CSS -->
+>>>>>>> 0d6da0cd73113e9336d0e89ba40122eaabca537e:maintenance.html
 </head>
 <body class="background background-lunar-landed">
 	<main>
@@ -57,31 +64,12 @@
 		<div id='spacer-maintenance'></div>
 
 
-		<div class="grid">
-
-			<div class="item">
-				<div class="item-content">
-						This can be anything.
-				</div>
-			</div>
-
-			<div class="item">
-				<div class="item-content">
-					<div class="my-custom-content">
-						Yippee!
-					</div>
-				</div>
-			</div>
-
-		</div>
-		<!--
 		<div class='container container-maintenance-ticket'>
 			<h5 class='maintenance-ticket-title'>Patch up oxygen leak</h5>
 			<div class='container container-maintenance-ticket-content'>
 				<h6>This is an example task for the tenant's view</h6>
 			</div>
 		</div>
-		-->
 
 
 		<footer class='footer'>
@@ -98,5 +86,6 @@
 	<script src='../js/hammer.min.js'></script>		<!-- Hammer JS (required by Muuri for draggability) -->
 	<script src='../js/muuri.min.js'></script>		<!-- Muuri JS -->
 	<script>var grid = new Muuri('.grid');</script>		<!-- initialize Muuri -->
+
 </body>
 </html>
