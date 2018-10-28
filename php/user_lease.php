@@ -17,7 +17,7 @@
     <link rel='stylesheet' href='../css/fontawesome.min.css'>		<!-- Font Awesome CSS -->
 	<link rel='stylesheet' href='../css/style.css'>		<!-- custom CSS -->
 </head>
-<body>
+<body class="background background-moon-in-space">
     <?php
 		//session_start();
 		// make sure to remove this line.. It is just static field for testing

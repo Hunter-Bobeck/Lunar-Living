@@ -356,14 +356,7 @@ a {
     box-shadow: inset -1px 0 10px rgba(0, 0, 0, 0.4);
 	background: #293749;
 }
-.main_sidebar:after {
-    content: '';
-    background: #293749;
-    position: fixed;
-    z-index: -1;
-    height: 100%;
-    width: 58px;
-}
+
 .main_sidebar ul {
     list-style:none;
     padding-left:58px;
