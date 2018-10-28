@@ -203,8 +203,6 @@ a {
 
 /* index.php */
 
-
-
 #spacer-index-before-banner {
 	height: 0px;
 }
@@ -346,6 +344,43 @@ a {
 		height: 50px;
 	}
 }
+
+
+/* newticket.html */
+
+#spacer-newticket {
+	height: 65px;
+}
+
+#container-newticket {
+	width: 250px;
+}
+
+@media only screen and (min-width: 700px) {
+	#spacer-newticket {
+		height: 200px;
+	}
+
+	#container-newticket {
+		width: 400px;
+	}
+}
+
+#newticket-header {
+	font-family: 'Ramabhadra', sans-serif;
+	font-size: 1.5em;
+}
+
+#newticket-ticket-description {
+	height: 6em;
+	width: 100%;
+	overflow: hidden;
+	resize: none;
+	border-radius: 5px;
+}
+
+
+/* backend changes */
 
 .main_sidebar {
     min-height:85vh;

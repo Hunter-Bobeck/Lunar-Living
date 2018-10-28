@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang='en'>
 <head>
 	<!-- metadata -->
@@ -8,8 +8,8 @@
     <meta name='description' content='Rent a living space, in outer space.'>		<!-- description [shown on searchengine result] -->
     <meta name='keywords' content='Kidd, Living, space, rental, service, management, system, SpaceX, outer, Elon, Musk'>		<!-- keywords for searchengine optimization -->
     <meta name='author' content='IU SE G2'>		<!-- author name -->
-    <link rel='icon' href='../images/Icon.ico'>		<!-- favicon -->
-    <title>Lunar Living | Maintenance</title>		<!-- title -->
+    <link rel='icon' href='..\images\Icon.ico'>		<!-- favicon -->
+    <title>Lunar Living | New Ticket</title>		<!-- title -->
 
 	<!-- CSS -->
 	<link rel='stylesheet' href='../css/reset.css'>		<!-- Reset CSS -->
@@ -31,7 +31,7 @@
 						<a class='nav-link' href='index.php'>Home</a>
 					</li>
 					<li class='nav-item'>
-						<a class='nav-link' href='newlease.php'>New Lease</a>
+						<a class='nav-link' href='newticket.php'>New Lease</a>
 					</li>
 					<li class='nav-item active'>
 						<a class='nav-link current-lunar-living-nav-link' href='maintenance.php'>Maintenance <span class='sr-only'>(current)</span></a>
@@ -53,61 +53,36 @@
 		</nav>
 
 
-		<div id='spacer-maintenance'></div>
-
-
-		<div class='container container-maintenance-ticket'>
-			<h5 class='maintenance-ticket-title'>Patch up oxygen leak</h5>
-			<h5 class='maintenance-ticket-subtitle'>You created this ticket on: <span class='maintenance-ticket-date'>10/20/2018</span></h5>
-			<div class='container container-maintenance-ticket-content'>
-				<h6>
-					There is a hole in the oxygen supply, please apply some moon tape!<br>This particular task is an example task for the tenant's view. Also the 'Create Ticket' button down below is for the tenant's view.
-				</h6>
+		<div id='spacer-newticket'></div>
+		<div class='container container-form' id='container-newticket'>
+			<div class='row justify-content-center align-items-center'>
+				<div class='col-md-7' id='newticket-column'>
+					<br>
+					<h5 class='text-centered' id='newticket-header'>New Ticket</h5>
+					<br>
+					<form class='form' action=''>
+						<div class='form-group'>
+							<input class='form-control' type='text' id='newticket-ticket-title' name='newticketTicketTitle' placeholder='Ticket title'>
+						</div>
+						<div class='form-group'>
+							<textarea wrap='soft' id='newticket-ticket-description' name='newticketTicketDescription' placeholder='Ticket description'>
+								
+							</textarea>
+						</div>
+						<div class='form-group text-centered'>
+							<input class='btn btn-info btn-md' value='Submit Ticket' type='submit' name='newticketButtonSubmitTicket'>
+						</div>
+					</form>
+				</div>
 			</div>
-			<input class='btn btn-info btn-md button-maintenance-ticket' value='Cancel Request' type='submit'>
 		</div>
-		<div class='container container-maintenance-ticket'>
-			<h5 class='maintenance-ticket-title'>
-				Patch up oxygen leak
-			</h5>
-			<h5 class='maintenance-ticket-subtitle'>
-				<span class='maintenance-ticket-user'>Joe Smith</span> created on: <span class='maintenance-ticket-date'>10/20/2018</span>
-			</h5>
-			<div class='container container-maintenance-ticket-content'>
-				<h6>
-					There is a hole in the oxygen supply, please apply some moon tape!<br>This particular task is an example task for the maintainer's view. 
-				</h6>
-			</div>
-			<input class='btn btn-info btn-md button-maintenance-ticket' value='Complete Task' type='submit'>
-		</div>
-		<div class='container container-maintenance-ticket'>
-			<h5 class='maintenance-ticket-title'>
-				Patch up oxygen leak
-			</h5>
-			<h5 class='maintenance-ticket-subtitle'>
-				<span class='maintenance-ticket-user'>Joe Smith</span> created on: <span class='maintenance-ticket-date'>10/20/2018</span>
-			</h5>
-			<h5 class='maintenance-ticket-subtitle'>
-				You assigned this job to <span class='maintenance-ticket-user'>Bob Worker</span>.
-			</h5>
-			<div class='container container-maintenance-ticket-content'>
-				<h6>
-					There is a hole in the oxygen supply, please apply some moon tape!<br>This particular task is an example task for the manager's view. 
-				</h6>
-			</div>
-			<input class='btn btn-info btn-md button-maintenance-ticket' value='Remove Ticket' type='submit'>
-		</div>
-		<div class='text-centered'>
-			<a href='newticket.php'>
-				<input class='btn btn-info btn-md button-maintenance-ticket' value='New Ticket' type='submit'>
-			</a>
-		</div>
+		<br>
+		<br>
 	</main>
 
 	<!-- postJS -->
-    <script src='../js/jquery-3.3.1.js'></script>		<!-- Jquery JS (necessary for dropdowns) -->
-    <script src='../js/bootstrap.bundle.min.js'></script>		<!-- Bootstrap Bundle JS (necessary for dropdowns) -->
+    <script src='js/jquery-3.3.1.js'></script>		<!-- Jquery JS (necessary for dropdowns) -->
+    <script src='js/bootstrap.bundle.min.js'></script>		<!-- Bootstrap Bundle JS (necessary for dropdowns) -->
     <!-- <script src='js/bootstrap.min.js'></script> -->		<!-- Bootstrap JS � disabled because when enabled it has a conflict with Bootstrap Bundle JS that makes dropdowns require two clicks to dropdown; it doesn't seem that any needed functionality is lacking when this is disabled -->
-
 </body>
 </html>
