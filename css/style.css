@@ -287,7 +287,7 @@ a {
 /* maintenance.php */
 
 #spacer-maintenance {
-	height: 65px;
+	height: 50px;
 }
 
 .container-maintenance-ticket {
@@ -297,13 +297,29 @@ a {
 	border-radius: 5px;
 	background-color: rgba(42, 43, 47, 1);	/* this color in hex (without alpha) is #2a2b2f */
 	color: rgba(171, 199, 215, 1);	/* this color in hex (without alpha) is #abc7d7 */
+	margin-bottom: 20px;
+}
+
+.container-maintenance-ticket > h5 {
+	padding-left: 5px;
+	font-size: 15px;
+	font-family: 'Ramabhadra', sans-serif;
 }
 
 .maintenance-ticket-title {
-	padding-left: 15px;
-	font-size: 15px;
 	font-weight: bold;
-	font-family: 'Ramabhadra', sans-serif;
+}
+
+.maintenance-ticket-subtitle {
+	
+}
+
+.maintenance-ticket-author {
+	font-style: italic;
+}
+
+.maintenance-ticket-date {
+	
 }
 
 .container-maintenance-ticket-content {
@@ -321,9 +337,13 @@ a {
 	font-family: 'Ramabhadra', sans-serif;
 }
 
+.button-maintenance-ticket {
+	margin-top: .5em;
+}
+
 @media only screen and (min-width: 700px) {
 	#spacer-maintenance {
-		height: 200px;
+		height: 50px;
 	}
 }
 
