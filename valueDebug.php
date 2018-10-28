@@ -1,10 +1,17 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: nishc
+ * Date: 10/28/2018
+ * Time: 12:57 PM
+ */
 
+$username = $_POST['loginUsername'];
+$password = $_POST['loginPassword'];
 session_start();
-$otp = $_POST['otpverificationOTP'];
-$username = $_SESSION['username'];
+$_SESSION['username'] = $username;
 //setup the request, you can also use CURLOPT_URL
-$ch = curl_init('https://lunar-living.herokuapp.com/otpVerification');
+$ch = curl_init('https://lunar-living.herokuapp.com/login');
 
 // Returns the data/output as a string instead of raw data
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -16,25 +23,26 @@ curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
     'Content-Type: application/json',
     "username: $username",
-    "otp: $otp"
-    ));
+    "password: $password"
+));
 
 // get stringified data/output. See CURLOPT_RETURNTRANSFER
 $data = curl_exec($ch);
-echo $data;
+
+
+
 // get info about the request
 $info = curl_getinfo($ch);
 
-if($data == 'false'){
-  echo "OTP not same";
-}else
- {
-  echo "Welcome Page" . $data;
-  session_destroy();
-}
 
+$dataArray = json_decode($data, true);
+
+if($data == 'false'){
+    echo "none";
+}else {
+    echo $dataArray["newuser"];
+}
 // close curl resource to free up system resources
 curl_close($ch);
 
-
- ?>
+?>

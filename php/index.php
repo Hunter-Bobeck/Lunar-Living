@@ -70,7 +70,7 @@
 						<a class='nav-link current-lunar-living-nav-link' href='index.php'>Home <span class='sr-only'>(current)</span></a>
 					</li>
 					<li class='nav-item'>
-						<a class='nav-link' href='../newlease.html'>New Lease</a>
+						<a class='nav-link' href='newlease.php'>New Lease</a>
 					</li>
 				</ul>
 			</div>
@@ -89,7 +89,7 @@
                 echo "</ul>";
             }
             else{
-                echo"<a class='login-link' href = '../login.html'>Login</a>";
+                echo"<a class='login-link' href = 'login.php'>Login</a>";
             }
             ?>
 		</nav>

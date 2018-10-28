@@ -14,14 +14,14 @@
     <meta name='description' content='Rent a living space, in outer space.'>		<!-- description [shown on searchengine result] -->
     <meta name='keywords' content='Kidd, Living, space, rental, service, management, system, SpaceX, outer, Elon, Musk'>		<!-- keywords for searchengine optimization -->
     <meta name='author' content='IU SE G2'>		<!-- author name -->
-    <link rel='icon' href='images\Icon.ico'>		<!-- favicon -->
+    <link rel='icon' href='../images\Icon.ico'>		<!-- favicon -->
     <title>Lunar Living | Login</title>		<!-- title -->
 
 	<!-- CSS -->
-	<link rel='stylesheet' href='css/reset.css'>		<!-- Reset CSS -->
-    <link rel='stylesheet' href='css/bootstrap.min.css'>		<!-- Bootstrap CSS -->
-    <link rel='stylesheet' href='css/fontawesome.min.css'>		<!-- Font Awesome CSS -->
-	<link rel='stylesheet' href='css/style.css'>		<!-- custom CSS -->
+	<link rel='stylesheet' href='../css/reset.css'>		<!-- Reset CSS -->
+    <link rel='stylesheet' href='../css/bootstrap.min.css'>		<!-- Bootstrap CSS -->
+    <link rel='stylesheet' href='../css/fontawesome.min.css'>		<!-- Font Awesome CSS -->
+	<link rel='stylesheet' href='../css/style.css'>		<!-- custom CSS -->
 </head>
 <body class='background background-moon-in-space'>
 	<main>
@@ -29,7 +29,7 @@
 		<div class='container container-form' id='container-login'>
 			<div class='row justify-content-center align-items-center'>
 				<div class='col-md-7' id='login-column'>
-					<div class='text-centered five-padding-bottom'><img src='images\Logo - Login.png' class='logo'></div>
+					<div class='text-centered five-padding-bottom'><img src='../images\Logo - Login.png' class='logo'></div>
 					<br>
 					<form class='form' method = 'post'>
 						<div class='form-group'>
@@ -56,7 +56,7 @@
 	</main>
 
 <!--	<!-- postJS -->-->
-    <script src='js/bootstrap.min.js'></script>		<!-- Bootstrap JS -->
+    <script src='../js/bootstrap.min.js'></script>		<!-- Bootstrap JS -->
     <?php
     function loginButtonClick(){
         $username = $_POST['loginUsername'];
@@ -82,13 +82,18 @@
         // get stringified data/output. See CURLOPT_RETURNTRANSFER
         $data = curl_exec($ch);
 
+
+
         // get info about the request
         $info = curl_getinfo($ch);
 
+
+        $dataArray = json_decode($data, true);
+        $_SESSION["newuser"] = $dataArray["newuser"];
         if($data == 'false'){
-            echo "User Not Found";
+            header("Location: ");
         }else {
-            header("Location: otpverification.html");
+            header("Location: otpverification.php");
         }
         // close curl resource to free up system resources
         curl_close($ch);
@@ -97,6 +102,7 @@
         loginButtonClick();
     }
     ?>
+
 </body>
 
 </html>

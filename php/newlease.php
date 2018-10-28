@@ -14,22 +14,22 @@
 <!-- keywords for searchengine optimization -->
     <meta name='author' content='IU SE G2'>
 <!-- author name -->
-    <link rel='icon' href='images\Icon.ico'>
+    <link rel='icon' href='../images\Icon.ico'>
 <!-- favicon -->
     <title>Lunar Living | New Lease</title>
 <!-- title -->
 
 	<!-- CSS -->
-	<link rel='stylesheet' href='css/reset.css'>		<!-- Reset CSS -->
-    <link rel='stylesheet' href='css/bootstrap.min.css'>		<!-- Bootstrap CSS -->
-    <link rel='stylesheet' href='css/fontawesome.min.css'>		<!-- Font Awesome CSS -->
-	<link rel='stylesheet' href='css/daterangepicker.css'>		<!-- Date Range Picker CSS -->
-	<link rel='stylesheet' href='css/style.css'>		<!-- custom CSS -->
+	<link rel='stylesheet' href='../css/reset.css'>		<!-- Reset CSS -->
+    <link rel='stylesheet' href='../css/bootstrap.min.css'>		<!-- Bootstrap CSS -->
+    <link rel='stylesheet' href='../css/fontawesome.min.css'>		<!-- Font Awesome CSS -->
+	<link rel='stylesheet' href='../css/daterangepicker.css'>		<!-- Date Range Picker CSS -->
+	<link rel='stylesheet' href='../css/style.css'>		<!-- custom CSS -->
 </head>
 <body class="background background-moon-in-space">
 	<main>
 		<nav class='navbar navbar-expand-lg navbar-light bg-light' style='overflow: hidden'>
-			<a class='navbar-brand' href='index.html'><img src='images\Title.png' class='title'></a>
+			<a class='navbar-brand' href='index.php'><img src='../images\logo.png' class='title'></a>
 			<button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
 				<span class='navbar-toggler-icon'></span>
 			</button>
@@ -37,13 +37,13 @@
 <div class='collapse navbar-collapse' id='navbarSupportedContent'>
 <ul class='navbar-nav mr-auto'>
 <li class='nav-item'>
-<a class='nav-link' href='index.html'>Home</a>
+<a class='nav-link' href='index.php'>Home</a>
 </li>
 <li class='nav-item active'>
-<a class='nav-link current-lunar-living-nav-link' href='newlease.html'>New Lease <span class='sr-only'>(current)</span></a>
+<a class='nav-link current-lunar-living-nav-link' href='newlease.php'>New Lease <span class='sr-only'>(current)</span></a>
 </li>
 <li class='nav-item'>
-	<a class='nav-link' href='maintenance.html'>Maintenance</a>
+	<a class='nav-link' href='maintenance.php'>Maintenance</a>
 </li>
 </ul>
 </div>
@@ -109,11 +109,11 @@ Copyright 2018 IU-SE-G2
 </main>
 
 	<!-- postJS -->
-    <script src='js/jquery-3.3.1.js'></script>		<!-- Jquery JS (necessary for dropdowns) -->
-    <script src='js/bootstrap.bundle.min.js'></script>		<!-- Bootstrap Bundle JS (necessary for dropdowns) -->
+    <script src='../js/jquery-3.3.1.js'></script>		<!-- Jquery JS (necessary for dropdowns) -->
+    <script src='../js/bootstrap.bundle.min.js'></script>		<!-- Bootstrap Bundle JS (necessary for dropdowns) -->
     <!-- <script src='js/bootstrap.min.js'></script> -->		<!-- Bootstrap JS � disabled because when enabled it has a conflict with Bootstrap Bundle JS that makes dropdowns require two clicks to dropdown; it doesn't seem that any needed functionality is lacking when this is disabled -->
-    <script src='js/moment.min.js'></script>		<!-- Moment JS (necessary for Date Range Picker) -->
-    <script src='js/daterangepicker.min.js'></script>		<!-- Date Range Picker JS (http://www.daterangepicker.com/#usage) -->
+    <script src='../js/moment.min.js'></script>		<!-- Moment JS (necessary for Date Range Picker) -->
+    <script src='../js/daterangepicker.min.js'></script>		<!-- Date Range Picker JS (http://www.daterangepicker.com/#usage) -->
 	<script type='text/javascript'>
 		$('input[name="newleaseDateRange"]').daterangepicker();
 	</script>
