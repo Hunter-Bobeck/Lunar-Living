@@ -67,15 +67,11 @@
 
     // get info about the request
         $info = curl_getinfo($ch);
-
-        $dataArray = json_decode($data, true);
-        $_SESSION["newuser"] = $dataArray["newuser"];
-
-
         if($data == 'false'){
             echo "User Not Found";
         }else {
-
+            $dataArray = json_decode($data, true);
+            $_SESSION["newuser"] = $dataArray["newuser"];
             header("Location: otpverification.php");
         }
 
