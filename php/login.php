@@ -84,6 +84,7 @@ session_start();
         $data = curl_exec($ch);
         // get info about the request
         $info = curl_getinfo($ch);
+        curl_close($ch);
         if($data == 'false'){
             header("Location: ");
         }else {
@@ -92,7 +93,6 @@ session_start();
             header("Location: otpverification.php");
         }
         // close curl resource to free up system resources
-        curl_close($ch);
     }
     if(array_key_exists('loginButtonLogin',$_POST)){
         loginButtonClick();
