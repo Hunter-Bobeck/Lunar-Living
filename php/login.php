@@ -81,18 +81,13 @@
 
         // get stringified data/output. See CURLOPT_RETURNTRANSFER
         $data = curl_exec($ch);
-
-
-
         // get info about the request
         $info = curl_getinfo($ch);
-
-
-        $dataArray = json_decode($data, true);
-        $_SESSION["newuser"] = $dataArray["newuser"];
         if($data == 'false'){
             header("Location: ");
         }else {
+            $dataArray = json_decode($data, true);
+            $_SESSION["newuser"] = $dataArray["newuser"];
             header("Location: otpverification.php");
         }
         // close curl resource to free up system resources

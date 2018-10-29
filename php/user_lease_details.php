@@ -25,7 +25,7 @@
     <link rel='stylesheet' href='../css/fontawesome.min.css'>		<!-- Font Awesome CSS -->
 	<link rel='stylesheet' href='../css/style.css'>		<!-- custom CSS -->
 </head>
-<body>
+<body class="background background-moon-in-space">
     <?php
 		//session_start();
 		// make sure to remove this line.. It is just static field for testing
@@ -96,7 +96,7 @@
 	<main class = "content_body">
         <div class='container-fluid padding-zero'>
             <nav class='navbar navbar-expand-lg navbar-light bg-light'>
-                <a class='navbar-brand' href='../index.php'><img src='../images\Title.png' class='title'></a>
+                <a class='navbar-brand' href='index.php'><img src='../images\Title.png' class='title'></a>
                 <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
                     <span class='navbar-toggler-icon'></span>
                 </button>
@@ -104,7 +104,7 @@
                 <div class='collapse navbar-collapse' id='navbarSupportedContent'>
                     <ul class='navbar-nav mr-auto'>
                         <li class='nav-item active'>
-                            <a class='nav-link current-lunar-living-nav-link' href='../index.php'>Home <span class='sr-only'>(current)</span></a>
+                            <a class='nav-link current-lunar-living-nav-link' href='index.php'>Home <span class='sr-only'>(current)</span></a>
                         </li>
                         <li class='nav-item'>
                             <a class='nav-link' href='newlease.php'>New Lease</a>
@@ -222,12 +222,6 @@
                 </div>
             </div>
         </div>
-
-		<footer class='footer'>
-			<div class='container'>
-				Copyright 2018 IU-SE-G2
-			</div>
-		</footer>
 	</main>
 
 	<!-- postJS -->

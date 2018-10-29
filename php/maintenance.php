@@ -8,7 +8,11 @@
     <meta name='description' content='Rent a living space, in outer space.'>		<!-- description [shown on searchengine result] -->
     <meta name='keywords' content='Kidd, Living, space, rental, service, management, system, SpaceX, outer, Elon, Musk'>		<!-- keywords for searchengine optimization -->
     <meta name='author' content='IU SE G2'>		<!-- author name -->
+<<<<<<< HEAD
     <link rel='icon' href='../images\Icon.ico'>		<!-- favicon -->
+=======
+    <link rel='icon' href='../images/Icon.ico'>		<!-- favicon -->
+>>>>>>> c033624aa87261698242cd65d969637a9724e1ce
     <title>Lunar Living | Maintenance</title>		<!-- title -->
 
 	<!-- CSS -->
@@ -19,10 +23,11 @@
 	<link rel='stylesheet' href='../css/style-muuri.css'>		<!-- custom CSS for Muuri -->
 
 </head>
-<body class="background background-lunar-landed">
+<body class='background background-lunar-landed'>
 	<main>
 		<nav class='navbar navbar-expand-lg navbar-light bg-light'>
 			<a class='navbar-brand' href='index.php'><img src='../images\Title.png' class='title'></a>
+
 			<button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
 				<span class='navbar-toggler-icon'></span>
 			</button>
@@ -60,26 +65,56 @@
 
 		<div class='container container-maintenance-ticket'>
 			<h5 class='maintenance-ticket-title'>Patch up oxygen leak</h5>
+			<h5 class='maintenance-ticket-subtitle'>You created this ticket on: <span class='maintenance-ticket-date'>10/20/2018</span></h5>
 			<div class='container container-maintenance-ticket-content'>
-				<h6>This is an example task for the tenant's view</h6>
+				<h6>
+					There is a hole in the oxygen supply, please apply some moon tape!<br>This particular task is an example task for the tenant's view. Also the 'Create Ticket' button down below is for the tenant's view.
+				</h6>
 			</div>
+			<input class='btn btn-info btn-md button-maintenance-ticket' value='Cancel Request' type='submit'>
 		</div>
-
-
-		<footer class='footer'>
-			<div class='container'>
-				Copyright 2018 IU-SE-G2
+		<div class='container container-maintenance-ticket'>
+			<h5 class='maintenance-ticket-title'>
+				Patch up oxygen leak
+			</h5>
+			<h5 class='maintenance-ticket-subtitle'>
+				<span class='maintenance-ticket-user'>Joe Smith</span> created on: <span class='maintenance-ticket-date'>10/20/2018</span>
+			</h5>
+			<div class='container container-maintenance-ticket-content'>
+				<h6>
+					There is a hole in the oxygen supply, please apply some moon tape!<br>This particular task is an example task for the maintainer's view. 
+				</h6>
 			</div>
-		</footer>
+			<input class='btn btn-info btn-md button-maintenance-ticket' value='Complete Task' type='submit'>
+		</div>
+		<div class='container container-maintenance-ticket'>
+			<h5 class='maintenance-ticket-title'>
+				Patch up oxygen leak
+			</h5>
+			<h5 class='maintenance-ticket-subtitle'>
+				<span class='maintenance-ticket-user'>Joe Smith</span> created on: <span class='maintenance-ticket-date'>10/20/2018</span>
+			</h5>
+			<h5 class='maintenance-ticket-subtitle'>
+				You assigned this job to <span class='maintenance-ticket-user'>Bob Worker</span>.
+			</h5>
+			<div class='container container-maintenance-ticket-content'>
+				<h6>
+					There is a hole in the oxygen supply, please apply some moon tape!<br>This particular task is an example task for the manager's view. 
+				</h6>
+			</div>
+			<input class='btn btn-info btn-md button-maintenance-ticket' value='Remove Ticket' type='submit'>
+		</div>
+		<div class='text-centered'>
+			<a href='newticket.php'>
+				<input class='btn btn-info btn-md button-maintenance-ticket' value='New Ticket' type='submit'>
+			</a>
+		</div>
 	</main>
 
 	<!-- postJS -->
     <script src='../js/jquery-3.3.1.js'></script>		<!-- Jquery JS (necessary for dropdowns) -->
     <script src='../js/bootstrap.bundle.min.js'></script>		<!-- Bootstrap Bundle JS (necessary for dropdowns) -->
     <!-- <script src='js/bootstrap.min.js'></script> -->		<!-- Bootstrap JS � disabled because when enabled it has a conflict with Bootstrap Bundle JS that makes dropdowns require two clicks to dropdown; it doesn't seem that any needed functionality is lacking when this is disabled -->
-	<script src='../js/hammer.min.js'></script>		<!-- Hammer JS (required by Muuri for draggability) -->
-	<script src='../js/muuri.min.js'></script>		<!-- Muuri JS -->
-	<script>var grid = new Muuri('.grid');</script>		<!-- initialize Muuri -->
 
 </body>
 </html>

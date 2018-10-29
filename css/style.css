@@ -203,8 +203,6 @@ a {
 
 /* index.php */
 
-
-
 #spacer-index-before-banner {
 	height: 0px;
 }
@@ -287,7 +285,7 @@ a {
 /* maintenance.php */
 
 #spacer-maintenance {
-	height: 65px;
+	height: 50px;
 }
 
 .container-maintenance-ticket {
@@ -297,13 +295,29 @@ a {
 	border-radius: 5px;
 	background-color: rgba(42, 43, 47, 1);	/* this color in hex (without alpha) is #2a2b2f */
 	color: rgba(171, 199, 215, 1);	/* this color in hex (without alpha) is #abc7d7 */
+	margin-bottom: 20px;
+}
+
+.container-maintenance-ticket > h5 {
+	padding-left: 5px;
+	font-size: 15px;
+	font-family: 'Ramabhadra', sans-serif;
 }
 
 .maintenance-ticket-title {
-	padding-left: 15px;
-	font-size: 15px;
 	font-weight: bold;
-	font-family: 'Ramabhadra', sans-serif;
+}
+
+.maintenance-ticket-subtitle {
+	
+}
+
+.maintenance-ticket-author {
+	font-style: italic;
+}
+
+.maintenance-ticket-date {
+	
 }
 
 .container-maintenance-ticket-content {
@@ -321,11 +335,52 @@ a {
 	font-family: 'Ramabhadra', sans-serif;
 }
 
+.button-maintenance-ticket {
+	margin-top: .5em;
+}
+
 @media only screen and (min-width: 700px) {
 	#spacer-maintenance {
-		height: 200px;
+		height: 50px;
 	}
 }
+
+
+/* newticket.html */
+
+#spacer-newticket {
+	height: 65px;
+}
+
+#container-newticket {
+	width: 250px;
+}
+
+@media only screen and (min-width: 700px) {
+	#spacer-newticket {
+		height: 200px;
+	}
+
+	#container-newticket {
+		width: 400px;
+	}
+}
+
+#newticket-header {
+	font-family: 'Ramabhadra', sans-serif;
+	font-size: 1.5em;
+}
+
+#newticket-ticket-description {
+	height: 6em;
+	width: 100%;
+	overflow: hidden;
+	resize: none;
+	border-radius: 5px;
+}
+
+
+/* backend changes */
 
 .main_sidebar {
     min-height:85vh;
@@ -336,14 +391,7 @@ a {
     box-shadow: inset -1px 0 10px rgba(0, 0, 0, 0.4);
 	background: #293749;
 }
-.main_sidebar:after {
-    content: '';
-    background: #293749;
-    position: fixed;
-    z-index: -1;
-    height: 100%;
-    width: 58px;
-}
+
 .main_sidebar ul {
     list-style:none;
     padding-left:58px;

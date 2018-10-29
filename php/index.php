@@ -20,7 +20,7 @@
     <link rel='stylesheet' href='../css/fontawesome.min.css'>		<!-- Font Awesome CSS -->
 	<link rel='stylesheet' href='../css/style.css'>		<!-- custom CSS -->
 </head>
-<body>
+<body class="background background-moon-in-space">
 <?php
 	if(isset($_SESSION['username'])){
 		// make sure to remove this line.. It is just static field for testing
@@ -59,7 +59,7 @@
 ?>
 	<main>
 		<nav class='navbar navbar-expand-lg navbar-light bg-light'>
-			<a class='navbar-brand' href='index.php'><img src='../images\Title.png' class='title'></a>
+			<a class='navbar-brand' href='index.php'><img src='../images/Title.png' class='title'></a>
 			<button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
 				<span class='navbar-toggler-icon'></span>
 			</button>
@@ -141,12 +141,6 @@
 			</div>
 		</div>
 		<div id='spacer-index-after-banner'></div>
-
-		<footer class='footer'>
-			<div class='container'>
-				Copyright 2018 IU-SE-G2
-			</div>
-		</footer>
 	</main>
 
 	<!-- postJS -->
