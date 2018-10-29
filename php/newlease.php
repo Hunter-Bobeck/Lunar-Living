@@ -26,15 +26,7 @@
     <link rel='stylesheet' href='../css/daterangepicker.css'>		<!-- Date Range Picker CSS -->
     <link rel='stylesheet' href='../css/style.css'>		<!-- custom CSS -->
 </head>
-<<<<<<< HEAD
-<body>
-<main>
-    <nav class='navbar navbar-expand-lg navbar-light bg-light' style='overflow: hidden'>
-        <a class='navbar-brand' href='index.html'><img src='images\Title.png' class='title'></a>
-        <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
-            <span class='navbar-toggler-icon'></span>
-        </button>
-=======
+
 <body class="background background-moon-in-space">
 	<main>
 		<nav class='navbar navbar-expand-lg navbar-light bg-light' style='overflow: hidden'>
@@ -42,7 +34,6 @@
 			<button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
 				<span class='navbar-toggler-icon'></span>
 			</button>
->>>>>>> c033624aa87261698242cd65d969637a9724e1ce
 
         <div class='collapse navbar-collapse' id='navbarSupportedContent'>
             <ul class='navbar-nav mr-auto'>
@@ -69,51 +60,6 @@
     </nav>
 
 
-<<<<<<< HEAD
-    <div id='spacer-newlease'></div>
-    <div class='container container-form' id='container-newlease'>
-        <div class='row justify-content-center align-items-center'>
-            <div class='col-md-7' id='newlease-column'>
-                <br>
-                <h5 class='text-centered'>New Lease Agreement</h5>
-                <br>
-                <form class='form' action=''>
-                    <div class='form-group'>
-                        <input class='form-control' type='text' id='newlease-start-date' name='newleaseDateRange' placeholder='Apartment ID'>
-                    </div>
-                    <div class='form-group'>
-                        <input class='form-control' type='text' id='newlease-apartment-id' name='newleaseApartmentID' placeholder='Apartment ID'>
-                        <!-- <div class='form-group' id = 'email-list'>
-                            <input class='form-control' type='text' name='newleaseEmailID1' placeholder='Email ID #1'>
-                        </div>
-                        <div class='form-group text-centered'>
-                            <!-- <button class='btn btn-primary'>
-                                <span id='newlease-remove-email-button' class='button-add-or-remove-text'>-</span>
-                            </button> -->
-                        <table  id="dynamic_field">
-                            <tr>
-                                <td><input type="text" name="newleaseEmailID[]" placeholder="Email ID #1" class="form-control email_list" /></td>
-                                <td><a type="button" name="add" id="add" class="btn btn-success">Add More</a></td>
-                            </tr>
-                        </table>
-                        <div class='form-group text-centered'>
-                            <input class='btn btn-info btn-md' value='Create Lease' type='submit' name='newleaseButtonCreateLease'>
-                        </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <br>
-    <br>
-
-
-    <!-- <footer class='footer'>
-    <div class='container'>
-    Copyright 2018 IU-SE-G2
-    </div>
-    </footer>
-    </main> -->
-=======
 		<div id='spacer-newlease'></div>
 		<div class='container container-form' id='container-newlease'>
 			<div class='row justify-content-center align-items-center'>

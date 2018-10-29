@@ -8,11 +8,8 @@
     <meta name='description' content='Rent a living space, in outer space.'>		<!-- description [shown on searchengine result] -->
     <meta name='keywords' content='Kidd, Living, space, rental, service, management, system, SpaceX, outer, Elon, Musk'>		<!-- keywords for searchengine optimization -->
     <meta name='author' content='IU SE G2'>		<!-- author name -->
-<<<<<<< HEAD
     <link rel='icon' href='../images\Icon.ico'>		<!-- favicon -->
-=======
-    <link rel='icon' href='../images/Icon.ico'>		<!-- favicon -->
->>>>>>> c033624aa87261698242cd65d969637a9724e1ce
+
     <title>Lunar Living | Maintenance</title>		<!-- title -->
 
 	<!-- CSS -->
