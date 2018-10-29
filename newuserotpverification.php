@@ -29,7 +29,7 @@ if($data == 'false'){
   echo "OTP not same";
 }else
  {
-  header("Location: signup.html");
+  header("Location: signup.php");
 }
 
 // close curl resource to free up system resources

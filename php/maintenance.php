@@ -8,27 +8,21 @@
     <meta name='description' content='Rent a living space, in outer space.'>		<!-- description [shown on searchengine result] -->
     <meta name='keywords' content='Kidd, Living, space, rental, service, management, system, SpaceX, outer, Elon, Musk'>		<!-- keywords for searchengine optimization -->
     <meta name='author' content='IU SE G2'>		<!-- author name -->
-    <link rel='icon' href='images\Icon.ico'>		<!-- favicon -->
+    <link rel='icon' href='../images\Icon.ico'>		<!-- favicon -->
     <title>Lunar Living | Maintenance</title>		<!-- title -->
 
 	<!-- CSS -->
-<<<<<<< HEAD:php/maintenance.php
 	<link rel='stylesheet' href='../css/reset.css'>		<!-- Reset CSS -->
     <link rel='stylesheet' href='../css/bootstrap.min.css'>		<!-- Bootstrap CSS -->
     <link rel='stylesheet' href='../css/fontawesome.min.css'>		<!-- Font Awesome CSS -->
 	<link rel='stylesheet' href='../css/style.css'>		<!-- custom CSS -->
 	<link rel='stylesheet' href='../css/style-muuri.css'>		<!-- custom CSS for Muuri -->
-=======
-	<link rel='stylesheet' href='css/reset.css'>		<!-- Reset CSS -->
-    <link rel='stylesheet' href='css/bootstrap.min.css'>		<!-- Bootstrap CSS -->
-    <link rel='stylesheet' href='css/fontawesome.min.css'>		<!-- Font Awesome CSS -->
-	<link rel='stylesheet' href='css/style.css'>		<!-- custom CSS -->
->>>>>>> 0d6da0cd73113e9336d0e89ba40122eaabca537e:maintenance.html
+
 </head>
 <body class="background background-lunar-landed">
 	<main>
 		<nav class='navbar navbar-expand-lg navbar-light bg-light'>
-			<a class='navbar-brand' href='index.php'><img src='images\Title.png' class='title'></a>
+			<a class='navbar-brand' href='index.php'><img src='../images\Title.png' class='title'></a>
 			<button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
 				<span class='navbar-toggler-icon'></span>
 			</button>

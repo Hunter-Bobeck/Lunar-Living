@@ -77,7 +77,7 @@
             header("Location: profile.php");
             session_destroy();
         } else{
-            header("Location: ../signup.html");
+            header("Location: ../signup.php");
         }
 
         // close curl resource to free up system resources

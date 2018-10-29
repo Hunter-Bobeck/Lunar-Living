@@ -25,7 +25,7 @@
 				<div class='col-md-7' id='newuser-column'>
 					<div class='text-centered five-padding-bottom'><img src='../images\Logo - New User.png' class='logo'></div>
 					<br>
-					<form class='form' action='otpverification.php', method = 'post'>
+					<form class='form', method = 'post'>
 						<div class='form-group'>
 							<input class='form-control' type='text' id='newuser-email-id' name='username' placeholder='Email ID'>
 						</div>
@@ -45,6 +45,7 @@
     <?php
     function newuserButtonSubmitClick(){
         $username = $_POST['username'];
+        session_destroy();
         session_start();
         $_SESSION['username'] = $username;
     //setup the request, you can also use CURLOPT_URL
@@ -71,11 +72,10 @@
         $dataArray = json_decode($data, true);
         $_SESSION["newuser"] = $dataArray["newuser"];
 
-
+        echo "<h1>". $data . "</h1>";
         if($data == 'false'){
             echo "User Not Found";
         }else {
-
             header("Location: otpverification.php");
         }
 
@@ -83,7 +83,7 @@
         curl_close($ch);
     }
     if(array_key_exists('newuserButtonSubmit',$_POST)){
-        loginButtonClick();
+        newuserButtonSubmitClick();
     }
 
     ?>
