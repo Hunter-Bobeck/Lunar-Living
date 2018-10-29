@@ -25,7 +25,7 @@
 				<div class='col-md-7' id='login-column'>
 					<div class='text-centered five-padding-bottom'><img src='../images\Logo.png' class='logo'></div>
 					<h5 class='medium-gray text-centered'>OTP Verification</h5>
-					<form class='form' method = 'post'>
+					<form class='form' action = 'otpverify.php' method = 'post'>
 						<div class='form-group'>
 							<input class='form-control' type='text' id='otpverification-otp' name='otpverificationOTP' placeholder='One-time password'>
 						</div>
@@ -43,50 +43,7 @@
 	<!-- postJS -->
     <script src='../js/bootstrap.min.js'></script>		<!-- Bootstrap JS -->
 
-    <?php
-    function otpverificationButtonSubmitclick()
-    {
-        session_start();
-        $otp = $_POST['otpverificationOTP'];
-        $username = $_SESSION['username'];
-        //setup the request, you can also use CURLOPT_URL
-        $ch = curl_init('https://lunar-living.herokuapp.com/otpVerification');
 
-        // Returns the data/output as a string instead of raw data
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-        // Good practice to let people know who's accessing their servers. See https://en.wikipedia.org/wiki/User_agent
-        curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
-
-        //Set your auth headers
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            'Content-Type: application/json',
-            "username: $username",
-            "otp: $otp"
-        ));
-
-        // get stringified data/output. See CURLOPT_RETURNTRANSFER
-        $data = curl_exec($ch);
-        echo $data;
-        // get info about the request
-        $info = curl_getinfo($ch);
-
-        if ($data == 'false') {
-            echo "OTP not same";
-        } else if ($data != 'false' and $_SESSION['newuser'] == 1){
-            header("Location: profile.php");
-            session_destroy();
-        } else{
-            header("Location: ../signup.php");
-        }
-
-        // close curl resource to free up system resources
-        curl_close($ch);
-    }
-
-    if(array_key_exists('otpverificationButtonSubmit',$_POST)){
-        otpverificationButtonSubmitclick();
-    }    ?>
 
 
 </body>
