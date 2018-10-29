@@ -1,14 +1,11 @@
 <?php
-session_destroy();
-session_start();
+    if(isset($_SESSION['username'])){
+        session_destroy();
+    }
+    session_start();
 ?>
-
-
 <!doctype html>
 <html lang='en'>
-
-
-
 <head>
 	<!-- metadata -->
     <meta charset='utf-8'>	<!-- Unicode characterset -->
@@ -27,6 +24,7 @@ session_start();
 	<link rel='stylesheet' href='../css/style.css'>		<!-- custom CSS -->
 </head>
 <body class='background background-moon-in-space'>
+    
 	<main>
 		<div id='spacer-login'></div>
 		<div class='container container-form' id='container-login'>
