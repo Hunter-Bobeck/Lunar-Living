@@ -1,3 +1,8 @@
+<?php
+session_start();
+?>
+
+
 <!doctype html>
 <html lang='en'>
 <head>
@@ -19,9 +24,6 @@
 </head>
 <body class="background background-moon-in-space">
     <?php
-		//session_start();
-		// make sure to remove this line.. It is just static field for testing
-		$_SESSION['username'] = 'sam@iu.edu';
 
 		$username = $_SESSION['username'];
 		//setup the request, you can also use CURLOPT_URL
@@ -109,7 +111,7 @@
                     echo"<ul class='navbar-nav ml-auto'>";
                         echo "<li>
                         <div class='dropdown'>
-                            <button class='btn btn-secondary dropdown-toggle' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Hello, ". $apiData->first_name ."</button>
+                            <button class='btn btn-secondary dropdown-toggle' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Hello, ". $userInfoData->first_name ."</button>
                             <div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>
                                 <a class='dropdown-item' href='#'>Signout</a>
                             </div>

@@ -45,7 +45,6 @@
     <?php
     function newuserButtonSubmitClick(){
         $username = $_POST['username'];
-        session_destroy();
         session_start();
         $_SESSION['username'] = $username;
     //setup the request, you can also use CURLOPT_URL

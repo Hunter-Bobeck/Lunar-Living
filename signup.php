@@ -106,7 +106,7 @@ session_start();
 
             curl_setopt($ch, CURLOPT_POST, 1);
 
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonDataEncoded);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonDataEncoded1);
 
             curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
 

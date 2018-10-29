@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 
 
 <!doctype html>
@@ -55,13 +57,12 @@
 		<br>
 	</main>
 
-<!--	<!-- postJS -->-->
+<!-- postJS -->
     <script src='../js/bootstrap.min.js'></script>		<!-- Bootstrap JS -->
     <?php
     function loginButtonClick(){
         $username = $_POST['loginUsername'];
         $password = $_POST['loginPassword'];
-        session_start();
         $_SESSION['username'] = $username;
         //setup the request, you can also use CURLOPT_URL
         $ch = curl_init('https://lunar-living.herokuapp.com/login');

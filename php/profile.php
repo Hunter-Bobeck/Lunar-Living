@@ -22,9 +22,6 @@
 </head>
 <body class="background background-moon-in-space">
 	<?php
-		// make sure to remove this line.. It is just static field for testing
-		$_SESSION['username'] = 'szpatel@iu.edu';
-
 		$username = $_SESSION['username'];
 		//setup the request, you can also use CURLOPT_URL
 		$ch = curl_init('https://lunar-living.herokuapp.com/getUserDetails');
