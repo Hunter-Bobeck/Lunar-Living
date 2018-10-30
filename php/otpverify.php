@@ -21,19 +21,21 @@
 
     // get stringified data/output. See CURLOPT_RETURNTRANSFER
     $data = curl_exec($ch);
-    echo $data;
     // get info about the request
     $info = curl_getinfo($ch);
-
+    curl_close($ch);
     if ($data == 'false') {
         echo "OTP not same";
     } else if ($data != 'false' and $_SESSION['newuser'] == 1){
-        header("Location: profile.php");
+        echo "<script>
+             window.location.href = 'profile.php';
+        </script>";
     } else{
-        header("Location: ../signup.php");
+        echo "<script>
+             window.location.href = '../signup.php';
+        </script>";
     }
-
-    // close curl resource to free up system resources
-    curl_close($ch);
-
 ?>
+
+
+
