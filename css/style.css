@@ -641,7 +641,7 @@ color: #000;
 .index-details .name-heading{
 	font-size: 45px;
 	text-align: center;
-	color: white;
+	text-shadow: #FFFFFF 0 0 10px, #FFFFFF 5px 5px 5px;
 }
 
 .index-details img{
