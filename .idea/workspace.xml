@@ -3,15 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c5ccbb92-42c6-40da-876c-23d5a46b3155" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newuserotpverification.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/addLease.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/addLease.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/newlease.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/newlease.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/otpverify.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/otpverify.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profile.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/signup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/valueDebug.php" beforeDir="false" afterPath="$PROJECT_DIR$/valueDebug.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/verifyCredibility.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/signup.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,8 +15,9 @@
     <session id="-1530347602">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.2" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -62,12 +55,12 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/php/signup.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="39" column="62" selection-start-line="39" selection-start-column="62" selection-end-line="39" selection-end-column="62" />
+            <state relative-caret-position="320">
+              <caret line="150" column="52" selection-start-line="150" selection-start-column="46" selection-end-line="150" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -126,7 +119,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="950" />
     <option name="width" value="980" />
     <option name="height" value="1040" />
@@ -197,18 +190,19 @@
       <option name="presentableId" value="Default" />
       <updated>1540683288792</updated>
       <workItem from="1540683290839" duration="26412000" />
+      <workItem from="1540914705397" duration="316000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33967000" />
+    <option name="totallyTimeSpent" value="34283000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.22885907" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.23221476" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
@@ -246,13 +240,7 @@
     <entry file="file://$PROJECT_DIR$/images/Title.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/newuserotpverification.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/newuserotpverification.php" />
     <entry file="file://$PROJECT_DIR$/php/updateProfile.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -271,26 +259,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="25" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#4747#4754#1#HTML" expanded="true" />
-            <element signature="e#22#28#0" expanded="true" />
-            <element signature="e#28#34#0" expanded="true" />
-            <element signature="e#34#40#0" expanded="true" />
-            <element signature="e#40#46#0" expanded="true" />
-            <element signature="e#142#148#0" expanded="true" />
-            <element signature="e#148#154#0" expanded="true" />
-            <element signature="e#154#160#0" expanded="true" />
-            <element signature="e#160#166#0" expanded="true" />
-            <element signature="e#257#263#0" expanded="true" />
-            <element signature="e#263#269#0" expanded="true" />
-            <element signature="e#269#275#0" expanded="true" />
-            <element signature="e#275#281#0" expanded="true" />
-            <element signature="e#281#287#0" expanded="true" />
-            <element signature="e#287#293#0" expanded="true" />
-            <element signature="e#293#299#0" expanded="true" />
-            <element signature="e#299#305#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -312,9 +280,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1411">
           <caret line="83" column="25" selection-start-line="83" selection-start-column="12" selection-end-line="83" selection-end-column="25" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -357,15 +322,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
           <caret line="28" column="49" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
-          <folding>
-            <element signature="n#style#0;n#nav#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/verifyCredibility.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/verifyCredibility.php" />
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
@@ -389,8 +349,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/php/signup.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="39" column="62" selection-start-line="39" selection-start-column="62" selection-end-line="39" selection-end-column="62" />
+        <state relative-caret-position="320">
+          <caret line="150" column="52" selection-start-line="150" selection-start-column="46" selection-end-line="150" selection-end-column="52" />
         </state>
       </provider>
     </entry>

@@ -140,17 +140,13 @@ session_start();
                     echo "User Not Found";
                 }
                 else {
-                    header("Location: php/profile.php");
+                    header("Location: profile.php");
                 }
             }
 
         }
 
         }
-
-
-
-
 
     if(array_key_exists('signupButtonSubmit', $_POST)){
         signupButtonSubmitClick();
