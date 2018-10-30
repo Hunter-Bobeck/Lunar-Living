@@ -12,14 +12,14 @@ session_start();
     <meta name='description' content='Rent a living space, in outer space.'>		<!-- description [shown on searchengine result] -->
     <meta name='keywords' content='Kidd, Living, space, rental, service, management, system, SpaceX, outer, Elon, Musk'>		<!-- keywords for searchengine optimization -->
     <meta name='author' content='IU SE G2'>		<!-- author name -->
-    <link rel='icon' href='images\Icon.ico'>		<!-- favicon -->
+    <link rel='icon' href='../images\Icon.ico'>		<!-- favicon -->
     <title>Lunar Living | Signup</title>		<!-- title -->
 
 	<!-- CSS -->
-	<link rel='stylesheet' href='css/reset.css'>		<!-- Reset CSS -->
-    <link rel='stylesheet' href='css/bootstrap.min.css'>		<!-- Bootstrap CSS -->
-    <link rel='stylesheet' href='css/fontawesome.min.css'>		<!-- Font Awesome CSS -->
-	<link rel='stylesheet' href='css/style.css'>		<!-- custom CSS -->
+	<link rel='stylesheet' href='../css/reset.css'>		<!-- Reset CSS -->
+    <link rel='stylesheet' href='../css/bootstrap.min.css'>		<!-- Bootstrap CSS -->
+    <link rel='stylesheet' href='../css/fontawesome.min.css'>		<!-- Font Awesome CSS -->
+	<link rel='stylesheet' href='../css/style.css'>		<!-- custom CSS -->
 </head>
 <body class='background background-moon-in-space'>
 	<main>
@@ -27,7 +27,7 @@ session_start();
 		<div class='container container-form' id='container-signup'>
 			<div class='row justify-content-center align-items-center'>
 				<div class='col-md-7' id='signup-column'>
-					<div class='text-centered five-padding-bottom'><img src='images\Logo - Signup.png' class='logo'></div>
+					<div class='text-centered five-padding-bottom'><img src='../images\Logo - Signup.png' class='logo'></div>
 					<br>
 					<form class='form' method = 'post'>
 						<div class='form-group'>
@@ -37,7 +37,7 @@ session_start();
 							<input class='form-control' type='text' id='signup-last-name' name='signupLastName' placeholder='Last name'>
 						</div>
 						<div class='form-group'>
-							<div class='dropdown'>
+							<div class='dropdown text-centered'>
 								<select class='btn btn-secondary dropdown-toggle' type='button' id='signup-gender' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' name='signupGender'>
                                     <option class='dropdown-item' value="Gender">Gender </option>
                                     <option class='dropdown-item' value="Male">Male </option>
@@ -65,8 +65,8 @@ session_start();
 	</main>
 
 	<!-- postJS -->
-    <script src='js/jquery-3.3.1.js'></script>		<!-- Jquery JS (necessary for dropdowns) -->
-    <script src='js/bootstrap.bundle.min.js'></script>		<!-- Bootstrap Bundle JS (necessary for dropdowns) -->
+    <script src='../js/jquery-3.3.1.js'></script>		<!-- Jquery JS (necessary for dropdowns) -->
+    <script src='../js/bootstrap.bundle.min.js'></script>		<!-- Bootstrap Bundle JS (necessary for dropdowns) -->
     <!-- <script src='js/bootstrap.min.js'></script> -->		<!-- Bootstrap JS � disabled because when enabled it has a conflict with Bootstrap Bundle JS that makes dropdowns require two clicks to dropdown; it doesn't seem that any needed functionality is lacking when this is disabled -->
 
 	<?php

@@ -32,7 +32,7 @@
         </script>";
     } else{
         echo "<script>
-             window.location.href = '../signup.php';
+             window.location.href = 'signup.php';
         </script>";
     }
 ?>

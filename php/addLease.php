@@ -1,9 +1,15 @@
 <?php
 
 session_start();
-$apartment_ID = $_POST['newleaseApartmentID'];
-$email_ID = $_POST['newleaseEmailID'];
-// $username = $_SESSION['username'];
+
+$apartment_id = $_POST['newleaseApartmentID'];
+$email_id = $_POST['newleaseEmailID'];
+$dates = explode(' ', $_POST['newleaseDateRange']);
+
+//for($i = 0; $i < count($_POST['newleaseEmailID']); $i++) {
+//    echo $_POST['newleaseEmailID'][$i];
+//}
+
 //setup the request, you can also use CURLOPT_URL
 $ch = curl_init('https://lunar-living.herokuapp.com/signLease');
 
@@ -16,10 +22,10 @@ curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
 
 //set JSON data
 $jsonData = array(
-    'email_ID' => [$email_ID],
-    'apt_ID' => $apartment_ID,
-    'start_date' => "10/01/2018",
-    'end_date' => "09/01/2019"
+    'email_ID' => $email_id,
+    'apt_ID' => $apartment_id,
+    'start_date' => $dates[0],
+    'end_date' => $dates[2]
 );
 
 $jsonDataEncoded = json_encode($jsonData);
@@ -31,28 +37,5 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonDataEncoded);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
 
 $result = curl_exec($ch);
-echo $result;
-
-
-// //Set your auth headers
-// curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-//     'Content-Type: application/json',
-//     "email_ID: $email_ID",
-//     "apt_ID: $apartment_ID",
-//     "start_date: 10/01/2018",
-// 	  "end_date: 09/01/2019"
-//     ));
-
-// get stringified data/output. See CURLOPT_RETURNTRANSFER
-// $data = curl_exec($ch);
-// echo $data;
-// get info about the request
-// $info = curl_getinfo($ch);
-
-// echo "$data";
-
-// close curl resource to free up system resources
-// curl_close($ch);
-
 
  ?>
