@@ -135,6 +135,7 @@ session_start();
                                 <li class='active'><a href='#'>Lease</a></li>
                                 <li><a href='#'>Payment</a></li>
                                 <li><a href='#'>Tickets</a></li>
+                                <li><a href='review.php'>Review</a></li>
                             </ul>
                         </aside>
                     </div>

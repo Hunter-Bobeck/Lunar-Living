@@ -21,7 +21,7 @@
     <link rel='stylesheet' href='../css/fontawesome.min.css'>		<!-- Font Awesome CSS -->
 	<link rel='stylesheet' href='../css/style.css'>		<!-- custom CSS -->
 </head>
-<body class="background background-moon-in-space">
+<body class="background background-night-sky">
 	<?php
 		$username = $_SESSION['username'];
 		//setup the request, you can also use CURLOPT_URL
@@ -170,56 +170,36 @@
 			</div>
 			<div class='col-sm-8'>
                 <h2 class = 'lease_info'>Review Us</h2>
-                <div class = 'rating-section'>
-                    <fieldset class="rating right-space">
+                <div class = 'rating-section right-space'>
+                    <fieldset class="rating">
                         <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
                         <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
                         <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
                         <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
                         <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-                    </fieldset><br><br>
-                    <button class='btn btn-info btn-md' onclick='rateMe()'>Submit Review</button>
+                    </fieldset><br><br><br>
+                    <button class='btn btn-info btn-md margin-right' onclick='rateMe()'>Submit Review</button>
                 </div>
                 <br><br>
-                <div class='user-review right-space'>
+                <div class='user-review'>
                     <?php
                     $totalVotes = $fiveStar + $fourStar + $threeStar + $twoStar + $oneStar;
                     $sum = 5 * $fiveStar + 4 * $fourStar + 3 * $threeStar + 2 * $twoStar + $oneStar;
                     if($totalVotes == 0){
                         $avg = 0;
-                    }
-                    else{
-                        $avg = $sum / $totalVotes;
-                    }
-                    if($fiveStar == 0){
                         $fiveWidth = 0;
-                    }
-                    else{
-                        $fiveWidth = ($totalVotes/$fiveStar) * 100;
-                    }
-                    if($fourStar == 0){
                         $fourWidth = 0;
-                    }
-                    else{
-                        $fourWidth = ($totalVotes/$fourStar) * 100;
-                    }
-                    if($threeStar == 0){
                         $threeWidth = 0;
-                    }
-                    else{
-                        $threeWidth = ($totalVotes/$threeStar) * 100;
-                    }
-                    if($twoStar == 0){
                         $twoWidth = 0;
-                    }
-                    else{
-                        $twoWidth = ($totalVotes/$twoStar) * 100;
-                    }
-                    if($oneStar == 0){
                         $oneWidth = 0;
                     }
                     else{
-                        $oneWidth = ($totalVotes/$oneStar) * 100;
+                        $avg = $sum / $totalVotes;
+                        $fiveWidth = ($fiveStar/$totalVotes) * 100;
+                        $fourWidth = ($fourStar/$totalVotes) * 100;
+                        $threeWidth = ($threeStar/$totalVotes) * 100;
+                        $twoWidth = ($twoStar/$totalVotes) * 100;
+                        $oneWidth = ($oneStar/$totalVotes) * 100;
                     }
                     echo"
                     <span class='heading'>User Rating</span>";

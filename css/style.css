@@ -12,6 +12,9 @@
 .background-lunar-landed {
 	background-image: url('../images/Lunar Landed.jpg');
 }
+.background-night-sky {
+	background-image: url('../images/nightsky.jpg');
+}
 
 a {
 	color: #46b8da;
@@ -745,13 +748,17 @@ color: #000;
 }
 
 .right-space{
-	margin-left: 40%;
+	margin-left: 25%;
 }
 
-fieldset, label { margin: 0; padding: 0; }
-body{ margin: 20px; }
-h1 { font-size: 1.5em; margin: 10px; }
+fieldset, label { 
+	margin: 0; 
+	padding-left: 15%; 
+}
 
+.margin-right{
+	margin-right: 28%
+}
 /****** Style Star Rating Widget *****/
 
 .rating { 
