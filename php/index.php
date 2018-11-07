@@ -11,7 +11,8 @@
     <meta name='description' content='Rent a living space, in outer space.'>		<!-- description [shown on searchengine result] -->
     <meta name='keywords' content='Kidd, Living, space, rental, service, management, system, SpaceX, outer, Elon, Musk'>		<!-- keywords for searchengine optimization -->
     <meta name='author' content='IU SE G2'>		<!-- author name -->
-    <link rel='icon' href='../images\Icon.ico'>		<!-- favicon -->
+	<link rel='icon' href='../images\Icon.ico'>		<!-- favicon -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Lunar Living | Home</title>		<!-- title -->
 
 	<!-- CSS -->
@@ -20,7 +21,7 @@
     <link rel='stylesheet' href='../css/fontawesome.min.css'>		<!-- Font Awesome CSS -->
 	<link rel='stylesheet' href='../css/style.css'>		<!-- custom CSS -->
 </head>
-<body class="background background-moon-in-space">
+<body class="background">
 <?php
 	if(isset($_SESSION['username'])){
 		// make sure to remove this line.. It is just static field for testing
@@ -126,15 +127,101 @@
 							</form>
 						</div>
 					</section>
+					<div id='spacer-index-after-banner'></div>
+					<section class='review-sidebar'>
+						<div>
+							<div class='contact-heading'><strong>Review</strong></div>
+							<p>Please Help us improve</p>
+							<p><span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star"></span></p>
+							<p><button class='btn btn-info btn-md'>Submit a Review</button></p>
+						</div>
+					</section>
 				</div>
 				<div class='col-sm-9'>
 					<section class='index-details'>
 						<div>
 							<div class='name-heading'><strong>Rental Apartments</strong></div>
-							<img src='../images/apt1.jpg'>
-							<img src='../images/apt2.jpg'>
-							<img src='../images/apt3.jpg'>
-							<img src='../images/apt4.jpg'>
+							<p class='tags'><b>Apartment searching can be exciting for tenants- it’s an opportunity for tenants to upgrade their life.<br>Great for entertaining: spacious, updated 2 bedroom, 1 bathroom apartments
+							<br>Space is available for you to take photos whenever.</b>
+							</p>
+							<img class ='aptImg' src='../images/apt1.jpg'>
+							<img class ='aptImg' src='../images/apt2.jpg'>
+							<img class ='aptImg' src='../images/apt3.jpg'>
+							<img class ='aptImg' src='../images/apt4.jpg'>
+						</div>
+						<div id='spacer-index-after-banner'></div>
+						<div class='name-heading'><strong>User Reviews</strong></div>
+							<div class='user-review'>
+								<span class="heading">User Rating</span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>
+								<p>4.1 average based on 254 reviews.</p>
+								<hr style="border:3px solid #f1f1f1">
+
+								<div class="row">
+								<div class="side">
+									<div>5 star</div>
+								</div>
+								<div class="middle">
+									<div class="bar-container">
+									<div class="bar-5"></div>
+									</div>
+								</div>
+								<div class="side right">
+									<div>150</div>
+								</div>
+								<div class="side">
+									<div>4 star</div>
+								</div>
+								<div class="middle">
+									<div class="bar-container">
+									<div class="bar-4"></div>
+									</div>
+								</div>
+								<div class="side right">
+									<div>63</div>
+								</div>
+								<div class="side">
+									<div>3 star</div>
+								</div>
+								<div class="middle">
+									<div class="bar-container">
+									<div class="bar-3"></div>
+									</div>
+								</div>
+								<div class="side right">
+									<div>15</div>
+								</div>
+								<div class="side">
+									<div>2 star</div>
+								</div>
+								<div class="middle">
+									<div class="bar-container">
+									<div class="bar-2"></div>
+									</div>
+								</div>
+								<div class="side right">
+									<div>6</div>
+								</div>
+								<div class="side">
+									<div>1 star</div>
+								</div>
+								<div class="middle">
+									<div class="bar-container">
+									<div class="bar-1"></div>
+									</div>
+								</div>
+								<div class="side right">
+									<div>20</div>
+								</div>
+							</div>
 						</div>
 					</section>
 				</div>
@@ -151,7 +238,7 @@
 	<script src='../js/daterangepicker.min.js'></script>		<!-- Date Range Picker JS (http://www.daterangepicker.com/#usage) -->
 	<script type='text/javascript'>
 		$('input[name="scheduleAppointmentDatePicker"]').daterangepicker();
-		var myIndex = 0;
+		var myIndex = 0, reviewIndex = 0;
 		carousel();
 		function carousel() {
 			var i;
@@ -162,7 +249,7 @@
 			myIndex++;
 			if (myIndex > x.length) {myIndex = 1}    
 			x[myIndex-1].style.display = "block";  
-			setTimeout(carousel, 2000); // Change image every 2 seconds
+			setTimeout(carousel, 3500); // Change image every 3.5 seconds
 		}
 	</script>
 </body>
