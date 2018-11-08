@@ -23,4 +23,5 @@
     <link rel='stylesheet' href='../css/fontawesome.min.css'>		<!-- Font Awesome CSS -->
     <link rel='stylesheet' href='../css/daterangepicker.css'>		<!-- Date Range Picker CSS -->
     <link rel='stylesheet' href='../css/style.css'>		<!-- custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>

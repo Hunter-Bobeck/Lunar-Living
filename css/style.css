@@ -795,3 +795,54 @@ fieldset, label {
 .rating > input:checked ~ label:hover,
 .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
 .rating > input:checked ~ label:hover ~ label { color: #FFED85;  }
+
+.show-map{
+	width: 100%;
+	height: 80%;
+	position: relative;
+}
+
+.location{
+	position: absolute;
+	width: 100%;
+	height: 120%;
+}
+/* Top left text */
+.top-left {
+    position: absolute;
+    top: 48%;
+    left: 22%;
+}
+
+/* Top right text */
+.top-right {
+    position: absolute;
+    top: 43%;
+    right: 2%;
+}
+
+/* Centered text */
+.centered {
+    position: absolute;
+    top: 46%;
+    left: 62%;
+    transform: translate(-50%, -50%);
+}
+
+.top-left-data{
+	text-align: center;
+	color: #0d10f5;
+	margin: 0;
+}
+
+.centered-data {
+	text-align: center;
+	color: #0d10f5;
+	margin: 0;
+}
+
+.top-right-data {
+	text-align: center;
+	color: #0d10f5;
+	margin: 0;
+}
