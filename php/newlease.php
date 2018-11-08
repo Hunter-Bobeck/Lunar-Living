@@ -36,12 +36,12 @@
     <br>
 
 
-    <!-- <footer class='footer'>
+    <footer class='footer'>
     <div class='container'>
     Copyright 2018 IU-SE-G2
     </div>
     </footer>
-    </main> -->
+    </main>
 
     <!-- postJS -->
     <script src='../js/jquery-3.3.1.js'></script>		<!-- Jquery JS (necessary for dropdowns) -->
