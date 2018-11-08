@@ -28,6 +28,7 @@
                         <div class='form-group text-centered'>
                             <input class='btn btn-info btn-md' value='Create Lease' type='submit' name='newleaseButtonCreateLease'>
                         </div>
+                    </div>
                 </form>
             </div>
         </div>
