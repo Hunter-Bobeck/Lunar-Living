@@ -185,7 +185,7 @@
                         $oneWidth = ($oneStar/$totalVotes) * 100;
                     }
                     echo"
-                    <span class='heading'>User Rating</span>";
+                    <span class='heading'>User Rating &nbsp</span>";
                     if($avg >= 1){
                         echo "<span class='fa fa-star checked'></span>";
                     }
