@@ -16,6 +16,10 @@
 	background-image: url('../images/nightsky.jpg');
 }
 
+.background-dark {
+	background-image: url('../images/dark.jpg');
+}
+
 a {
 	color: #46b8da;
 }
@@ -431,7 +435,7 @@ a {
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 40%;
+    max-width: 30%;
 	margin-left: 35%;
 	margin-right: auto;
 	margin-top:15%;

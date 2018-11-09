@@ -6,7 +6,7 @@ session_start();
 <!doctype html>
 <html lang='en'>
 <?php include 'header.php'; ?>
-<body class="background background-moon-in-space">
+<body class="background background-dark">
     <?php
 
 		$username = $_SESSION['username'];
@@ -116,8 +116,8 @@ session_start();
                         <aside class='main_sidebar'>
                             <ul>
                                 <li><a href='profile.php'>Profile</a></li>
-                                <li class='active'><a href='#'>Lease</a></li>
-                                <li><a href='payment.php'>Payment</a></li>
+                                <li><a href='user_lease.php'>Lease</a></li>
+                                <li class='active'><a href='#'>Payment</a></li>
                                 <li><a href='#'>Tickets</a></li>
                                 <li><a href='review.php'>Review</a></li>
                             </ul>
@@ -126,22 +126,54 @@ session_start();
                 </div>
                 <div class="col-sm-9">
                     <div class="container">
-                        <h2 class = 'lease_info'>Signed Lease</h2>
+                        <h2 class = 'lease_info'>Payments</h2>
                         <div class='row'>
                         <?php
                         $leaseArray = $apiData->Lease;
                         $index = 1;
+                        echo"
+                        <table class='table table-dark table-hover'>
+                            <thead>
+                                <tr>
+                                <th scope='col'>#</th>
+                                <th scope='col'>Apt Name</th>
+                                <th scope='col'>Payment Due</th>
+                                <th scope='col'>Pay</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                        ";
                         foreach($leaseArray as $lease){
+                            $ch = curl_init('https://lunar-living.herokuapp.com/paymentDue');
+                            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                            curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
+                            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                                'Content-Type: application/json',
+                                "apt_name: $lease->aptID"
+                                ));
+                            $data = curl_exec($ch);
+                            $info = curl_getinfo($ch);
+                            $paymentData = json_decode($data);
+                            curl_close($ch);
                             echo"
-                                <div class='col-sm-3'>
-                                    <div class='tour'>
-                                        <a class='tour-img' style='background-image: url(../images/apt.jpg);' href='user_lease_details.php?aptID=". $lease->aptID ."&groupNo=". $lease->groupNo ."&startDate=". substr($lease->start_date, 0, 10). "&endDate=".substr($lease->end_date, 0, 10) ."'>
-                                            <p class='price'><span id=lease". $index . ">Apt " . $lease->aptID ."</span></p>
-                                        </a>
-                                    </div>
-                                </div>";
+                            <tr>
+                                <th scope='row'>". $index ."</th>
+                                <td>". $lease->aptID ."</td>
+                                <td>$". $paymentData->amount ."</td>";
+                                if($paymentData->amount == 0){
+                                    echo"<td><button class = 'btn btn-info btn-md' disabled>Pay</button></td>";
+                                }else{
+                                echo"
+                                <td><button class = 'btn btn-info btn-md'>Pay</button></td>";
+                                }
+                                echo"
+                            </tr>
+                            ";
                         $index++;
                         }
+                        echo"
+                            </tbody>
+                        </table>";
                         ?>
                         </div>
                     </div>

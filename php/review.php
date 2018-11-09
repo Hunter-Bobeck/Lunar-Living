@@ -102,22 +102,22 @@
 	<div class='container-fluid padding-zero'>
     <?php include 'signInNavbar.php'; ?>
 	</div>
-	<div class='container userlease_container'>
+	<div class='container-fluid userlease_container'>
 		<div class='row'>
-			<div class='col-sm-4'>
+			<div class='col-sm-3'>
 				<div class='wrapper'>
 					<aside class='main_sidebar'>
 						<ul>
                             <li><a href='profile.php'>Profile</a></li>
 							<li><a href='user_lease.php'>Lease</a></li>
-							<li><a href='#'>Payment</a></li>
+							<li><a href='payment.php'>Payment</a></li>
                             <li><a href='#'>Tickets</a></li>
                             <li class='active'><a href='#'>Review</a></li>
 						</ul>
 					</aside>
 				</div>
 			</div>
-			<div class='col-sm-8'>
+			<div class='col-sm-9'>
                 <h2 class = 'lease_info'>Review Us</h2>
                 <div class = 'rating-section right-space'>
                     <fieldset class="rating">
@@ -129,7 +129,7 @@
                     </fieldset><br><br><br>
                     <button class='btn btn-info btn-md margin-right' onclick='rateMe()'>Submit Review</button>
                 </div>
-                <br><br>
+                <br>
                 <div class='user-review'>
                     <?php
                     $totalVotes = $fiveStar + $fourStar + $threeStar + $twoStar + $oneStar;
