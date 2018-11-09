@@ -151,14 +151,17 @@
 							<div class='contact-heading'>
 								<strong>Schedule an Appointment</strong>
 							</div>
+							<br>
 	        				<form>
-								<div class="form-group">
+								<div class='form-group text-centered'>
 									<div class='input-group date' id='datepicker'>
-										<input type='text' class="form-control"/>
-										<span class="input-group-addon">
-											<span class="glyphicon glyphicon-calendar"></span>
+										<input type='text' class='form-control'/>
+										<span class='input-group-addon'>
+											<span class='glyphicon glyphicon-calendar'></span>
 										</span>
 									</div>
+									<br>
+									<button class='btn btn-info btn-md'>Schedule</button>
 								</div>
 							</form>
 						</div>
