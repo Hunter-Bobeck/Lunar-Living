@@ -56,67 +56,67 @@
 
 		// close curl resource to free up system resources
 		curl_close($ch);
-
-		$ch = curl_init('https://lunar-living.herokuapp.com/getReviews');
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-			'Content-Type: application/json',
-			"rating: 5"
-			));
-        $data = curl_exec($ch);
-        $info = curl_getinfo($ch);
-		$fiveStar = json_decode($data)->total;
-        curl_close($ch);
-        
-        $ch = curl_init('https://lunar-living.herokuapp.com/getReviews');
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-			'Content-Type: application/json',
-			"rating: 4"
-			));
-        $data = curl_exec($ch);
-        $info = curl_getinfo($ch);
-		$fourStar = json_decode($data)->total;
-        curl_close($ch);
-        
-        $ch = curl_init('https://lunar-living.herokuapp.com/getReviews');
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-			'Content-Type: application/json',
-			"rating: 3"
-			));
-        $data = curl_exec($ch);
-        $info = curl_getinfo($ch);
-		$threeStar = json_decode($data)->total;
-        curl_close($ch);
-        
-        $ch = curl_init('https://lunar-living.herokuapp.com/getReviews');
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-			'Content-Type: application/json',
-			"rating: 2"
-			));
-        $data = curl_exec($ch);
-        $info = curl_getinfo($ch);
-		$twoStar = json_decode($data)->total;
-        curl_close($ch);
-        
-        $ch = curl_init('https://lunar-living.herokuapp.com/getReviews');
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-			'Content-Type: application/json',
-			"rating: 1"
-			));
-        $data = curl_exec($ch);
-        $info = curl_getinfo($ch);
-		$oneStar = json_decode($data)->total;
-		curl_close($ch);
 	}
+
+	$ch = curl_init('https://lunar-living.herokuapp.com/getReviews');
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+		'Content-Type: application/json',
+		"rating: 5"
+		));
+	$data = curl_exec($ch);
+	$info = curl_getinfo($ch);
+	$fiveStar = json_decode($data)->total;
+	curl_close($ch);
+	
+	$ch = curl_init('https://lunar-living.herokuapp.com/getReviews');
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+		'Content-Type: application/json',
+		"rating: 4"
+		));
+	$data = curl_exec($ch);
+	$info = curl_getinfo($ch);
+	$fourStar = json_decode($data)->total;
+	curl_close($ch);
+	
+	$ch = curl_init('https://lunar-living.herokuapp.com/getReviews');
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+		'Content-Type: application/json',
+		"rating: 3"
+		));
+	$data = curl_exec($ch);
+	$info = curl_getinfo($ch);
+	$threeStar = json_decode($data)->total;
+	curl_close($ch);
+	
+	$ch = curl_init('https://lunar-living.herokuapp.com/getReviews');
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+		'Content-Type: application/json',
+		"rating: 2"
+		));
+	$data = curl_exec($ch);
+	$info = curl_getinfo($ch);
+	$twoStar = json_decode($data)->total;
+	curl_close($ch);
+	
+	$ch = curl_init('https://lunar-living.herokuapp.com/getReviews');
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+		'Content-Type: application/json',
+		"rating: 1"
+		));
+	$data = curl_exec($ch);
+	$info = curl_getinfo($ch);
+	$oneStar = json_decode($data)->total;
+	curl_close($ch);
 ?>
 	<main>
 	<?php include 'signInNavbar.php'; ?>
