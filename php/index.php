@@ -187,10 +187,10 @@
 							<p class='tags'><b>Apartment searching can be exciting for tenants- it’s an opportunity for tenants to upgrade their life.<br>Great for entertaining: spacious, updated 2 bedroom, 1 bathroom apartments
 							<br>Space is available for you to take photos whenever.</b>
 							</p>
-							<img class ='aptImg' src='../images/apt1.jpg'>
-							<img class ='aptImg' src='../images/apt2.jpg'>
-							<img class ='aptImg' src='../images/apt3.jpg'>
-							<img class ='aptImg' src='../images/apt4.jpg'>
+							<img class ='aptImg hover-image' src='../images/apt1.jpg'>
+							<img class ='aptImg hover-image' src='../images/apt2.jpg'>
+							<img class ='aptImg hover-image' src='../images/apt3.jpg'>
+							<img class ='aptImg hover-image' src='../images/apt4.jpg'>
 						</div>
 						<div id='spacer-index-after-banner'></div>
 						<div class='name-heading'><strong>User Reviews</strong></div>
@@ -314,8 +314,15 @@
 		<div id='spacer-index-after-banner'></div>
 	</main>
 
+	<!-- image hover modal -->
+	<div id='apartment-modal' class='modal'>
+		<span class='close'>&times;</span>
+		<img class='modal-content' id='img01'>
+		<div id='caption'></div>
+	</div>
+
 	<!-- postJS -->
-    <script src='../js/jquery-3.3.1.js'></script>		<!-- Jquery JS (necessary for dropdowns) -->
+    <script src='../js/jquery-3.3.1.js'></script>		<!-- Jquery JS (necessary for dropdowns and modal) -->
     <script src='../js/bootstrap.bundle.min.js'></script>		<!-- Bootstrap Bundle JS (necessary for dropdowns) -->
 	<!-- <script src='js/bootstrap.min.js'></script> -->		<!-- Bootstrap JS � disabled because when enabled it has a conflict with Bootstrap Bundle JS that makes dropdowns require two clicks to dropdown; it doesn't seem that any needed functionality is lacking when this is disabled -->
 	<!-- custom carousel JS -->
@@ -352,6 +359,32 @@
 		        orientation: 'button'
 	        });
 	    });
+	</script>
+	<script>
+		var modal = document.getElementById('apartment-modal');
+		var modalImg = document.getElementById('img01');
+		var captionText = document.getElementById('caption');
+		$(document).ready(function()
+		{
+			$('img.hover-image').click(function()
+			{
+				modal.style.display = 'block';
+				modalImg.src = this.src;
+				captionText.innerHTML = this.alt;
+			});
+		});
+
+		document.getElementsByClassName('close')[0].onclick = function()
+		{ 
+			modal.style.display = 'none';
+		}
+		$(document).keyup(function(e)
+		{
+			if (e.key === "Escape")
+			{
+				modal.style.display = 'none';
+			}
+		});
 	</script>
 </body>
 </html>
