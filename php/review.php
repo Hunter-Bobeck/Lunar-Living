@@ -4,7 +4,7 @@
 <!doctype html>
 <html lang='en'>
 <?php include 'header.php'; ?>
-<body class="background background-night-sky">
+<body class="background background-dark">
 	<?php
 		$username = $_SESSION['username'];
 		//setup the request, you can also use CURLOPT_URL

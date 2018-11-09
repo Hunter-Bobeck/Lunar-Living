@@ -6,7 +6,7 @@ session_start();
 <!doctype html>
 <html lang='en'>
 <?php include 'header.php'; ?>
-<body class="background background-moon-in-space">
+<body class="background background-dark">
     <?php
 
 		$username = $_SESSION['username'];

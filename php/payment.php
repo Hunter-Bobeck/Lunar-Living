@@ -164,7 +164,7 @@ session_start();
                                     echo"<td><button class = 'btn btn-info btn-md' disabled>Pay</button></td>";
                                 }else{
                                 echo"
-                                <td><button class = 'btn btn-info btn-md'>Pay</button></td>";
+                                <td><button class = 'btn btn-info btn-md' onclick = \"callPayment('". $lease->aptID ."','" . $_SESSION['username'] ."'," . $paymentData->amount .")\">Pay</button></td>";
                                 }
                                 echo"
                             </tr>
@@ -186,5 +186,10 @@ session_start();
     <script src='../js/jquery-3.3.1.js'></script>		<!-- Jquery JS (necessary for dropdowns) -->
     <script src='../js/bootstrap.bundle.min.js'></script>		<!-- Bootstrap Bundle JS (necessary for dropdowns) -->
     <!-- <script src='js/bootstrap.min.js'></script> -->		<!-- Bootstrap JS � disabled because when enabled it has a conflict with Bootstrap Bundle JS that makes dropdowns require two clicks to dropdown; it doesn't seem that any needed functionality is lacking when this is disabled -->
+    <script>
+        function callPayment(aptID, username, amount){
+            window.location.href = "paymentpage.php?aptID=" + aptID;
+        }
+    </script>
 </body>
 </html>
