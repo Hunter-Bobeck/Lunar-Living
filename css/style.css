@@ -946,3 +946,20 @@ fieldset, label {
         text-align: left;
     }
 }
+
+.table-wrapper-scroll-y {
+	display: block;
+	max-height: 300px;
+	overflow-y: auto;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.shift-right{
+	padding-left: 70% 
+}
+
+.link-prop{
+	color: #00beff;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	text-decoration: underline;
+}

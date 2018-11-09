@@ -127,7 +127,7 @@ session_start();
                 <div class="col-sm-9">
                     <div class="container">
                         <h2 class = 'lease_info'>Payments</h2>
-                        <a href='paymenthistory.php'><h4 class = 'shift-right link-prop'>&lt;&nbspPayment History<h4></a><br>
+                        <a href='payment.php'><h4 class = 'shift-right link-prop'>&lt;&nbspPayment<h4></a><br>
                         <div class='row table-wrapper-scroll-y'>
                         <?php
                         $leaseArray = $apiData->Lease;
@@ -138,14 +138,15 @@ session_start();
                                 <tr>
                                 <th scope='col'>#</th>
                                 <th scope='col'>Apt Name</th>
-                                <th scope='col'>Payment Due</th>
-                                <th scope='col'>Pay</th>
+                                <th scope='col'>Paid By</th>
+                                <th scope='col'>Paid Amount</th>
+                                <th scope='col'>Date</th>
                                 </tr>
                             </thead>
                             <tbody>
                         ";
                         foreach($leaseArray as $lease){
-                            $ch = curl_init('https://lunar-living.herokuapp.com/paymentDue');
+                            $ch = curl_init('https://lunar-living.herokuapp.com/paymentHistory');
                             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                             curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
                             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
@@ -156,20 +157,17 @@ session_start();
                             $info = curl_getinfo($ch);
                             $paymentData = json_decode($data);
                             curl_close($ch);
-                            echo"
-                            <tr>
-                                <th scope='row'>". $index ."</th>
-                                <td>". $lease->aptID ."</td>
-                                <td>$". $paymentData->amount ."</td>";
-                                if($paymentData->amount == 0){
-                                    echo"<td><button class = 'btn btn-info btn-md' disabled>Pay</button></td>";
-                                }else{
+                            foreach($paymentData as $payment){
                                 echo"
-                                <td><button class = 'btn btn-info btn-md' onclick = \"callPayment('". $lease->aptID ."','" . $_SESSION['username'] ."'," . $paymentData->amount .")\">Pay</button></td>";
-                                }
-                                echo"
-                            </tr>
-                            ";
+                                <tr>
+                                    <th scope='row'>". $payment->paymentID ."</th>
+                                    <td>". $lease->aptID ."</td>
+                                    <td>". $payment->username ."</td>
+                                    <td>$". $payment->amount ."</td>
+                                    <td>". substr($payment->paidOn, 0, 10) ."</td>
+                                </tr>
+                                ";
+                            }
                         $index++;
                         }
                         echo"
