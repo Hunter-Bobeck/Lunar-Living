@@ -32,7 +32,7 @@
 		echo "User Not Found";
 		}
 		else {
-			$apiData = json_decode($data);
+			$userInfoData = json_decode($data);
 		}
 
 		// close curl resource to free up system resources
@@ -61,8 +61,8 @@
 				<div class='card'>
 					<img src='../images/profile.jpg' alt='ProfileImage' style='width:100%'>
 					<?php
-					echo "<h2>". $apiData->first_name ." ". $apiData->last_name ."</h2>
-					<p>". $apiData->gender ."</p>"
+					echo "<h2>". $userInfoData->first_name ." ". $userInfoData->last_name ."</h2>
+					<p>". $userInfoData->gender ."</p>"
 					?>
 					<button class='update' id='updateProfileBtn'>Update Profile</button>
 				</div>
@@ -75,11 +75,11 @@
 						</div>
 						<div class='modal-body'>
 							<?php
-								echo "</br><span>First Name:&nbsp;&nbsp;&nbsp;&nbsp;</span><input id= 'first_name' value=". $apiData->first_name ."></br></br>
-								<span>Last Name:&nbsp;&nbsp;&nbsp;&nbsp;</span><input id= 'last_name' value=". $apiData->last_name ."></br></br>
+								echo "</br><span>First Name:&nbsp;&nbsp;&nbsp;&nbsp;</span><input id= 'first_name' value=". $userInfoData->first_name ."></br></br>
+								<span>Last Name:&nbsp;&nbsp;&nbsp;&nbsp;</span><input id= 'last_name' value=". $userInfoData->last_name ."></br></br>
 								<span>Gender:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 								<select id= 'gender'>";
-									switch($apiData->gender){
+									switch($userInfoData->gender){
 										case 'Male':
 											echo"<option value='Male' selected = 'selected'>Male</option>
 											<option value='Female'>Female</option>

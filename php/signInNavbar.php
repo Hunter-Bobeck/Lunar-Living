@@ -20,7 +20,7 @@
 			    echo"<ul class='navbar-nav ml-auto'>";
                     echo "<li>
 					<div class='dropdown'>
-						<button class='btn btn-secondary dropdown-toggle' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Hello, ". $apiData->first_name ."</button>
+						<button class='btn btn-secondary dropdown-toggle' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Hello, ". $userInfoData->first_name ."</button>
 						<div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>
 							<a class='dropdown-item' href='#'>Signout</a>
 						</div>

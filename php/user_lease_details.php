@@ -39,7 +39,7 @@
 		echo "User Not Found";
 		}
 		else {
-            $apiData = json_decode($data);
+            $userInfoData = json_decode($data);
 		}
 
 		// close curl resource to free up system resources

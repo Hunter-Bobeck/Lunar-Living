@@ -32,7 +32,7 @@
 		echo "User Not Found";
 		}
 		else {
-			$apiData = json_decode($data);
+			$userInfoData = json_decode($data);
 		}
 
 		// close curl resource to free up system resources
@@ -100,7 +100,7 @@
 	?>
 	<main class = 'content_body'>
 	<div class='container-fluid padding-zero'>
-    <?php include 'signInNavbar.php'; ?>
+        <?php include 'signInNavbar.php'; ?>
 	</div>
 	<div class='container-fluid userlease_container'>
 		<div class='row'>
