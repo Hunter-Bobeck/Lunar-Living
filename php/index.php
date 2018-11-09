@@ -148,18 +148,19 @@
 					<div id='spacer-index-after-banner'></div>
 					<section class='contact-sidebar'>
 						<div>
-							<div class='contact-heading'><strong>Schedule an Appointment</strong></div>
-	        					<form>
-									<div class="form-group">
-										<div class='input-group date' id='datepicker'>
-											<input type='text' class="form-control"/>
-											<span class="input-group-addon">
-												<span class="glyphicon glyphicon-calendar"></span>
-											</span>
-										</div>
-									</div>
-								</form>
+							<div class='contact-heading'>
+								<strong>Schedule an Appointment</strong>
 							</div>
+	        				<form>
+								<div class="form-group">
+									<div class='input-group date' id='datepicker'>
+										<input type='text' class="form-control"/>
+										<span class="input-group-addon">
+											<span class="glyphicon glyphicon-calendar"></span>
+										</span>
+									</div>
+								</div>
+							</form>
 						</div>
 					</section>
 					<div id='spacer-index-after-banner'></div>
@@ -314,6 +315,22 @@
     <script src='../js/jquery-3.3.1.js'></script>		<!-- Jquery JS (necessary for dropdowns) -->
     <script src='../js/bootstrap.bundle.min.js'></script>		<!-- Bootstrap Bundle JS (necessary for dropdowns) -->
 	<!-- <script src='js/bootstrap.min.js'></script> -->		<!-- Bootstrap JS � disabled because when enabled it has a conflict with Bootstrap Bundle JS that makes dropdowns require two clicks to dropdown; it doesn't seem that any needed functionality is lacking when this is disabled -->
+	<!-- custom carousel JS -->
+	<script>
+		var myIndex = 0, reviewIndex = 0;
+		carousel();
+		function carousel() {
+			var i;
+			var x = document.getElementsByClassName("mySlides");
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";  
+			}
+			myIndex++;
+			if (myIndex > x.length) {myIndex = 1}    
+			x[myIndex-1].style.display = "block";  
+			setTimeout(carousel, 3500); // Change image every 3.5 seconds
+		}
+	</script>
 	<script type='text/javascript' src='../js/bootstrap-datepicker.min.js'></script>		<!-- Bootstrap Datepicker 3 JS -->
 	<!-- Bootstrap Datepicker 3 JS - for initialization -->
 	<script>

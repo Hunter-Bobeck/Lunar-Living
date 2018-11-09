@@ -210,6 +210,10 @@ a {
 
 /* index.php */
 
+#datepicker {
+	color: black;
+}
+
 #spacer-index-before-banner {
 	height: 0px;
 }
@@ -462,10 +466,6 @@ a {
     font-size: 50px;
 	font-family: serif;
 	text-align: center;
-}
-
-.lease_info_collapse th, td, tr, h4, h5{
-	color: white;
 }
 
 .panel-heading a, h5{
