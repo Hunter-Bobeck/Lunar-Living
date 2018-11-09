@@ -14,7 +14,7 @@
     <!-- author name -->
     <link rel='icon' href='../images\Icon.ico'>
     <!-- favicon -->
-    <title>Lunar Living | New Lease</title>
+    <title>Lunar Living</title>
     <!-- title -->
 
     <!-- CSS -->
