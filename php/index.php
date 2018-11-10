@@ -317,7 +317,7 @@
 	<!-- image hover modal -->
 	<div id='apartment-modal' class='modal'>
 		<span class='close'>&times;</span>
-		<img class='modal-content' id='img01'>
+		<img class='modal-content' id='modal-image'>
 		<div id='caption'></div>
 	</div>
 
@@ -362,7 +362,7 @@
 	</script>
 	<script>
 		var modal = document.getElementById('apartment-modal');
-		var modalImg = document.getElementById('img01');
+		var modalImg = document.getElementById('modal-image');
 		var captionText = document.getElementById('caption');
 		$(document).ready(function()
 		{
