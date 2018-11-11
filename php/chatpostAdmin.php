@@ -2,7 +2,7 @@
 session_start();
     if (isset($_SESSION["firstName"])) {
         $username = $_SESSION['chatuser'];
-        $ch = curl_init('https://lunar-living.herokuapp.com/sendMsg');
+        $ch = curl_init('https://lunar-living.herokuapp.com/sendAdminMsg');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
         $jsonData = array(

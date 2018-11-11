@@ -1,15 +1,5 @@
 <?php
 session_start(); 
-if(isset($_POST['enter'])){
-    if($_POST['name'] != ""){
-        $_SESSION['chatuser'] = stripslashes(htmlspecialchars($_POST['email']));
-        $_SESSION['firstName'] = stripslashes(htmlspecialchars($_POST['name']));
-    }
-    else{
-        echo '<span class="error">Please type in a name</span>';
-    }
-}
-
 if(isset($_GET['logout'])){     
     //Simple exit message
     header("Location: index.php"); //Redirect the user
@@ -19,10 +9,9 @@ if(isset($_GET['logout'])){
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Chat - Customer Module</title>
+<title>Chat - Admin Module</title>
 <link type="text/css" rel="stylesheet" href="../css/style.css" />
 </head>
- 
     <div id="wrapper" class='chat'>
         <div id="menu">
             <p class="welcome">Welcome, <b><?php echo $_SESSION['firstName']; ?></b></p>
@@ -50,14 +39,14 @@ if(isset($_GET['logout'])){
         });
         $("#submitmsg").click(function(){	
             var clientmsg = $("#usermsg").val();
-            $.post("chatpost.php", {text: clientmsg});				
+            $.post("chatpostAdmin.php", {text: clientmsg});				
             $("#usermsg").attr("value", "");
             return false;
         });
         function loadLog(){		
             var oldscrollHeight = $("#chatbox").attr("scrollHeight") - 20; //Scroll height before the request
             $.ajax({
-                url:'chatfetch.php',
+                url:'chatfetchAdmin.php',
                 type: 'post',
                 data: 'msg',
                 success: function(data){

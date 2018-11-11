@@ -9,7 +9,8 @@ session_start();
 <body class="background background-dark">
     <?php
 
-		$username = $_SESSION['username'];
+        $username = $_SESSION['username'];
+        $first_name = $_SESSION['firstName'];
 		//setup the request, you can also use CURLOPT_URL
 		$ch = curl_init('https://lunar-living.herokuapp.com/getUserLease');
 
@@ -40,36 +41,6 @@ session_start();
 
 		// close curl resource to free up system resources
         curl_close($ch);
-        
-        $ch = curl_init('https://lunar-living.herokuapp.com/getUserDetails');
-
-		// Returns the data/output as a string instead of raw data
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-		// Good practice to let people know who's accessing their servers. See https://en.wikipedia.org/wiki/User_agent
-		curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
-
-		//Set your auth headers
-		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-			'Content-Type: application/json',
-			"username: $username"
-			));
-
-		// get stringified data/output. See CURLOPT_RETURNTRANSFER
-		$userData = curl_exec($ch);
-
-		// get info about the request
-		$info = curl_getinfo($ch);
-
-		if($userData == 'false'){
-		echo "User Not Found";
-		}
-		else {
-			$userInfoData = json_decode($userData);
-		}
-
-		// close curl resource to free up system resources
-		curl_close($ch);
 	?>
 	<main class = "content_body">
         <div class='container-fluid padding-zero'>
@@ -95,7 +66,7 @@ session_start();
                     echo"<ul class='navbar-nav ml-auto'>";
                         echo "<li>
                         <div class='dropdown'>
-                            <button class='btn btn-secondary dropdown-toggle' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Hello, ". $userInfoData->first_name ."</button>
+                            <button class='btn btn-secondary dropdown-toggle' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Hello, ". $first_name ."</button>
                             <div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>
                                 <a class='dropdown-item' href='#'>Signout</a>
                             </div>
