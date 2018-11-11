@@ -65,11 +65,11 @@ echo"
                 <div class="col-sm-9">
                     <h2 class = 'lease_info'>Payment Stats</h2>
                     <?php
-                    echo"<button class='btn btn-success' onclick='toggleOnByYear()'>Yearly Stats</button>
-                    <input id='toggle-triggerYear' type='checkbox' data-toggle='toggle'>
-                    <button class='btn btn-danger' onclick='toggleOffByMonth()'>Montly Stats</button>
-                    <input id='toggle-triggerMonth' type='checkbox' data-toggle='toggle'>";
                     if($year){
+                        echo"<div class='margin-bottom'><button class='btn btn-success' onclick='toggleOnByYear()'>Yearly Stats</button>
+                        <input id='toggle-triggerYear' type='checkbox' checked data-toggle='toggle'>
+                        <button class='btn btn-danger' onclick='toggleOffByMonth()'>Montly Stats</button>
+                        <input id='toggle-triggerMonth' type='checkbox' data-toggle='toggle'></div>";
                         $ch = curl_init('https://lunar-living.herokuapp.com/paymentYearStats');
                         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                         curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
@@ -132,6 +132,11 @@ echo"
                         );  
                     }
                     else{
+                        echo"<div class='margin-bottom'><button class='btn btn-success' onclick='toggleOnByYear()'>Yearly Stats</button>
+                        <input id='toggle-triggerYear' type='checkbox' data-toggle='toggle'>
+                        <button class='btn btn-danger' onclick='toggleOffByMonth()'>Montly Stats</button>
+                        <input id='toggle-triggerMonth' type='checkbox' checked data-toggle='toggle'></div>";
+                        
                         /*$ch = curl_init('https://lunar-living.herokuapp.com/paymentMonthStats');
                         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                         curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
@@ -394,10 +399,12 @@ echo"
         function toggleOnByYear() {
             $('#toggle-triggerYear').prop('checked', true).change()
             $('#toggle-triggerMonth').prop('checked', false).change()
+            window.location.href='paymentstats.php'
         }
         function toggleOffByMonth() {
             $('#toggle-triggerMonth').prop('checked', true).change()
             $('#toggle-triggerYear').prop('checked', false).change()
+            window.location.href='paymentstats.php?year=0'
         }
     </script>
 </body>
