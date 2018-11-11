@@ -89,6 +89,7 @@
                                 <li class='active'><a href='user_lease.php'>Lease</a></li>
                                 <li><a href='payment.php'>Payment</a></li>
                                 <li><a href='#'>Tickets</a></li>
+                                <li><a href='laundry.php'>Laundry</a></li>
                                 <li><a href='review.php'>Review</a></li>
                             </ul>
                         </aside>
