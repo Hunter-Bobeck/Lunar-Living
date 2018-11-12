@@ -11,6 +11,7 @@
     $data = curl_exec($ch);
     $info = curl_getinfo($ch);
     $apiData = json_decode($data);
+    curl_close($ch);
 
     if($apiData != null){
         $allmsgs = explode ("~", $apiData->msg);

@@ -20,5 +20,6 @@ if(!isset($_SESSION['firstName'])){
 }
 else{
     $_SESSION['chatuser'] = $_SESSION['username'];
+    header('Location: chat.php');
 }
 ?>
