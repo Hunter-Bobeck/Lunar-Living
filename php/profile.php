@@ -89,13 +89,22 @@
 				</div>
 			</div>
 		</div>
+		<div class='chat-body'>
+			<button class="open-button" onclick="openForm()">Chat</button>
+			<div class="chat-popup" id="myForm">
+			<div class="form-container">
+				<?php include 'chat.php'; ?>
+				<input class="btn cancel" onclick="closeForm()" value='Close' />
+			</div>
+			</div>
+		</div>
 	</div>
 	</main>
 
 	<!-- postJS -->
     <script src='../js/jquery-3.3.1.js'></script>		<!-- Jquery JS (necessary for dropdowns) -->
     <script src='../js/bootstrap.bundle.min.js'></script>		<!-- Bootstrap Bundle JS (necessary for dropdowns) -->
-    <!-- <script src='js/bootstrap.min.js'></script> -->		<!-- Bootstrap JS � disabled because when enabled it has a conflict with Bootstrap Bundle JS that makes dropdowns require two clicks to dropdown; it doesn't seem that any needed functionality is lacking when this is disabled -->
+	<!-- <script src='js/bootstrap.min.js'></script> -->		<!-- Bootstrap JS � disabled because when enabled it has a conflict with Bootstrap Bundle JS that makes dropdowns require two clicks to dropdown; it doesn't seem that any needed functionality is lacking when this is disabled -->
 	<script>
 		// Get the modal
 		var modal = document.getElementById('updateProfileModal');
@@ -123,6 +132,14 @@
 			var gender = document.getElementById("gender").value;
 			window.location.href = 'updateProfile.php?firstName=' + first_name +"&lastName=" + last_name + "&gender=" + gender;
 		}
+		function openForm() {
+			document.getElementById("myForm").style.display = "block";
+		}
+		function closeForm() {
+			document.getElementById("myForm").style.display = "none";
+		}
 	</script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+    <script src='../js/chat.js'></script>
 </body>
 </html>
