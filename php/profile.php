@@ -107,6 +107,7 @@
 			</div>
 		</div>
 	</div>
+	<?php include 'footer.php'; ?>
 	</main>
 
 	<!-- postJS -->

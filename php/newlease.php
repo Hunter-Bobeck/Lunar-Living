@@ -3,7 +3,7 @@
 <?php include 'header.php'; ?>
 <body class="background background-moon-in-space">
 <main>
-<?php include 'navbar.php'; ?>
+<?php include 'signInNavbar.php'; ?>
 
 
     <div id='spacer-newlease'></div>
@@ -37,11 +37,7 @@
     <br>
 
 
-    <footer class='footer'>
-    <div class='container'>
-    Copyright 2018 IU-SE-G2
-    </div>
-    </footer>
+    <?php include 'footer.php'; ?>
     </main>
 
     <!-- postJS -->

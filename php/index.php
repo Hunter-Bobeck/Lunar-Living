@@ -299,6 +299,7 @@
 			</div>
 		</div>
 		<div id='spacer-index-after-banner'></div>
+		<?php include 'footer.php'; ?>
 	</main>
 
 	<!-- postJS -->

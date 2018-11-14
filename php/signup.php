@@ -46,6 +46,7 @@ session_start();
 		</div>
 		<br>
 		<br>
+        <?php include 'footer.php'; ?>
 	</main>
 
 	<!-- postJS -->

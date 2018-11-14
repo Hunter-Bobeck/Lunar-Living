@@ -55,6 +55,7 @@
 				<input class='btn btn-info btn-md button-maintenance-ticket' value='New Ticket' type='submit'>
 			</a>
 		</div>
+		<?php include 'footer.php'; ?>
 	</main>
 
 	<!-- postJS -->
