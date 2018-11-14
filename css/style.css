@@ -16,6 +16,10 @@
 	background-image: url('../images/nightsky.jpg');
 }
 
+.background-dark {
+	background-image: url('../images/dark.jpg');
+}
+
 a {
 	color: #46b8da;
 }
@@ -205,6 +209,81 @@ a {
 
 
 /* index.php */
+
+/* image modal (ref.: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal_img) */
+.hover-image {
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.hover-image:hover {
+	opacity: 0.7;
+}
+.modal {
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: fixed;
+    display: none;
+    z-index: 1;
+    padding-top: 100px;
+    overflow: auto;
+}
+.modal-content {
+    width: 80%;
+    max-width: 700px;
+    margin: auto;
+    display: block;
+}
+.caption {
+    color: #ccc;
+    width: 80%;
+    max-width: 700px;
+    height: 150px;
+    margin: auto;
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+}
+.modal-content, .caption {    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+.close {
+    font-size: 40px;
+    color: #f1f1f1;
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-content {
+	width: 100%;
+}
+
+#datepicker {
+	color: black;
+}
 
 #spacer-index-before-banner {
 	height: 0px;
@@ -431,7 +510,7 @@ a {
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 40%;
+    max-width: 30%;
 	margin-left: 35%;
 	margin-right: auto;
 	margin-top:15%;
@@ -453,15 +532,11 @@ a {
 
 .lease_info{
 	color: #0cbdfb;
-    margin-top: 10%;
+    margin-top: 5%;
 	margin-bottom: 8%;
     font-size: 50px;
 	font-family: serif;
 	text-align: center;
-}
-
-.lease_info_collapse th, td, tr, h4, h5{
-	color: white;
 }
 
 .panel-heading a, h5{
@@ -491,10 +566,9 @@ a {
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     padding-top: 100px; /* Location of the box */
-	left: 30%;
-	right: 30%;
+	left: 0;
     top: 0;
-    width: 40%; /* Full width */
+    width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
@@ -845,4 +919,234 @@ fieldset, label {
 	text-align: center;
 	color: #0d10f5;
 	margin: 0;
+}
+
+.creditCardForm {
+    max-width: 700px;
+    background-color: #fff;
+    margin: 100px auto;
+    overflow: hidden;
+    padding: 25px;
+    color: #4c4e56;
+}
+
+.creditCardForm label {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.creditCardForm .heading h1 {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    color: #4c4e56;
+}
+
+.creditCardForm .payment {
+    float: left;
+    font-size: 18px;
+    padding: 10px 25px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.creditCardForm .payment .form-group {
+    float: left;
+    margin-bottom: 15px;
+}
+
+.creditCardForm .payment .form-control {
+    line-height: 40px;
+    height: auto;
+    padding: 0 16px;
+}
+
+.creditCardForm .owner {
+    width: 63%;
+    margin-right: 10px;
+}
+
+.creditCardForm .CVV {
+    width: 35%;
+}
+
+.creditCardForm #card-number-field {
+    width: 100%;
+}
+
+.creditCardForm #expiration-date {
+    width: 49%;
+}
+
+.creditCardForm #credit_cards {
+    width: 50%;
+    margin-top: 25px;
+    text-align: right;
+}
+
+.creditCardForm #pay-now {
+    width: 100%;
+    margin-top: 25px;
+}
+
+.creditCardForm .payment .btn {
+    width: 100%;
+    margin-top: 3px;
+    font-size: 24px;
+    background-color: #2ec4a5;
+    color: white;
+}
+
+.creditCardForm .payment select {
+    padding: 10px;
+    margin-right: 15px;
+}
+
+.transparent {
+    opacity: 0.2;
+}
+
+@media(max-width: 650px) {
+    .creditCardForm .owner,
+    .creditCardForm .CVV,
+    .creditCardForm #expiration-date,
+    .creditCardForm #credit_cards {
+        width: 100%;
+    }
+	.creditCardForm #credit_cards {
+        text-align: left;
+    }
+}
+
+.table-wrapper-scroll-y {
+	display: block;
+	max-height: 300px;
+	overflow-y: auto;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.shift-right{
+	padding-left: 70% 
+}
+
+.link-prop{
+	color: #00beff;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	text-decoration: underline;
+}
+
+.avgStats-display{
+	color: #8bd800;
+	margin-bottom: 5%;
+}
+
+.margin-bottom{
+	margin-bottom: 5%; 
+}
+
+#wrapper, #loginform {
+    margin:0 auto;
+    padding-bottom:25px;
+    }
+  
+#loginform { padding-top:18px; }
+
+    #loginform p { margin: 5px; }
+  
+#chatbox {
+    text-align:left;
+    margin:0 auto;
+    margin-bottom:25px;
+    padding:10px;
+    background:#fff;
+	height:270px;
+	width: 100%;
+    overflow:auto; }
+  
+#usermsg {
+    width:100%;
+    border:1px solid #ACD8F0; }
+  
+#submit { width: 60px; }
+  
+.error { color: #ff0000; }
+  
+#menu { padding:12.5px 25px 12.5px 25px; }
+  
+.welcome { float:left; }
+  
+.logout { float:right; }
+  
+.msgln { margin:0 0 2px 0; }
+
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+	background-color: #555;
+	color: white;
+	padding: 16px 20px;
+	border: none;
+	cursor: pointer;
+	opacity: 0.8;
+	position: fixed;
+	bottom: 23px;
+	right: 28px;
+width: 280px;
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+	display: none;
+	position: fixed;
+	bottom: 0;
+	right: 15px;
+	border: 3px solid #f1f1f1;
+z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+	max-width: 300px;
+	padding: 10px;
+background-color: white;
+}
+
+/* Full-width textarea */
+.form-container .text-area {
+	width: 100%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	border: none;
+	background: #f1f1f1;
+	resize: none;
+}
+
+/* When the textarea gets focus, do something */
+.form-container .text-area:focus {
+	background-color: #ddd;
+	outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+	background-color: #4CAF50;
+	color: white;
+	padding: 16px 20px;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	margin-bottom:10px;
+	opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+	background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+	opacity: 1;
+}
+.chat-body {
+	font-family: Arial, Helvetica, sans-serif;
+	box-sizing: border-box;
 }

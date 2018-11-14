@@ -4,65 +4,48 @@
 <!doctype html>
 <html lang='en'>
 <?php include 'header.php'; ?>
-<body class="background background-moon-in-space">
+<body class="background background-dark">
 	<?php
 		$username = $_SESSION['username'];
-		//setup the request, you can also use CURLOPT_URL
 		$ch = curl_init('https://lunar-living.herokuapp.com/getUserDetails');
-
-		// Returns the data/output as a string instead of raw data
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-		// Good practice to let people know who's accessing their servers. See https://en.wikipedia.org/wiki/User_agent
 		curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
-
-		//Set your auth headers
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 			'Content-Type: application/json',
 			"username: $username"
 			));
-
-		// get stringified data/output. See CURLOPT_RETURNTRANSFER
 		$data = curl_exec($ch);
-
-		// get info about the request
 		$info = curl_getinfo($ch);
-
-		if($data == 'false'){
-		echo "User Not Found";
-		}
-		else {
-			$apiData = json_decode($data);
-		}
-
-		// close curl resource to free up system resources
+		$userInfoData = json_decode($data);
 		curl_close($ch);
+		$_SESSION['firstName'] = $userInfoData->first_name;
 	?>
 	<main class = 'content_body'>
 	<div class='container-fluid padding-zero'>
 	<?php include 'signInNavbar.php'; ?>
 	</div>
-	<div class='container userlease_container'>
+	<div class='container-fluid userlease_container'>
 		<div class='row'>
-			<div class='col-sm-4'>
+			<div class='col-sm-3'>
 				<div class='wrapper'>
 					<aside class='main_sidebar'>
 						<ul>
 							<li class='active'><a href='#'>Profile</a></li>
 							<li><a href='user_lease.php'>Lease</a></li>
-							<li><a href='#'>Payment</a></li>
+							<li><a href='payment.php'>Payment</a></li>
 							<li><a href='#'>Tickets</a></li>
+							<li><a href='laundry.php'>Laundry</a></li>
 							<li><a href='review.php'>Review</a></li>
 						</ul>
 					</aside>
 				</div>
 			</div>
-			<div class='col-sm-8'>
+			<div class='col-sm-9'>
 				<div class='card'>
 					<img src='../images/profile.jpg' alt='ProfileImage' style='width:100%'>
 					<?php
-					echo "<h2>". $apiData->first_name ." ". $apiData->last_name ."</h2>
-					<p>". $apiData->gender ."</p>"
+					echo "<h2>". $userInfoData->first_name ." ". $userInfoData->last_name ."</h2>
+					<p>". $userInfoData->gender ."</p>"
 					?>
 					<button class='update' id='updateProfileBtn'>Update Profile</button>
 				</div>
@@ -75,11 +58,11 @@
 						</div>
 						<div class='modal-body'>
 							<?php
-								echo "</br><span>First Name:&nbsp;&nbsp;&nbsp;&nbsp;</span><input id= 'first_name' value=". $apiData->first_name ."></br></br>
-								<span>Last Name:&nbsp;&nbsp;&nbsp;&nbsp;</span><input id= 'last_name' value=". $apiData->last_name ."></br></br>
+								echo "</br><span>First Name:&nbsp;&nbsp;&nbsp;&nbsp;</span><input id= 'first_name' value=". $userInfoData->first_name ."></br></br>
+								<span>Last Name:&nbsp;&nbsp;&nbsp;&nbsp;</span><input id= 'last_name' value=". $userInfoData->last_name ."></br></br>
 								<span>Gender:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 								<select id= 'gender'>";
-									switch($apiData->gender){
+									switch($userInfoData->gender){
 										case 'Male':
 											echo"<option value='Male' selected = 'selected'>Male</option>
 											<option value='Female'>Female</option>
@@ -106,6 +89,15 @@
 				</div>
 			</div>
 		</div>
+		<div class='chat-body'>
+			<button class="open-button" onclick="openForm()">Chat</button>
+			<div class="chat-popup" id="myForm">
+			<div class="form-container">
+				<?php include 'chat.php'; ?>
+				<input class="btn cancel" onclick="closeForm()" value='Close' />
+			</div>
+			</div>
+		</div>
 	</div>
 	<?php include 'footer.php'; ?>
 	</main>
@@ -113,7 +105,7 @@
 	<!-- postJS -->
     <script src='../js/jquery-3.3.1.js'></script>		<!-- Jquery JS (necessary for dropdowns) -->
     <script src='../js/bootstrap.bundle.min.js'></script>		<!-- Bootstrap Bundle JS (necessary for dropdowns) -->
-    <!-- <script src='js/bootstrap.min.js'></script> -->		<!-- Bootstrap JS � disabled because when enabled it has a conflict with Bootstrap Bundle JS that makes dropdowns require two clicks to dropdown; it doesn't seem that any needed functionality is lacking when this is disabled -->
+	<!-- <script src='js/bootstrap.min.js'></script> -->		<!-- Bootstrap JS � disabled because when enabled it has a conflict with Bootstrap Bundle JS that makes dropdowns require two clicks to dropdown; it doesn't seem that any needed functionality is lacking when this is disabled -->
 	<script>
 		// Get the modal
 		var modal = document.getElementById('updateProfileModal');
@@ -141,6 +133,14 @@
 			var gender = document.getElementById("gender").value;
 			window.location.href = 'updateProfile.php?firstName=' + first_name +"&lastName=" + last_name + "&gender=" + gender;
 		}
+		function openForm() {
+			document.getElementById("myForm").style.display = "block";
+		}
+		function closeForm() {
+			document.getElementById("myForm").style.display = "none";
+		}
 	</script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+    <script src='../js/chat.js'></script>
 </body>
 </html>

@@ -4,39 +4,9 @@
 <!doctype html>
 <html lang='en'>
 <?php include 'header.php'; ?>
-<body class="background background-night-sky">
+<body class="background background-dark">
 	<?php
 		$username = $_SESSION['username'];
-		//setup the request, you can also use CURLOPT_URL
-		$ch = curl_init('https://lunar-living.herokuapp.com/getUserDetails');
-
-		// Returns the data/output as a string instead of raw data
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-		// Good practice to let people know who's accessing their servers. See https://en.wikipedia.org/wiki/User_agent
-		curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
-
-		//Set your auth headers
-		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-			'Content-Type: application/json',
-			"username: $username"
-			));
-
-		// get stringified data/output. See CURLOPT_RETURNTRANSFER
-		$data = curl_exec($ch);
-
-		// get info about the request
-		$info = curl_getinfo($ch);
-
-		if($data == 'false'){
-		echo "User Not Found";
-		}
-		else {
-			$apiData = json_decode($data);
-		}
-
-		// close curl resource to free up system resources
-        curl_close($ch);
         
         $ch = curl_init('https://lunar-living.herokuapp.com/getReviews');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -100,24 +70,25 @@
 	?>
 	<main class = 'content_body'>
 	<div class='container-fluid padding-zero'>
-    <?php include 'signInNavbar.php'; ?>
+        <?php include 'signInNavbar.php'; ?>
 	</div>
-	<div class='container userlease_container'>
+	<div class='container-fluid userlease_container'>
 		<div class='row'>
-			<div class='col-sm-4'>
+			<div class='col-sm-3'>
 				<div class='wrapper'>
 					<aside class='main_sidebar'>
 						<ul>
                             <li><a href='profile.php'>Profile</a></li>
 							<li><a href='user_lease.php'>Lease</a></li>
-							<li><a href='#'>Payment</a></li>
+							<li><a href='payment.php'>Payment</a></li>
                             <li><a href='#'>Tickets</a></li>
+                            <li><a href='laundry.php'>Laundry</a></li>
                             <li class='active'><a href='#'>Review</a></li>
 						</ul>
 					</aside>
 				</div>
 			</div>
-			<div class='col-sm-8'>
+			<div class='col-sm-9'>
                 <h2 class = 'lease_info'>Review Us</h2>
                 <div class = 'rating-section right-space'>
                     <fieldset class="rating">
@@ -129,7 +100,7 @@
                     </fieldset><br><br><br>
                     <button class='btn btn-info btn-md margin-right' onclick='rateMe()'>Submit Review</button>
                 </div>
-                <br><br>
+                <br>
                 <div class='user-review'>
                     <?php
                     $totalVotes = $fiveStar + $fourStar + $threeStar + $twoStar + $oneStar;

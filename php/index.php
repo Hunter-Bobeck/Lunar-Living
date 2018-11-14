@@ -12,13 +12,14 @@
     <meta name='keywords' content='Kidd, Living, space, rental, service, management, system, SpaceX, outer, Elon, Musk'>		<!-- keywords for searchengine optimization -->
     <meta name='author' content='IU SE G2'>		<!-- author name -->
 	<link rel='icon' href='../images\Icon.ico'>		<!-- favicon -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Lunar Living | Home</title>		<!-- title -->
 
 	<!-- CSS -->
 	<link rel='stylesheet' href='../css/reset.css'>		<!-- Reset CSS -->
     <link rel='stylesheet' href='../css/bootstrap.min.css'>		<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">		<!-- Font Awesome CSS (another one added by backend devs for some reason?) -->
     <link rel='stylesheet' href='../css/fontawesome.min.css'>		<!-- Font Awesome CSS -->
+	<link rel='stylesheet' href='../css/bootstrap-datepicker3.css'>		<!-- Bootstrap Datepicker 3 CSS -->
 	<link rel='stylesheet' href='../css/style.css'>		<!-- custom CSS -->
 </head>
 <body class="background">
@@ -56,67 +57,67 @@
 
 		// close curl resource to free up system resources
 		curl_close($ch);
-
-		$ch = curl_init('https://lunar-living.herokuapp.com/getReviews');
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-			'Content-Type: application/json',
-			"rating: 5"
-			));
-        $data = curl_exec($ch);
-        $info = curl_getinfo($ch);
-		$fiveStar = json_decode($data)->total;
-        curl_close($ch);
-        
-        $ch = curl_init('https://lunar-living.herokuapp.com/getReviews');
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-			'Content-Type: application/json',
-			"rating: 4"
-			));
-        $data = curl_exec($ch);
-        $info = curl_getinfo($ch);
-		$fourStar = json_decode($data)->total;
-        curl_close($ch);
-        
-        $ch = curl_init('https://lunar-living.herokuapp.com/getReviews');
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-			'Content-Type: application/json',
-			"rating: 3"
-			));
-        $data = curl_exec($ch);
-        $info = curl_getinfo($ch);
-		$threeStar = json_decode($data)->total;
-        curl_close($ch);
-        
-        $ch = curl_init('https://lunar-living.herokuapp.com/getReviews');
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-			'Content-Type: application/json',
-			"rating: 2"
-			));
-        $data = curl_exec($ch);
-        $info = curl_getinfo($ch);
-		$twoStar = json_decode($data)->total;
-        curl_close($ch);
-        
-        $ch = curl_init('https://lunar-living.herokuapp.com/getReviews');
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-			'Content-Type: application/json',
-			"rating: 1"
-			));
-        $data = curl_exec($ch);
-        $info = curl_getinfo($ch);
-		$oneStar = json_decode($data)->total;
-		curl_close($ch);
 	}
+
+	$ch = curl_init('https://lunar-living.herokuapp.com/getReviews');
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+		'Content-Type: application/json',
+		"rating: 5"
+		));
+	$data = curl_exec($ch);
+	$info = curl_getinfo($ch);
+	$fiveStar = json_decode($data)->total;
+	curl_close($ch);
+	
+	$ch = curl_init('https://lunar-living.herokuapp.com/getReviews');
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+		'Content-Type: application/json',
+		"rating: 4"
+		));
+	$data = curl_exec($ch);
+	$info = curl_getinfo($ch);
+	$fourStar = json_decode($data)->total;
+	curl_close($ch);
+	
+	$ch = curl_init('https://lunar-living.herokuapp.com/getReviews');
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+		'Content-Type: application/json',
+		"rating: 3"
+		));
+	$data = curl_exec($ch);
+	$info = curl_getinfo($ch);
+	$threeStar = json_decode($data)->total;
+	curl_close($ch);
+	
+	$ch = curl_init('https://lunar-living.herokuapp.com/getReviews');
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+		'Content-Type: application/json',
+		"rating: 2"
+		));
+	$data = curl_exec($ch);
+	$info = curl_getinfo($ch);
+	$twoStar = json_decode($data)->total;
+	curl_close($ch);
+	
+	$ch = curl_init('https://lunar-living.herokuapp.com/getReviews');
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+		'Content-Type: application/json',
+		"rating: 1"
+		));
+	$data = curl_exec($ch);
+	$info = curl_getinfo($ch);
+	$oneStar = json_decode($data)->total;
+	curl_close($ch);
 ?>
 	<main>
 	<?php include 'signInNavbar.php'; ?>
@@ -147,9 +148,21 @@
 					<div id='spacer-index-after-banner'></div>
 					<section class='contact-sidebar'>
 						<div>
-							<div class='contact-heading'><strong>Schedule a Appointment</strong></div>
-							<form>
-								<input class='form-control' type='text' id='newlease-start-date' name='scheduleAppointmentDatePicker' placeholder='Select Date'>
+							<div class='contact-heading'>
+								<strong>Schedule an Appointment</strong>
+							</div>
+							<br>
+	        				<form>
+								<div class='form-group text-centered'>
+									<div class='input-group date' id='datepicker'>
+										<input type='text' class='form-control'/>
+										<span class='input-group-addon'>
+											<span class='glyphicon glyphicon-calendar'></span>
+										</span>
+									</div>
+									<br>
+									<button class='btn btn-info btn-md'>Schedule</button>
+								</div>
 							</form>
 						</div>
 					</section>
@@ -174,10 +187,10 @@
 							<p class='tags'><b>Apartment searching can be exciting for tenants- it’s an opportunity for tenants to upgrade their life.<br>Great for entertaining: spacious, updated 2 bedroom, 1 bathroom apartments
 							<br>Space is available for you to take photos whenever.</b>
 							</p>
-							<img class ='aptImg' src='../images/apt1.jpg'>
-							<img class ='aptImg' src='../images/apt2.jpg'>
-							<img class ='aptImg' src='../images/apt3.jpg'>
-							<img class ='aptImg' src='../images/apt4.jpg'>
+							<img class ='aptImg hover-image' src='../images/apt1.jpg'>
+							<img class ='aptImg hover-image' src='../images/apt2.jpg'>
+							<img class ='aptImg hover-image' src='../images/apt3.jpg'>
+							<img class ='aptImg hover-image' src='../images/apt4.jpg'>
 						</div>
 						<div id='spacer-index-after-banner'></div>
 						<div class='name-heading'><strong>User Reviews</strong></div>
@@ -302,14 +315,19 @@
 		<?php include 'footer.php'; ?>
 	</main>
 
+	<!-- image hover modal -->
+	<div id='apartment-modal' class='modal'>
+		<span class='close'>&times;</span>
+		<img class='modal-content' id='modal-image'>
+		<div id='caption'></div>
+	</div>
+
 	<!-- postJS -->
-    <script src='../js/jquery-3.3.1.js'></script>		<!-- Jquery JS (necessary for dropdowns) -->
+    <script src='../js/jquery-3.3.1.js'></script>		<!-- Jquery JS (necessary for dropdowns and modal) -->
     <script src='../js/bootstrap.bundle.min.js'></script>		<!-- Bootstrap Bundle JS (necessary for dropdowns) -->
 	<!-- <script src='js/bootstrap.min.js'></script> -->		<!-- Bootstrap JS � disabled because when enabled it has a conflict with Bootstrap Bundle JS that makes dropdowns require two clicks to dropdown; it doesn't seem that any needed functionality is lacking when this is disabled -->
-	<script src='../js/moment.min.js'></script>		<!-- Moment JS (necessary for Date Range Picker) -->
-	<script src='../js/daterangepicker.min.js'></script>		<!-- Date Range Picker JS (http://www.daterangepicker.com/#usage) -->
-	<script type='text/javascript'>
-		$('input[name="scheduleAppointmentDatePicker"]').daterangepicker();
+	<!-- custom carousel JS -->
+	<script>
 		var myIndex = 0, reviewIndex = 0;
 		carousel();
 		function carousel() {
@@ -323,6 +341,51 @@
 			x[myIndex-1].style.display = "block";  
 			setTimeout(carousel, 3500); // Change image every 3.5 seconds
 		}
+	</script>
+	<script type='text/javascript' src='../js/bootstrap-datepicker.min.js'></script>		<!-- Bootstrap Datepicker 3 JS -->
+	<!-- Bootstrap Datepicker 3 JS - for initialization -->
+	<script>
+	    $(function()
+		{
+	        $('#datepicker').datepicker(
+			{
+	            format: 'dd/mm/yyyy',
+	            autoclose: true,
+	            todayHighlight: true,
+		        showOtherMonths: true,
+		        selectOtherMonths: true,
+		        autoclose: true,
+		        changeMonth: true,
+		        changeYear: true,
+		        orientation: 'button'
+	        });
+	    });
+	</script>
+	<script>
+		var modal = document.getElementById('apartment-modal');
+		var modalImg = document.getElementById('modal-image');
+		var captionText = document.getElementById('caption');
+		$(document).ready(function()
+		{
+			$('img.hover-image').click(function()
+			{
+				modal.style.display = 'block';
+				modalImg.src = this.src;
+				captionText.innerHTML = this.alt;
+			});
+		});
+
+		document.getElementsByClassName('close')[0].onclick = function()
+		{ 
+			modal.style.display = 'none';
+		}
+		$(document).keyup(function(e)
+		{
+			if (e.key === "Escape")
+			{
+				modal.style.display = 'none';
+			}
+		});
 	</script>
 </body>
 </html>
