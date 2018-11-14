@@ -1110,18 +1110,17 @@ background-color: white;
 }
 
 /* Full-width textarea */
-.form-container textarea {
+.form-container .text-area {
 	width: 100%;
 	padding: 15px;
 	margin: 5px 0 22px 0;
 	border: none;
 	background: #f1f1f1;
 	resize: none;
-	min-height: 200px;
 }
 
 /* When the textarea gets focus, do something */
-.form-container textarea:focus {
+.form-container .text-area:focus {
 	background-color: #ddd;
 	outline: none;
 }

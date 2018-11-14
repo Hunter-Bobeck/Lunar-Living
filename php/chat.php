@@ -14,28 +14,24 @@ if(isset($_GET['logout'])){
     //Simple exit message
     header("Location: index.php"); //Redirect the user
 }
-?>
+?> 
+<div id="wrapper" class='chat'>
+    <div id="menu">
+        <h3 class="welcome">Welcome, <b><?php echo $_SESSION['firstName']; ?></b></h3>
+        <?php
+        if(isset($_SESSION['username'])){
+        }
+        else{
+            echo"<p class='logout'><a id='exit' href='#'>Exit Chat</a></p>";
+        }
+        ?>
+        <div style="clear:both"></div>
+    </div>    
+    <div id="chatbox" class='message'>
 
-
- 
-    <div id="wrapper" class='chat'>
-        <div id="menu">
-            <h3 class="welcome">Welcome, <b><?php echo $_SESSION['firstName']; ?></b></h3>
-            <?php
-            if(isset($_SESSION['username'])){
-            }
-            else{
-                echo"<p class='logout'><a id='exit' href='#'>Exit Chat</a></p>";
-            }
-            ?>
-            <div style="clear:both"></div>
-        </div>    
-        <div id="chatbox" class='message'>
-
-        </div>
-        
-        <form name="message" action="">
-            <input name="usermsg" type="text" id="usermsg"/>
-            <input name="submitmsg" type="submit" id="submitmsg" value="Send" class="btn" />
-        </form>
     </div>
+    <form name="message" action="">
+        <input name="usermsg" type="text" id="usermsg" class = 'text-area'/>
+        <input name="submitmsg" type="submit" id="submitmsg" value="Send" class="btn" />
+    </form>
+</div>

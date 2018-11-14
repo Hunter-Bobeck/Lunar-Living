@@ -5,19 +5,18 @@ if(isset($_GET['logout'])){
     header("Location: index.php"); //Redirect the user
 }
 ?>
+<div id="wrapper" class='chat'>
+    <div id="menu">
+        <p class="welcome">Welcome, <b><?php echo $_SESSION['firstName']; ?></b></p>
+        <div style="clear:both"></div>
+    </div>    
+    <div id="chatbox" class='message'>
 
-    <div id="wrapper" class='chat'>
-        <div id="menu">
-            <p class="welcome">Welcome, <b><?php echo $_SESSION['firstName']; ?></b></p>
-            <div style="clear:both"></div>
-        </div>    
-        <div id="chatbox" class='message'>
-
-        </div>
-        
-        <form name="message" action="">
-            <input name="usermsg" type="text" id="usermsg"/>
-            <input name="submitmsg" type="submit" id="submitmsg" value="Send" class="btn" />
-        </form>
     </div>
+        
+    <form name="message" action="">
+        <input name="usermsg" type="text" id="usermsg" class = 'text-area'/>
+        <input name="submitmsg" type="submit" id="submitmsg" value="Send" class="btn" />
+    </form>
+</div>
     
