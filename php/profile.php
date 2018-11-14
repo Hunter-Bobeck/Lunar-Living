@@ -40,7 +40,7 @@
 					</aside>
 				</div>
 			</div>
-			<div class='col-sm-9'>
+			<div class='col-sm-6'>
 				<div class='card'>
 					<img src='../images/profile.jpg' alt='ProfileImage' style='width:100%'>
 					<?php
@@ -87,6 +87,49 @@
 						</div>
 					</div>
 				</div>
+			</div>
+			<div class='col-sm-3'>
+				<h2 class='text-centered oxygen-level'>Oxygen Level</h2>
+				<?php
+				$username = $_SESSION['username'];
+				$ch = curl_init('https://lunar-living.herokuapp.com/getOxygenLevels');
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+				curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
+				curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+					'Content-Type: application/json',
+					"username: $username"
+					));
+				$data = curl_exec($ch);
+				$info = curl_getinfo($ch);
+				$oxygenData = json_decode($data);
+				curl_close($ch);
+				foreach($oxygenData as $currLevel){
+					if($currLevel->amount > 80){
+						echo"<div class='progress-bar green stripes'>
+						<span style='width: " . $currLevel->amount . "%'>". $currLevel->aptID . "</span>
+						<span style='width: " . $currLevel->amount . "%'></span>
+						</div>";
+					}
+					else if($currLevel->amount > 50){
+						echo"<div class='progress-bar blue stripes'>
+						<span style='width: " . $currLevel->amount . "%'>". $currLevel->aptID . "</span>
+						<span style='width: " . $currLevel->amount . "%'></span>
+						</div>";
+					}
+					else if($currLevel->amount > 20){
+						echo"<div class='progress-bar orange stripes'>
+						<span style='width: " . $currLevel->amount . "%'></span>
+						<span style='width: " . $currLevel->amount . "%'>". $currLevel->aptID . "</span>
+						</div>";
+					}
+					else{
+						echo"<div class='progress-bar red stripes'>
+						<span style='width: " . $currLevel->amount . "%'>". $currLevel->aptID . "</span>
+						<span style='width: " . $currLevel->amount . "%'></span>
+						</div>";
+					}
+				}
+				?>
 			</div>
 		</div>
 		<div class='chat-body'>
