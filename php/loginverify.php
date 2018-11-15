@@ -29,8 +29,10 @@
     }else {
         $dataArray = json_decode($data, true);
         $_SESSION["newuser"] = $dataArray["newuser"];
+        $_SESSION["usertype"] = $dataArray["usertype"];
+        $usertype = $_SESSION["usertype"];
         header("Location: otpverification.php");
     }
     // close curl resource to free up system resources
-
 ?>
+
