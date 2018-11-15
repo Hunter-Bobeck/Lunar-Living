@@ -34,11 +34,11 @@ echo"
                 <div class="container">
                         <h2 class = 'lease_info'>Ticket Management</h2>
                         <div class='shift-right'><button class='btn btn-info btn-md' id = 'bookLaundry'>Add New Ticket</button></div>
-                        </br>
-                        </br>
+                        <br/>
+                        <br/>
                         <div style = "background-color: rgba(255,255,255,0.3)">
                         <h1 class = 'ticket-table-header'>Ticket Management</h1>
-                        <table cellpadding="0" cellspacing="0" border="0" style = "width: 100%">
+                        <table cellpadding="0" cellspacing="0" style = "width: 100%;border='0'">
                             <thead>
                             <tr>
                                 <th style = "padding: 20px 15px;
