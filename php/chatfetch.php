@@ -12,6 +12,18 @@
     $info = curl_getinfo($ch);
     $apiData = json_decode($data);
     curl_close($ch);
+    if(isset($_COOKIE['deliver']) && $_COOKIE['deliver'] == 1){
+        $ch = curl_init('https://lunar-living.herokuapp.com/fetchReadMsg');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+            'Content-Type: application/json',
+            "username: $username"
+            ));
+        $data = curl_exec($ch);
+        $info = curl_getinfo($ch);
+        curl_close($ch);
+    }
 
     if($apiData != null){
         $allmsgs = explode ("~", $apiData->msg);

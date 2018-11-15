@@ -107,9 +107,11 @@
         }
         function openForm() {
 			document.getElementById("myForm").style.display = "block";
+			document.cookie = "deliver=1";
 		}
 		function closeForm() {
 			document.getElementById("myForm").style.display = "none";
+			document.cookie = "deliver=0";
 		}
     </script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>

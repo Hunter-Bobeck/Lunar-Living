@@ -13,7 +13,9 @@ if(isset($_GET['logout'])){
     <div id="chatbox" class='message'>
 
     </div>
+    <div class='status'>
         
+    </div>    
     <form name="message" action="">
         <input name="usermsg" type="text" id="usermsg" class = 'text-area'/>
         <input name="submitmsg" type="submit" id="submitmsg" value="Send" class="btn" />
