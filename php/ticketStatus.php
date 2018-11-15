@@ -36,55 +36,26 @@ echo"
                         <div class='shift-right'><button class='btn btn-info btn-md' id = 'bookLaundry'>Add New Ticket</button></div>
                         <br/>
                         <br/>
-                        <div style = "background-color: rgba(255,255,255,0.3)">
-                        <h1 class = 'ticket-table-header'>Ticket Management</h1>
-                        <table cellpadding="0" cellspacing="0" style = "width: 100%;border='0'">
+                        <div style = "background-color: rgba(255,255,255,0.3); text-align: center">
+                        <h1 style = "color:white; ">Ticket Management</h1>
+                        <?php
+                        $index = 1;
+                        echo"
+                        <table class='table table-dark table-hover'>
                             <thead>
-                            <tr>
-                                <th style = "padding: 20px 15px;
-                                             text-align: left;
-                                            font-weight: 500;
-                                            font-size: 12px;
-                                            color: #fff;
-                                            text-transform: uppercase;">ID</th>
-                                <th style = "padding: 20px 15px;
-                                             text-align: left;
-                                            font-weight: 500;
-                                            font-size: 12px;
-                                            color: #fff;
-                                            text-transform: uppercase;">TITLE</th>
-                                <th style = "padding: 20px 15px;
-                                             text-align: left;
-                                            font-weight: 500;
-                                            font-size: 12px;
-                                            color: #fff;
-                                            text-transform: uppercase;">STATUS</th>
-                            </tr>
-</thead>
-<tbody>
-<tr>
-<td>cell1_1</td>
-<td>cell2_1</td>
-<td>cell3_1</td>
-</tr>
-<tr>
-<td>cell1_2</td>
-<td>cell2_2</td>
-<td>cell3_2</td>
-</tr>
-<tr>
-<td>cell1_3</td>
-<td>cell2_3</td>
-<td>cell3_3</td>
-</tr>
-<tr>
-<td>cell1_4</td>
-<td>cell2_4</td>
-<td>cell3_4</td>
-</tr>
-</tbody>
-                    </table>
-
+                                <tr>
+                                <th scope='col'>#</th>
+                                <th scope='col'>ID</th>
+                                <th scope='col'>Title</th>
+                                <th scope='col'>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                        ";
+                        echo"
+                            </tbody>
+                        </table>";
+                        ?>
                          </div>
                     </div>
                 </div>
