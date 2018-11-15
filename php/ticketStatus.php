@@ -4,6 +4,16 @@
 <!doctype html>
 <html lang='en'>
 <?php include 'header.php'; ?>
+<style>
+li:hover:not(.active) {
+    background-color: #111;
+}
+
+.active-filter {
+background-color:steelblue;
+}
+}
+</style>
 <?php
 echo"
 <body class='background background-dark'>";
@@ -35,6 +45,17 @@ echo"
                         <h2 class = 'lease_info'>Ticket Management</h2>
                         <div class='shift-right'><button class='btn btn-info btn-md' id = 'bookLaundry'>Add New Ticket</button></div>
                         <br/>
+                        <div>
+                        
+                        <ul style = "list-style-type: none;margin: 0;padding: 0;overflow: hidden;background-color: #333;align-text:center">
+                            <li class = "active-filter" style="float:left;display: block;color: white;text-align: center;padding: 20px 16px;text-decoration: none;align:left">Filters</li>
+                            <li style="float:left;display: block;color: white;text-align: center;padding: 20px 16px;text-decoration: none"><a href="#home">ID</a></li>
+                            <li style="float:left;display: block;color: white;text-align: center;padding: 20px 16px;text-decoration: none"><a href="#news">Apartment</a></li>
+                            <li style="float:left;display: block;color: white;text-align: center;padding: 20px 16px;text-decoration: none"><a href="#contact">Title</a></li>
+                            <li style="float:left;display: block;color: white;text-align: center;padding: 20px 16px;text-decoration: none"><a href="#contact">Status</a></li>
+                            <li style="float:left;display: block;color: white;text-align: center;padding: 20px 16px;text-decoration: none"><a href="#contact">Area</a></li>
+                        </ul>
+                        </div>
                         <br/>
                         <div style = "background-color: rgba(255,255,255,0.3); text-align: center">
                         <h1 style = "color:white; ">Ticket Management</h1>
