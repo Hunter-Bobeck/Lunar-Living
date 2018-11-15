@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang='en'>
 <?php include 'header.php'; ?>
-<body class='background background-lunar-landed'>
+<body class='background background-astronauts'>
 	<main>
 		
 	<?php include 'navbar.php'; ?>
