@@ -25,7 +25,7 @@
     $info = curl_getinfo($ch);
     curl_close($ch);
     if($data == 'false'){
-        header("Location: ");
+        header("Location: login.php");
     }else {
         $dataArray = json_decode($data, true);
         $_SESSION["newuser"] = $dataArray["newuser"];

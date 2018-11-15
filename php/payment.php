@@ -25,7 +25,7 @@ session_start();
                                 <li><a href='profile.php'>Profile</a></li>
                                 <li><a href='user_lease.php'>Lease</a></li>
                                 <li class='active'><a href='#'>Payment</a></li>
-                                <li><a href='#'>Tickets</a></li>
+                                <li><a href='ticketStatus.php'>Tickets</a></li>
                                 <li><a href='laundry.php'>Laundry</a></li>
                                 <li><a href='review.php'>Review</a></li>
                             </ul>
