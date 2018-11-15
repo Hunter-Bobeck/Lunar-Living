@@ -40,7 +40,7 @@
 					</aside>
 				</div>
 			</div>
-			<div class='col-sm-6'>
+			<div class='col-sm-5'>
 				<div class='card'>
 					<img src='../images/profile.jpg' alt='ProfileImage' style='width:100%'>
 					<?php
@@ -88,9 +88,7 @@
 					</div>
 				</div>
 			</div>
-			<div class='col-sm-3'>
-				<h2 class='text-centered oxygen-level'>Oxygen Level</h2>
-				<?php
+			<?php
 				$username = $_SESSION['username'];
 				$ch = curl_init('https://lunar-living.herokuapp.com/getOxygenLevels');
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -103,6 +101,24 @@
 				$info = curl_getinfo($ch);
 				$oxygenData = json_decode($data);
 				curl_close($ch);
+			?>
+			<div class='col-sm-4'>
+			<div><h2 class='text-centered oxygen-level'>Oxygen Level</h2></div>
+			<div class = 'row'>
+			<div class='col-sm-2'>
+				<?php
+				foreach($oxygenData as $currLevel){
+					if($currLevel->start_date == null){
+						echo"<div><img src='../images/on.jpg' class='progress-bar'></div>";
+					}
+					else{
+						echo"<div><img src='../images/stop.png' class='progress-bar'></div>";
+					}
+				}
+				?>
+			</div>
+			<div class='col-sm-10'>
+				<?php
 				foreach($oxygenData as $currLevel){
 					if($currLevel->amount > 80){
 						echo"<div class='progress-bar green stripes'>
@@ -130,6 +146,8 @@
 					}
 				}
 				?>
+			</div>
+			</div>
 			</div>
 		</div>
 		<div class='chat-body'>
