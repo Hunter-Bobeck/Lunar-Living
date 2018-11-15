@@ -112,7 +112,15 @@
 						echo"<div><img src='../images/on.jpg' class='progress-bar'></div>";
 					}
 					else{
-						echo"<div><img src='../images/stop.png' class='progress-bar'></div>";
+						$startTime = strtotime($currLevel->start_date);
+						$endTime = strtotime($currLevel->end_date);
+						$currTime = time();
+						if((($currTime >= $startTime) && ($currTime <= $endTime))){
+							echo"<div><img src='../images/stop.png' class='progress-bar'></div>";
+						}
+						else{
+							echo"<div><img src='../images/on.jpg' class='progress-bar'></div>";
+						}
 					}
 				}
 				?>
