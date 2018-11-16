@@ -1,6 +1,7 @@
 /* general */
 
 @import url("https://fonts.googleapis.com/css?family=Ramabhadra");
+@import url('https://fonts.googleapis.com/css?family=KoHo');
 
 .background {
   background-color: black;
@@ -22,10 +23,12 @@
   background-image: url("../images/Astronauts with Earth.jpg");
 }
 .background-chilling {
-  background-image: url("../images/Chilling.jpg");
+	background-image: url("../images/Moon in Space.jpg");
 }
-.background-chilling {
-  background-image: url("../images/Chilling.jpg");
+@media only screen and (min-width: 1400px) {
+	.background-chilling {
+		background-image: url("../images/Chilling.jpg");
+	}
 }
 
 .background-dark {
@@ -380,7 +383,6 @@ a {
   border-radius: 5px;
   background-color: rgba(38, 38, 40, 1);
   /* this color in hex (without alpha) is #262628 */
-  color: rgba(171, 199, 215, 1);
   /* this color in hex (without alpha) is #abc7d7 */
 }
 .container-maintenance-ticket-content > h6 {
@@ -1202,4 +1204,90 @@ label {
 .oxygen button:hover{
   color: #00bbf0;
   cursor: pointer;
+}
+/* events.php */
+/* grids reference: https://www.w3schools.com/css/css_grid.asp */
+
+.spacer-events {
+  height: 65px;
+}
+@media only screen and (min-width: 700px) {
+  .spacer-events {
+    height: 145px;
+  }
+}
+#events-background {
+	background-color: rgba(33, 150, 243, 0);
+}
+@media only screen and (min-width: 1400px) {
+  #events-background {
+    background-color: rgba(33, 150, 243, .4);
+  }
+}
+#events-header {
+	font-family: "KoHo", sans-serif;
+	text-align: left;
+	margin-left: 23%;
+	color: white;
+}
+.events-grid-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	margin-left: 23%;
+	margin-right: 23%;
+	padding: 10px;
+    background-color: rgba(33, 150, 243, 0);
+	border-radius: 25px;
+}
+@media only screen and (min-width: 1600px) {
+  .events-grid-container {
+	grid-template-columns: repeat(4, minmax(200px, 1fr));
+  }
+}
+.events-grid-item {
+	font-family: "KoHo", sans-serif;
+	text-align: center;
+	border: 1px solid rgba(0, 0, 0, 0.8);
+	padding: 0px;
+	margin: .6em;
+	color: white;
+	overflow: hidden;
+	background-color: rgba(33, 150, 243, .4);
+	border-radius: 0px;
+}
+@media only screen and (min-width: 1400px) {
+  .events-grid-item {
+	border: 1px solid rgba(0, 0, 0, 0.8);
+	padding: 20px;
+	background-color: rgba(12, 12, 12, .9);
+	border-radius: 25px;
+  }
+}
+.event-link:link {
+    color: white;
+}
+.event-link:visited {
+    color: white;
+}
+.event-link:hover {
+    color: #1eced5;
+	text-decoration: none;
+}
+.event-link:active {
+    color: white;
+}
+.event-title {
+	font-size: 1.5em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.event-thumbnail {
+	width: 10em;
+	height: auto;
+	border-radius: 25px;
+}
+.event-date {
+	padding-top: .1em;
+	font-size: 1.1em;
 }

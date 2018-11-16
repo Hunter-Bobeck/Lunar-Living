@@ -46,15 +46,13 @@ echo"
                         <div class='shift-right'><button class='btn btn-info btn-md' id = 'bookLaundry'>Add New Ticket</button></div>
                         <br/>
                         <div>
-                        
-                        <ul style = "list-style-type: none;margin: 0;padding: 0;overflow: hidden;background-color: #333;align-text:center">
-                            <li class = "active-filter" style="float:left;display: block;color: white;text-align: center;padding: 20px 16px;text-decoration: none;align:left">Filters</li>
-                            <li style="float:left;display: block;color: white;text-align: center;padding: 20px 16px;text-decoration: none"><a href="#home">ID</a></li>
-                            <li style="float:left;display: block;color: white;text-align: center;padding: 20px 16px;text-decoration: none"><a href="#news">Apartment</a></li>
-                            <li style="float:left;display: block;color: white;text-align: center;padding: 20px 16px;text-decoration: none"><a href="#contact">Title</a></li>
-                            <li style="float:left;display: block;color: white;text-align: center;padding: 20px 16px;text-decoration: none"><a href="#contact">Status</a></li>
-                            <li style="float:left;display: block;color: white;text-align: center;padding: 20px 16px;text-decoration: none"><a href="#contact">Area</a></li>
-                        </ul>
+                        <?php
+                        if($_SESSION["usertype"] == 2){ 
+                            include 'TicketFilterBars/adminFilterBar.php';
+                        } else {
+                            include 'TicketFilterBars/userFilterBar.php';
+                        } 
+                        ?>
                         </div>
                         <br/>
                         <div style = "background-color: rgba(255,255,255,0.3); text-align: center">

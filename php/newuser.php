@@ -55,12 +55,13 @@
 
         $dataArray = json_decode($data, true);
         $_SESSION["newuser"] = $dataArray["newuser"];
+        $_SESSION["usertype"] = $dataArray["usertype"];
 
-        echo "<h1>". $data . "</h1>";
+        // echo "<h1>". $data . "</h1>";
         if($data == 'false'){
             echo "User Not Found";
         }else {
-            header("Location: otpverification.php");
+            header("Location: ../valueDebug.php");
         }
 
     // close curl resource to free up system resources
