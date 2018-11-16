@@ -1,48 +1,85 @@
 ﻿<!doctype html>
 <html lang='en'>
 <?php include 'header.php'; ?>
-<body class='background background-lunar-landed'>
+<head>
+	<link rel='stylesheet' href='../css/bootstrap-datepicker3.css'>		<!-- Bootstrap Datepicker 3 CSS -->
+</head>
+<body class='background background-chilling'>
 	<main>
+		
 	<?php include 'navbar.php'; ?>
 
+		<div class='spacer-events'></div>
 
-		<div id='spacer-newticket'></div>
-		<div class='container container-form' id='container-newticket'>
-			<div class='row justify-content-center align-items-center'>
-				<div class='col-md-7' id='newticket-column'>
-					<br>
-					<h5 class='text-centered' id='newticket-header'>New Ticket</h5>
-					<br>
-					<form class='form text-centered' action=''>
-						<div class='dropdown'>
-							<button class='btn btn-secondary dropdown-toggle' type='button' id='dropdownApartmentID' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Apartment ID</button>
-							<div class='dropdown-menu' aria-labelledby='dropdownApartmentID'>
-								<a class='dropdown-item' href='#'>placeholder option 1</a>
-								<a class='dropdown-item' href='#'>placeholder option 2</a>
-							</div>
-						</div>
-						<br>
-						<div class='form-group'>
-							<input class='form-control' type='text' id='newticket-ticket-title' name='newticketTicketTitle' placeholder='Ticket title'>
-						</div>
-						<div class='form-group'>
-							<textarea wrap='soft' id='newticket-ticket-description' name='newticketTicketDescription' placeholder='Ticket description'></textarea>
-						</div>
+		<div id='events-background'>
+			<br>
+			<h1 id='events-header'>
+				Events
+			</h1>
+			<br>
+			<br>
+			<div class='createevent-container'>
+				<br>
+				<h1 class='event-title'>New Event</h1>
+				<div class='createevent-form-container'>
+					<form>
 						<div class='form-group text-centered'>
-							<input class='btn btn-info btn-md' value='Submit Ticket' type='submit' name='newticketButtonSubmitTicket'>
+							<br>
+							<h4>Title</h4>
+							<div class='form-group'>
+								<input class='form-control' type='text' id='createvent-title-input' name='createventTitleInput' placeholder='Event title'>
+							</div>
+							<br>
+							<h4>Date</h4>
+							<div class='input-group date' id='datepicker'>
+								<input type='text' class='form-control' placeholder='Event date'/>
+								<span class='input-group-addon'>
+									<span class='glyphicon glyphicon-calendar'></span>
+								</span>
+							</div>
+							<br>
+							<h4>Description</h4>
+							<div class='form-group'>
+								<textarea wrap='soft' id='createevent-description-input' name='createeventDescriptionInput' placeholder='Event description'></textarea>
+							</div>
+							<br>
+							<button class='btn btn-info btn-md'>Create</button>
 						</div>
 					</form>
 				</div>
+				<br>
 			</div>
+			<br>
+			<br>
 		</div>
-		<br>
-		<br>
-		<?php include 'footer.php'; ?>
+
+		<div class='spacer-events'></div>
+		
 	</main>
 
 	<!-- postJS -->
     <script src='../js/jquery-3.3.1.js'></script>		<!-- Jquery JS (necessary for dropdowns) -->
     <script src='../js/bootstrap.bundle.min.js'></script>		<!-- Bootstrap Bundle JS (necessary for dropdowns) -->
-    <!-- <script src='js/bootstrap.min.js'></script> -->		<!-- Bootstrap JS � disabled because when enabled it has a conflict with Bootstrap Bundle JS that makes dropdowns require two clicks to dropdown; it doesn't seem that any needed functionality is lacking when this is disabled -->
+    <!-- <script src='js/bootstrap.min.js'></script> -->		<!-- Bootstrap JS – disabled because when enabled it has a conflict with Bootstrap Bundle JS that makes dropdowns require two clicks to dropdown; it doesn't seem that any needed functionality is lacking when this is disabled -->
+	<script type='text/javascript' src='../js/bootstrap-datepicker.min.js'></script>		<!-- Bootstrap Datepicker 3 JS -->
+	<!-- Bootstrap Datepicker 3 JS - for initialization -->
+	<script>
+	    $(function()
+		{
+	        $('#datepicker').datepicker(
+			{
+	            format: 'dd/mm/yyyy',
+	            autoclose: true,
+	            todayHighlight: true,
+		        showOtherMonths: true,
+		        selectOtherMonths: true,
+		        autoclose: true,
+		        changeMonth: true,
+		        changeYear: true,
+		        orientation: 'button'
+	        });
+	    });
+	</script>
+
 </body>
 </html>

@@ -77,7 +77,7 @@
 					</a>
 				</div>
 				<div class='events-grid-item'>
-					<a class='event-link' href='event.php'>
+					<a class='event-link' href='createevent.php'>
 						<p class='events-event-title'>Create New</p>
 						<br>
 						<img class='event-thumbnail' src='../images/New Event.png'/>
@@ -95,7 +95,6 @@
     <script src='../js/jquery-3.3.1.js'></script>		<!-- Jquery JS (necessary for dropdowns) -->
     <script src='../js/bootstrap.bundle.min.js'></script>		<!-- Bootstrap Bundle JS (necessary for dropdowns) -->
     <!-- <script src='js/bootstrap.min.js'></script> -->		<!-- Bootstrap JS – disabled because when enabled it has a conflict with Bootstrap Bundle JS that makes dropdowns require two clicks to dropdown; it doesn't seem that any needed functionality is lacking when this is disabled -->
-	<!-- change color
 
 </body>
 </html>
