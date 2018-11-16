@@ -312,6 +312,16 @@ a {
     width: 50%;
   }
 }
+#bridge-kid-container {
+	text-align: center;
+}
+#bridge-kid {
+	width: 20%;
+	height: auto;
+}
+#review-heading {
+	font-size: 2em;
+}
 /* newlease.php */
 #spacer-newlease {
   height: 65px;
@@ -1207,14 +1217,14 @@ label {
 #events-header {
 	font-family: "KoHo", sans-serif;
 	text-align: left;
-	margin-left: 23%;
+	margin-left: 22%;
 	color: white;
 }
 .events-grid-container {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-	margin-left: 23%;
-	margin-right: 23%;
+	margin-left: 22%;
+	margin-right: 22%;
 	padding: 10px;
     background-color: rgba(33, 150, 243, 0);
 	border-radius: 25px;
@@ -1256,7 +1266,7 @@ label {
 .event-link:active {
     color: white;
 }
-.event-title {
+.events-event-title {
 	font-size: 1.5em;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -1267,7 +1277,48 @@ label {
 	height: auto;
 	border-radius: 25px;
 }
-.event-date {
+.events-event-date {
 	padding-top: .1em;
 	font-size: 1.1em;
+}
+
+/* event.php */
+
+.event-container {
+	margin-left: 33%;
+	margin-right: 33%;
+	text-align: center;
+	background-color: rgba(33, 150, 243, .4);
+	border-radius: 25px;
+	font-family: "KoHo", sans-serif;
+	color: white;
+}
+@media only screen and (min-width: 1400px) {
+  .event-container {
+	background-color: rgba(12, 12, 12, .9);
+  }
+}
+.event-title {
+	padding: .1em;
+}
+.event-banner {
+	width: 100%;
+	height: auto;
+}
+.event-date {
+	padding-top: .6em;
+	font-size: 1.5em;
+}
+.event-description-holder {
+	padding-top: 1.5em;
+	padding-left: 3em;
+	padding-right: 3em;
+	padding-bottom: 0em;
+}
+.event-description {
+	text-align: left;
+}
+.event-icon {
+	padding: 1em;
+	padding-bottom: 1.15em;
 }

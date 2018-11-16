@@ -17,68 +17,68 @@
 			<br>
 			<div class='events-grid-container'>
 				<div class='events-grid-item'>
-					<a class='event-link' href='#'>
-						<p class='event-title'>Moon Golf</p>
+					<a class='event-link' href='event.php'>
+						<p class='events-event-title'>Moon Golf</p>
 						<img class='event-thumbnail' src='../images/Moon Golf.jpg'/>
-						<p class='event-date'>12/20/2018</p>
-						<a class='event-link' href='#'><i class='fa fa-calendar-check-o fa-2x fa-pull-left' aria-hidden='true'></i></a>
-						<a class='event-link' href='#'><i class='fa fa-question-circle fa-2x' aria-hidden='true'></i></a>
-						<a class='event-link' href='#'><i class='fa fa-calendar-times-o fa-2x fa-pull-right' aria-hidden='true'></i></a>
+						<p class='events-event-date'>12/20/2018</p>
+						<a class='event-link' href='#attendance-link-placeholder'><i class='fa fa-calendar-check-o fa-2x fa-pull-left' aria-hidden='true'></i></a>
+						<a class='event-link' href='#attendance-link-placeholder'><i class='fa fa-question-circle fa-2x' aria-hidden='true'></i></a>
+						<a class='event-link' href='#attendance-link-placeholder'><i class='fa fa-calendar-times-o fa-2x fa-pull-right' aria-hidden='true'></i></a>
 					</a>
 				</div>
 				<div class='events-grid-item'>
-					<a class='event-link' href='#'>
-						<p class='event-title'>Space Lounge: Grand Opening</p>
+					<a class='event-link' href='event.php'>
+						<p class='events-event-title'>Space Lounge: Grand Opening</p>
 						<img class='event-thumbnail' src='../images/Space Lounge.jpg'/>
-						<p class='event-date'>12/31/2018</p>
-						<a class='event-link' href='#'><i class='fa fa-calendar-check-o fa-2x fa-pull-left' aria-hidden='true'></i></a>
-						<a class='event-link' href='#'><i class='fa fa-question-circle fa-2x' aria-hidden='true'></i></a>
-						<a class='event-link' href='#'><i class='fa fa-calendar-times-o fa-2x fa-pull-right' aria-hidden='true'></i></a>
+						<p class='events-event-date'>12/31/2018</p>
+						<a class='event-link' href='#attendance-link-placeholder'><i class='fa fa-calendar-check-o fa-2x fa-pull-left' aria-hidden='true'></i></a>
+						<a class='event-link' href='#attendance-link-placeholder'><i class='fa fa-question-circle fa-2x' aria-hidden='true'></i></a>
+						<a class='event-link' href='#attendance-link-placeholder'><i class='fa fa-calendar-times-o fa-2x fa-pull-right' aria-hidden='true'></i></a>
 					</a>
 				</div>
 				<div class='events-grid-item'>
-					<a class='event-link' href='#'>
-						<p class='event-title'>Gravity Dance</p>
+					<a class='event-link' href='event.php'>
+						<p class='events-event-title'>Gravity Dance</p>
 						<img class='event-thumbnail' src='../images/Gravity Dance.jpg'/>
-						<p class='event-date'>2/4/2019</p>
-						<a class='event-link' href='#'><i class='fa fa-calendar-check-o fa-2x fa-pull-left' aria-hidden='true'></i></a>
-						<a class='event-link' href='#'><i class='fa fa-question-circle fa-2x' aria-hidden='true'></i></a>
-						<a class='event-link' href='#'><i class='fa fa-calendar-times-o fa-2x fa-pull-right' aria-hidden='true'></i></a>
+						<p class='events-event-date'>2/4/2019</p>
+						<a class='event-link' href='#attendance-link-placeholder'><i class='fa fa-calendar-check-o fa-2x fa-pull-left' aria-hidden='true'></i></a>
+						<a class='event-link' href='#attendance-link-placeholder'><i class='fa fa-question-circle fa-2x' aria-hidden='true'></i></a>
+						<a class='event-link' href='#attendance-link-placeholder'><i class='fa fa-calendar-times-o fa-2x fa-pull-right' aria-hidden='true'></i></a>
 					</a>
 				</div>
 				<div class='events-grid-item'>
-					<a class='event-link' href='#'>
-						<p class='event-title'>Moon Buggy Ride</p>
+					<a class='event-link' href='event.php'>
+						<p class='events-event-title'>Moon Buggy Ride</p>
 						<img class='event-thumbnail' src='../images/Moon Buggy Ride.jpg'/>
-						<p class='event-date'>4/2/2019</p>
-						<a class='event-link' href='#'><i class='fa fa-calendar-check-o fa-2x fa-pull-left' aria-hidden='true'></i></a>
-						<a class='event-link' href='#'><i class='fa fa-question-circle fa-2x' aria-hidden='true'></i></a>
-						<a class='event-link' href='#'><i class='fa fa-calendar-times-o fa-2x fa-pull-right' aria-hidden='true'></i></a>
+						<p class='events-event-date'>4/2/2019</p>
+						<a class='event-link' href='#attendance-link-placeholder'><i class='fa fa-calendar-check-o fa-2x fa-pull-left' aria-hidden='true'></i></a>
+						<a class='event-link' href='#attendance-link-placeholder'><i class='fa fa-question-circle fa-2x' aria-hidden='true'></i></a>
+						<a class='event-link' href='#attendance-link-placeholder'><i class='fa fa-calendar-times-o fa-2x fa-pull-right' aria-hidden='true'></i></a>
 					</a>
 				</div>
 				<div class='events-grid-item'>
-					<a class='event-link' href='#'>
-						<p class='event-title'>Planet Painting</p>
+					<a class='event-link' href='event.php'>
+						<p class='events-event-title'>Planet Painting</p>
 						<img class='event-thumbnail' src='../images/Planet Painting.jpg'/>
-						<p class='event-date'>9/8/2019</p>
-						<a class='event-link' href='#'><i class='fa fa-calendar-check-o fa-2x fa-pull-left' aria-hidden='true'></i></a>
-						<a class='event-link' href='#'><i class='fa fa-question-circle fa-2x' aria-hidden='true'></i></a>
-						<a class='event-link' href='#'><i class='fa fa-calendar-times-o fa-2x fa-pull-right' aria-hidden='true'></i></a>
+						<p class='events-event-date'>9/8/2019</p>
+						<a class='event-link' href='#attendance-link-placeholder'><i class='fa fa-calendar-check-o fa-2x fa-pull-left' aria-hidden='true'></i></a>
+						<a class='event-link' href='#attendance-link-placeholder'><i class='fa fa-question-circle fa-2x' aria-hidden='true'></i></a>
+						<a class='event-link' href='#attendance-link-placeholder'><i class='fa fa-calendar-times-o fa-2x fa-pull-right' aria-hidden='true'></i></a>
 					</a>
 				</div>
 				<div class='events-grid-item'>
-					<a class='event-link' href='#'>
-						<p class='event-title'>Jetpack Racing</p>
+					<a class='event-link' href='event.php'>
+						<p class='events-event-title'>Jetpack Racing</p>
 						<img class='event-thumbnail' src='../images/Jetpack Racing.png'/>
-						<p class='event-date'>8/15/2020</p>
-						<a class='event-link' href='#'><i class='fa fa-calendar-check-o fa-2x fa-pull-left' aria-hidden='true'></i></a>
-						<a class='event-link' href='#'><i class='fa fa-question-circle fa-2x' aria-hidden='true'></i></a>
-						<a class='event-link' href='#'><i class='fa fa-calendar-times-o fa-2x fa-pull-right' aria-hidden='true'></i></a>
+						<p class='events-event-date'>8/15/2020</p>
+						<a class='event-link' href='#attendance-link-placeholder'><i class='fa fa-calendar-check-o fa-2x fa-pull-left' aria-hidden='true'></i></a>
+						<a class='event-link' href='#attendance-link-placeholder'><i class='fa fa-question-circle fa-2x' aria-hidden='true'></i></a>
+						<a class='event-link' href='#attendance-link-placeholder'><i class='fa fa-calendar-times-o fa-2x fa-pull-right' aria-hidden='true'></i></a>
 					</a>
 				</div>
 				<div class='events-grid-item'>
-					<a class='event-link' href='#'>
-						<p class='event-title'>Create New</p>
+					<a class='event-link' href='event.php'>
+						<p class='events-event-title'>Create New</p>
 						<br>
 						<img class='event-thumbnail' src='../images/New Event.png'/>
 					</a>

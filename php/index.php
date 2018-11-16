@@ -133,11 +133,11 @@
 					<section class='contact-sidebar'>
 						<div>
 							<div>
-								<img src='../images/contact.jpeg' alt='Lunar Living Rental Scehma<'>
+								<img src='../images/contact.jpeg' alt='Lunar Living Rental Schema<'>
 							</div>
 							
 							<div>
-								<div class='contact-heading'><strong>Lunar Living Rental Scehma</strong></div>
+								<div class='contact-heading'><strong>Lunar Living Rental Schema</strong></div>
 								<div>
 									<span class='contact-phone'>&#9742 (812) 111-1212</span>
 									<span class='contact-phone'>&#x2709 lunarliving.space@gmail.com</span>
@@ -169,8 +169,8 @@
 					<div id='spacer-index-after-banner'></div>
 					<section class='review-sidebar'>
 						<div>
-							<div class='contact-heading'><strong>Review</strong></div>
-							<p>Please Help us improve</p>
+							<div class='contact-heading' id='review-heading'><strong>Review</strong></div>
+							<p><strong>Help Us Improve</strong></p>
 							<p><span class="fa fa-star checked"></span>
 							<span class="fa fa-star checked"></span>
 							<span class="fa fa-star checked"></span>
@@ -183,9 +183,19 @@
 				<div class='col-sm-9'>
 					<section class='index-details'>
 						<div>
-							<div class='name-heading'><strong>Rental Apartments</strong></div>
-							<p class='tags'><b>Apartment searching can be exciting for tenants- it’s an opportunity for tenants to upgrade their life.<br>Great for entertaining: spacious, updated 2 bedroom, 1 bathroom apartments
-							<br>Space is available for you to take photos whenever.</b>
+							<div class='name-heading'>Your <strong>living space</strong> – in <strong>outer space</strong></div>
+							<p class='tags'>
+								<b>
+									Rental Apartments:
+									<br>
+									Spacious, 2 bedroom, 1 bathroom apartments.
+									<br>
+									Great for entertaining interplanetary guests.
+									<br>
+									Access exclusive events such as lunar golf and moon buggy rides.
+									<br>
+									Oxygen supply included.
+								</b>
 							</p>
 							<img class ='aptImg hover-image' src='../images/apt1.jpg'>
 							<img class ='aptImg hover-image' src='../images/apt2.jpg'>
@@ -193,6 +203,9 @@
 							<img class ='aptImg hover-image' src='../images/apt4.jpg'>
 						</div>
 						<div id='spacer-index-after-banner'></div>
+						<div id='bridge-kid-container'>
+							<img id='bridge-kid' src='../images/Ko Phangan Infected Mushroom.jpg'/>
+						</div>
 						<div class='name-heading'><strong>User Reviews</strong></div>
 						<div class='user-review'>
 							<?php
