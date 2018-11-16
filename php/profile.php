@@ -103,58 +103,84 @@
 				curl_close($ch);
 			?>
 			<div class='col-sm-4'>
-			<div><h2 class='text-centered oxygen-level'>Oxygen Level</h2></div>
 			<div class = 'row'>
-			<div class='col-sm-2'>
-				<?php
-				foreach($oxygenData as $currLevel){
-					if($currLevel->start_date == null){
-						echo"<div><img src='../images/on.jpg' class='progress-bar'></div>";
-					}
-					else{
-						$startTime = strtotime($currLevel->start_date);
-						$endTime = strtotime($currLevel->end_date);
-						$currTime = time();
-						if((($currTime >= $startTime) && ($currTime <= $endTime))){
-							echo"<div><img src='../images/stop.png' class='progress-bar'></div>";
+				<div class='col-sm-12 oxygen'>
+					<h2 class='text-centered oxygen-level'>Oxygen Level</h2>
+					<button class='save-oxygen' id='updateOxygenBtn' >Save Oxygen</button>
+				</div>
+				<div id='updateOxygenModal' class='modal'>
+					<!-- Modal content -->
+					<div class='modal-content'>
+						<div class='modal-header'>
+							<h2>Save Oxygen</h2>
+							<span class='close'>&times;</span>	
+						</div>
+						<div class='modal-body'>
+							<?php
+								echo "</br><span>First Name:&nbsp;&nbsp;&nbsp;&nbsp;</span><input id= 'first_name' value=". $userInfoData->first_name ."></br></br>
+								<span>Last Name:&nbsp;&nbsp;&nbsp;&nbsp;</span><input id= 'last_name' value=". $userInfoData->last_name ."></br></br>
+								<span>Gender:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+								<select id= 'gender'>";
+							  	echo "</select></br></br>";
+							?>
+						</div>
+						<div class='modal-footer'>
+							<button class = 'update' onclick = 'saveOxygen()'>Save</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class = 'row'>
+				<div class='col-sm-2'>
+					<?php
+					foreach($oxygenData as $currLevel){
+						if($currLevel->start_date == null){
+							echo"<div><img src='../images/on.jpg' class='progress-bar-image'></div>";
 						}
 						else{
-							echo"<div><img src='../images/on.jpg' class='progress-bar'></div>";
+							$startTime = strtotime($currLevel->start_date);
+							$endTime = strtotime($currLevel->end_date);
+							$currTime = time();
+							if((($currTime >= $startTime) && ($currTime <= $endTime))){
+								echo"<div><img src='../images/stop.png' class='progress-bar-image'></div>";
+							}
+							else{
+								echo"<div><img src='../images/on.jpg' class='progress-bar-image'></div>";
+							}
 						}
 					}
-				}
-				?>
-			</div>
-			<div class='col-sm-10'>
-				<?php
-				foreach($oxygenData as $currLevel){
-					if($currLevel->amount > 80){
-						echo"<div class='progress-bar green stripes'>
-						<span style='width: " . $currLevel->amount . "%'>". $currLevel->aptID . "</span>
-						<span style='width: " . $currLevel->amount . "%'></span>
-						</div>";
+					?>
+				</div>
+				<div class='col-sm-10'>
+					<?php
+					foreach($oxygenData as $currLevel){
+						if($currLevel->amount > 80){
+							echo"<div class='progress-bar green stripes'>
+							<span style='width: " . $currLevel->amount . "%'>". $currLevel->aptID . "</span>
+							<span style='width: " . $currLevel->amount . "%'></span>
+							</div>";
+						}
+						else if($currLevel->amount > 50){
+							echo"<div class='progress-bar blue stripes'>
+							<span style='width: " . $currLevel->amount . "%'>". $currLevel->aptID . "</span>
+							<span style='width: " . $currLevel->amount . "%'></span>
+							</div>";
+						}
+						else if($currLevel->amount > 20){
+							echo"<div class='progress-bar orange stripes'>
+							<span style='width: " . $currLevel->amount . "%'></span>
+							<span style='width: " . $currLevel->amount . "%'>". $currLevel->aptID . "</span>
+							</div>";
+						}
+						else{
+							echo"<div class='progress-bar red stripes'>
+							<span style='width: " . $currLevel->amount . "%'>". $currLevel->aptID . "</span>
+							<span style='width: " . $currLevel->amount . "%'></span>
+							</div>";
+						}
 					}
-					else if($currLevel->amount > 50){
-						echo"<div class='progress-bar blue stripes'>
-						<span style='width: " . $currLevel->amount . "%'>". $currLevel->aptID . "</span>
-						<span style='width: " . $currLevel->amount . "%'></span>
-						</div>";
-					}
-					else if($currLevel->amount > 20){
-						echo"<div class='progress-bar orange stripes'>
-						<span style='width: " . $currLevel->amount . "%'></span>
-						<span style='width: " . $currLevel->amount . "%'>". $currLevel->aptID . "</span>
-						</div>";
-					}
-					else{
-						echo"<div class='progress-bar red stripes'>
-						<span style='width: " . $currLevel->amount . "%'>". $currLevel->aptID . "</span>
-						<span style='width: " . $currLevel->amount . "%'></span>
-						</div>";
-					}
-				}
-				?>
-			</div>
+					?>
+				</div>
 			</div>
 			</div>
 		</div>
@@ -202,6 +228,27 @@
 			var gender = document.getElementById("gender").value;
 			window.location.href = 'updateProfile.php?firstName=' + first_name +"&lastName=" + last_name + "&gender=" + gender;
 		}
+		var modalOxygen = document.getElementById('updateOxygenModal');
+		var btnOxygen = document.getElementById("updateOxygenBtn");
+		var spanOxygen = document.getElementsByClassName("close")[1];
+		btnOxygen.onclick = function() {
+			modalOxygen.style.display = "block";
+		}
+		spanOxygen.onclick = function() {
+			modalOxygen.style.display = "none";
+		}
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modalOxygen.style.display = "none";
+			}
+		}
+		function saveOxygen(){
+			var first_name = document.getElementById("first_name").value;
+			var last_name = document.getElementById("last_name").value;
+			var gender = document.getElementById("gender").value;
+			window.location.href = 'updateProfile.php?firstName=' + first_name +"&lastName=" + last_name + "&gender=" + gender;
+		}
+
 		function openForm() {
 			document.getElementById("myForm").style.display = "block";
 			document.cookie = "deliver=1";
