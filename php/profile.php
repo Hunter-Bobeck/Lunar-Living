@@ -117,11 +117,24 @@
 						</div>
 						<div class='modal-body'>
 							<?php
-								echo "</br><span>First Name:&nbsp;&nbsp;&nbsp;&nbsp;</span><input id= 'first_name' value=". $userInfoData->first_name ."></br></br>
-								<span>Last Name:&nbsp;&nbsp;&nbsp;&nbsp;</span><input id= 'last_name' value=". $userInfoData->last_name ."></br></br>
-								<span>Gender:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-								<select id= 'gender'>";
-							  	echo "</select></br></br>";
+								echo "<br/><span>Select Apt: </span><select id='aptSelect' onChange='showDates(this,". json_encode($oxygenData) .")'>
+										<option value='0'>Select Apt</option>";
+										foreach($oxygenData as $currLevel){
+											echo"<option value='". $currLevel->aptID ."'>". $currLevel->aptID ."</option>";
+										}
+										echo"   
+										</select><br/><br/>";
+								echo "<div class='oxygenDetailsOn' id='oxygenDetailsOn'>
+										<span style='font-size:35px;'>Oxygen Status: </span><span class='green-dot'></span><br/><button class = 'update' onclick = 'saveOxygen()'>Cancel All Request</button><br/><br/>
+									</div>";
+								echo "<div class='oxygenDetailsOff' id='oxygenDetailsOff'>
+										<span style='font-size:35px;'>Oxygen Status: </span><span class='red-dot'></span><br/><button onclick='cancelAllRequest()' class='update'>Cancel All Request</button><br/><br/>
+										<span id='currentDateSpan'></span><br/><br/>
+									</div>";
+								echo"<div class='form-group dates-picker' id ='dates-picker'>
+										<span>No Supply Needed on: </span>
+										<input id = 'dates' class='form-control' type='text' name='oxygenDateRange' placeholder='Start Date - End Date'><br/><br/>
+									</div>";
 							?>
 						</div>
 						<div class='modal-footer'>
@@ -201,7 +214,10 @@
     <script src='../js/jquery-3.3.1.js'></script>		<!-- Jquery JS (necessary for dropdowns) -->
     <script src='../js/bootstrap.bundle.min.js'></script>		<!-- Bootstrap Bundle JS (necessary for dropdowns) -->
 	<!-- <script src='js/bootstrap.min.js'></script> -->		<!-- Bootstrap JS � disabled because when enabled it has a conflict with Bootstrap Bundle JS that makes dropdowns require two clicks to dropdown; it doesn't seem that any needed functionality is lacking when this is disabled -->
-	<script>
+	<script src='../js/moment.min.js'></script>		<!-- Moment JS (necessary for Date Range Picker) -->
+    <script src='../js/daterangepicker.min.js'></script>		<!-- Date Range Picker JS (http://www.daterangepicker.com/#usage) -->
+    <script>
+		$('input[name="oxygenDateRange"]').daterangepicker();
 		// Get the modal
 		var modal = document.getElementById('updateProfileModal');
 		// Get the button that opens the modal
@@ -243,10 +259,10 @@
 			}
 		}
 		function saveOxygen(){
-			var first_name = document.getElementById("first_name").value;
-			var last_name = document.getElementById("last_name").value;
-			var gender = document.getElementById("gender").value;
-			window.location.href = 'updateProfile.php?firstName=' + first_name +"&lastName=" + last_name + "&gender=" + gender;
+			var dateRange = document.getElementById("dates").value;
+			var aptId = document.getElementById("aptSelect").value;
+			var ranges = dateRange.split("-");
+			window.location.href = 'stopOxygen.php?aptID=' + aptId +"&start_date=" + ranges[0].trim() + "&end_date=" + ranges[1].trim();
 		}
 
 		function openForm() {
@@ -257,6 +273,42 @@
 			document.getElementById("myForm").style.display = "none";
 			document.cookie = "deliver=0";
 		}
+        function showDates(current, lease) {
+            // Set selected value as variable
+			var selectValue = current.options[current.selectedIndex].value;
+			var modalOxygenOn = document.getElementById('oxygenDetailsOn');
+			var modalOxygenOff = document.getElementById('oxygenDetailsOff');
+			var modalOxygenDatePicker = document.getElementById('dates-picker');
+			var currentDateSpan = document.getElementById("currentDateSpan");
+			// Empty the time select field
+			modalOxygenOn.style.display = "none";
+			modalOxygenOff.style.display = "none";
+			modalOxygenDatePicker.style.display = "none";
+            if(selectValue != 0){
+				for(var iterator = 0; iterator < lease.length; iterator++){
+					var arrayItem = lease[iterator];
+					var currAptID = arrayItem.aptID;
+					if(currAptID == selectValue){
+						var start_date = arrayItem.start_date;
+						var end_date = arrayItem.end_date;
+						break;
+					}
+				}
+                if(start_date == null){
+					modalOxygenOn.style.display = "block";
+					modalOxygenDatePicker.style.display = "block";
+                }
+				else{
+					modalOxygenOff.style.display = "block";
+					modalOxygenDatePicker.style.display = "block";
+					currentDateSpan.textContent = "Current Off Date: " + start_date.substring(0,10) + " to " + end_date.substring(0,10);
+				}
+			}
+		}
+		function cancelAllRequest() {
+				var aptId = document.getElementById("aptSelect").value;
+				window.location.href = 'cancelAllRequest.php?aptID=' + aptId;
+			}
 	</script>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
     <script src='../js/chat.js'></script>
