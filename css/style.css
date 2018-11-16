@@ -1097,6 +1097,12 @@ label {
   border-radius: 5px;
   box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;
 }
+.progress-bar-image {
+  height: 30px;
+  padding: 5px;
+  width: 70%;
+  margin-top: 30px;
+}
 .progress-bar span {
   display: inline-block;
   height: 100%;
@@ -1195,6 +1201,20 @@ label {
   color: white;
 }
 
+.save-oxygen{
+  float: right;
+  margin-right: 5%;
+  color: #8eec00;
+  border: none;
+  background-color: transparent;
+  text-decoration: underline;
+  font-size: 20px;
+}
+
+.oxygen button:hover{
+  color: #00bbf0;
+  cursor: pointer;
+}
 /* events.php */
 /* grids reference: https://www.w3schools.com/css/css_grid.asp */
 
