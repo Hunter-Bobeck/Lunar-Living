@@ -133,6 +133,7 @@ a {
     width: 400px;
   }
 }
+
 /* profile.php */
 #spacer-profile {
   height: 140px;
@@ -148,49 +149,7 @@ a {
     width: 400px;
   }
 }
-/* navbarscapes */
-.navbar {
-  background-color: rgba(
-    223,
-    223,
-    224,
-    0.8
-  ) !important; /* this color in hex (without alpha) is #dfdfe0 */
-}
-.title {
-  width: 120px;
-  height: auto;
-}
-@media only screen and (min-width: 700px) {
-  .title {
-    width: 200px;
-    height: auto;
-  }
-}
-.nav-link {
-  color: gray !important;
-}
-.current-lunar-living-nav-link {
-  color: black !important;
-}
-.footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-  line-height: 60px;
-  background-color: rgba(
-    223,
-    223,
-    224,
-    0.8
-  ); /* this color in hex (without alpha) is #dfdfe0 */
-}
-.footer > .container {
-  padding-right: 15px;
-  padding-left: 15px;
-  color: black;
-}
+
 /* index.php */
 /* image modal (ref.: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal_img) */
 .hover-image {
@@ -311,6 +270,16 @@ a {
   #container-index {
     width: 50%;
   }
+}
+#bridge-kid-container {
+	text-align: center;
+}
+#bridge-kid {
+	width: 20%;
+	height: auto;
+}
+#review-heading {
+	font-size: 2em;
 }
 /* newlease.php */
 #spacer-newlease {
@@ -1227,14 +1196,14 @@ label {
 #events-header {
 	font-family: "KoHo", sans-serif;
 	text-align: left;
-	margin-left: 23%;
+	margin-left: 22%;
 	color: white;
 }
 .events-grid-container {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-	margin-left: 23%;
-	margin-right: 23%;
+	margin-left: 22%;
+	margin-right: 22%;
 	padding: 10px;
     background-color: rgba(33, 150, 243, 0);
 	border-radius: 25px;
@@ -1276,7 +1245,7 @@ label {
 .event-link:active {
     color: white;
 }
-.event-title {
+.events-event-title {
 	font-size: 1.5em;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -1287,7 +1256,127 @@ label {
 	height: auto;
 	border-radius: 25px;
 }
-.event-date {
+.events-event-date {
 	padding-top: .1em;
 	font-size: 1.1em;
+}
+
+/* event.php */
+
+.event-container {
+	margin-left: 33%;
+	margin-right: 33%;
+	text-align: center;
+	background-color: rgba(33, 150, 243, .4);
+	border-radius: 25px;
+	font-family: "KoHo", sans-serif;
+	color: white;
+}
+@media only screen and (min-width: 1400px) {
+  .event-container {
+	background-color: rgba(12, 12, 12, .9);
+  }
+}
+.event-title {
+	padding: .1em;
+}
+.event-banner {
+	width: 100%;
+	height: auto;
+}
+.event-date {
+	padding-top: .6em;
+	font-size: 1.5em;
+}
+.event-description-holder {
+	padding-top: 1.5em;
+	padding-left: 3em;
+	padding-right: 3em;
+	padding-bottom: 0em;
+}
+.event-description {
+	text-align: left;
+}
+.event-icon {
+	padding: 1em;
+	padding-bottom: 1.15em;
+}
+
+/* createevent.php */
+
+.createevent-container {
+	margin-left: 33%;
+	margin-right: 33%;
+	text-align: center;
+	background-color: rgba(12, 12, 12, .9);
+	border-radius: 25px;
+	font-family: "KoHo", sans-serif;
+	color: white;
+}
+.createevent-form-container {
+	padding-left: 5em;
+	padding-right: 5em;
+}
+#createevent-description-input {
+	width: 100%;
+	height: 10em;
+}
+
+/* navbarscapes */
+.navbar {
+  background-color: rgba(
+    223,
+    223,
+    224,
+    0.8
+  ) !important; /* this color in hex (without alpha) is #dfdfe0 */
+}
+.title {
+  width: 120px;
+  height: auto;
+}
+@media only screen and (min-width: 700px) {
+  .title {
+    width: 200px;
+    height: auto;
+  }
+}
+.nav-link {
+  color: gray;
+}
+.current-lunar-living-nav-link {
+  color: black;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: rgba(
+    223,
+    223,
+    224,
+    0.8
+  ); /* this color in hex (without alpha) is #dfdfe0 */
+}
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+  color: black;
+}
+.nav-item {
+	font-family: "KoHo", sans-serif;
+	font-weight: bold;
+}
+.nav-link:hover {
+    color: #2196f3 !important;
+}
+.login-link {
+	font-family: "KoHo", sans-serif;
+	font-weight: bold;
+}
+.login-link:hover {
+	text-decoration: none;
+    color: #2196f3 !important;
 }
