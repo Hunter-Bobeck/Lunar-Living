@@ -133,6 +133,7 @@ a {
     width: 400px;
   }
 }
+
 /* profile.php */
 #spacer-profile {
   height: 140px;
@@ -148,49 +149,7 @@ a {
     width: 400px;
   }
 }
-/* navbarscapes */
-.navbar {
-  background-color: rgba(
-    223,
-    223,
-    224,
-    0.8
-  ) !important; /* this color in hex (without alpha) is #dfdfe0 */
-}
-.title {
-  width: 120px;
-  height: auto;
-}
-@media only screen and (min-width: 700px) {
-  .title {
-    width: 200px;
-    height: auto;
-  }
-}
-.nav-link {
-  color: gray !important;
-}
-.current-lunar-living-nav-link {
-  color: black !important;
-}
-.footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-  line-height: 60px;
-  background-color: rgba(
-    223,
-    223,
-    224,
-    0.8
-  ); /* this color in hex (without alpha) is #dfdfe0 */
-}
-.footer > .container {
-  padding-right: 15px;
-  padding-left: 15px;
-  color: black;
-}
+
 /* index.php */
 /* image modal (ref.: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal_img) */
 .hover-image {
@@ -1361,4 +1320,63 @@ label {
 #createevent-description-input {
 	width: 100%;
 	height: 10em;
+}
+
+/* navbarscapes */
+.navbar {
+  background-color: rgba(
+    223,
+    223,
+    224,
+    0.8
+  ) !important; /* this color in hex (without alpha) is #dfdfe0 */
+}
+.title {
+  width: 120px;
+  height: auto;
+}
+@media only screen and (min-width: 700px) {
+  .title {
+    width: 200px;
+    height: auto;
+  }
+}
+.nav-link {
+  color: gray;
+}
+.current-lunar-living-nav-link {
+  color: black;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: rgba(
+    223,
+    223,
+    224,
+    0.8
+  ); /* this color in hex (without alpha) is #dfdfe0 */
+}
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+  color: black;
+}
+.nav-item {
+	font-family: "KoHo", sans-serif;
+	font-weight: bold;
+}
+.nav-link:hover {
+    color: #2196f3 !important;
+}
+.login-link {
+	font-family: "KoHo", sans-serif;
+	font-weight: bold;
+}
+.login-link:hover {
+	text-decoration: none;
+    color: #2196f3 !important;
 }
