@@ -152,18 +152,21 @@
 								<strong>Schedule an Appointment</strong>
 							</div>
 							<br>
-	        				<form>
+	        				<div>
 								<div class='form-group text-centered'>
 									<div class='input-group date' id='datepicker'>
-										<input type='text' class='form-control'/>
+										<input type='text' class='form-control' placeholder='Please Select a date' onchange='setTimings()' id='selectdate'/>
 										<span class='input-group-addon'>
 											<span class='glyphicon glyphicon-calendar'></span>
 										</span>
+									</div><br/>
+									<div class = 'showBookingDetails' id = 'showBookingDetails'>
+									 
 									</div>
-									<br>
-									<button class='btn btn-info btn-md'>Schedule</button>
+									<input type='text' class='form-control appointment-userinfo' placeholder='Enter your Email-Id' id='userinfo'/><br/>
+									<button class='btn btn-info btn-md' onclick='bookAppointment()'>Schedule</button>
 								</div>
-							</form>
+							</div>
 						</div>
 					</section>
 					<div id='spacer-index-after-banner'></div>
@@ -358,11 +361,11 @@
 	<script type='text/javascript' src='../js/bootstrap-datepicker.min.js'></script>		<!-- Bootstrap Datepicker 3 JS -->
 	<!-- Bootstrap Datepicker 3 JS - for initialization -->
 	<script>
-	    $(function()
+		$(function()
 		{
 	        $('#datepicker').datepicker(
 			{
-	            format: 'dd/mm/yyyy',
+	            format: 'mm/dd/yyyy',
 	            autoclose: true,
 	            todayHighlight: true,
 		        showOtherMonths: true,
@@ -399,6 +402,67 @@
 				modal.style.display = 'none';
 			}
 		});
+
+		function setTimings(){
+			var selectedDate = document.getElementById('selectdate').value;
+			var timingDiv = document.getElementById('showBookingDetails');
+			var userinfo = document.getElementById('userinfo');
+			userinfo.style.display = "block";
+			var bookedTimings = [];
+			var xmlhttp = new XMLHttpRequest();
+			var url = 'https://cors-anywhere.herokuapp.com/https://lunar-living.herokuapp.com/getAppointmentTimes';
+			xmlhttp.open("GET", url, true);
+			xmlhttp.setRequestHeader("visit_date", selectedDate);
+			xmlhttp.setRequestHeader('Content-Type','application/json');
+			xmlhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					var output = JSON.parse(this.responseText);
+					if(output.timings != null){
+						bookedTimings = output.timings.split(",");
+					}
+					var appendData = "";
+					for(var iterator = 10; iterator < 18; iterator += 0.5){
+						if(bookedTimings.includes(iterator.toString())){
+							continue;
+						}
+						if(bookedTimings.includes((iterator - 0.5).toString() + ":30")){
+							continue;
+						}
+						if(iterator.toString().length == 4){
+							var newIterator = iterator - 0.5;
+							appendData += "<div class='time-box'\>" +
+							"<input type='radio' id = 'time' name='time' value ='"+ newIterator +":30'\>" +
+							"<p\>"+newIterator+":30</p\>" +
+							"</div\>";
+						}
+						else{
+							appendData += "<div class='time-box'\>" +
+							"<input type='radio' id = 'time' name='time' value='"+ iterator +"'\>" +
+							"<p\>" +iterator +":00</p\>" +
+							"</div\>";
+						}
+					}
+					timingDiv.innerHTML = appendData;
+				}
+			};
+			xmlhttp.send();
+		}
+
+		function bookAppointment(){
+			var date = document.getElementById('selectdate').value;
+			var time;
+			var userinfo = document.getElementById('userinfo').value;
+			// get list of radio buttons with specified name
+			var radios = document.getElementsByName("time");
+			// loop through list of radio buttons
+			for (var i=0, len=radios.length; i<len; i++) {
+				if ( radios[i].checked ) { // radio checked?
+					time = radios[i].value; // if so, hold its value in val
+					break; // and break out of for loop
+				}
+			}
+			window.location.href = 'confirmappointment.php?date=' + date + '&time=' + time + '&userinfo=' + userinfo;
+		}
 	</script>
 </body>
 </html>
