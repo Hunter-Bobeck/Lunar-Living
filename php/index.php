@@ -160,10 +160,13 @@
 											<span class='glyphicon glyphicon-calendar'></span>
 										</span>
 									</div><br/>
+									<p class='error' id='DateError'>Select Date</p>
 									<div class = 'showBookingDetails' id = 'showBookingDetails'>
 									 
 									</div>
-									<input type='text' class='form-control appointment-userinfo' placeholder='Enter your Email-Id' id='userinfo'/><br/>
+									<p class='error' id='TimeError'>Select Time</p>
+									<input type='email' class='form-control appointment-userinfo' placeholder='Enter your Email-Id' id='userinfo' required/><br/>
+									<p class='error' id='EmailError'>Email Incorrect</p>
 									<button class='btn btn-info btn-md' onclick='bookAppointment()'>Schedule</button>
 								</div>
 							</div>
@@ -451,6 +454,7 @@
 		function bookAppointment(){
 			var date = document.getElementById('selectdate').value;
 			var time;
+			var flag = false, emailFlag = false;
 			var userinfo = document.getElementById('userinfo').value;
 			// get list of radio buttons with specified name
 			var radios = document.getElementsByName("time");
@@ -458,10 +462,23 @@
 			for (var i=0, len=radios.length; i<len; i++) {
 				if ( radios[i].checked ) { // radio checked?
 					time = radios[i].value; // if so, hold its value in val
+					flag = true;
 					break; // and break out of for loop
 				}
 			}
+			if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(userinfo))
+  			{
+    			emailFlag = true;
+  			}
+			if(!flag){
+				document.getElementById('TimeError').style.display = "block";
+			}
+			else if(!emailFlag){
+				document.getElementById('EmailError').style.display = "block";
+			}
+			else{
 			window.location.href = 'confirmappointment.php?date=' + date + '&time=' + time + '&userinfo=' + userinfo;
+			}
 		}
 	</script>
 </body>
