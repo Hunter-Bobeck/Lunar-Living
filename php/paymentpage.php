@@ -22,12 +22,40 @@
 				<div class='wrapper'>
 					<aside class='main_sidebar'>
 						<ul>
-							<li><a href='profile.php'>Profile</a></li>
-							<li><a href='user_lease.php'>Lease</a></li>
-							<li class='active'><a href='payment.php'>Payment</a></li>
+						<li><a href='profile.php'>Profile</a></li>
+							<?php
+							if($_SESSION["usertype"] == 1){
+								echo"<li><a href='user_lease.php'>Lease</a></li>
+								<li class='active'><a href='payment.php'>Payment</a></li>";
+							}
+							if($_SESSION["usertype"] == 2){
+								echo"<li><a href='newlease.php'>New Lease</a></li>";
+							}
+							if($_SESSION["usertype"] == 2){
+								echo"<li><a href='adminchat.php'>Chats</a></li>";
+							}
+							?>
 							<li><a href='ticketStatus.php'>Tickets</a></li>
+							<?php
+							if($_SESSION["usertype"] == 2){
+								echo"<li><a href='map.php'>Ticket Map</a></li>";
+							}
+							?>
+							<li><a href='#'>Events</a></li>
 							<li><a href='laundry.php'>Laundry</a></li>
 							<li><a href='review.php'>Review</a></li>
+							<?php
+							if($_SESSION["usertype"] == 2){
+								echo"<li>
+									<a onclick='displayStats()' href='#'>Stats</a>
+									<ul id='statsChilds' class= 'statsChilds'>
+										<li><a href='paymentstats.php'>Payment Stats</a></li>
+										<li><a href='ticketstats.php'>Ticket Area Stats</a></li>
+										<li><a href='ticketstatsstatus.php'>Ticket Status Stats</a></li>
+									</ul>
+								</li>";
+							}
+							?>
 						</ul>
 					</aside>
 				</div>
@@ -173,6 +201,15 @@
 				}
 			});
 		});
+		function displayStats(){
+			var statsChilds = document.getElementById("statsChilds");
+			if(statsChilds.style.display == "none"){
+				statsChilds.style.display = "block";
+			}
+			else{
+				statsChilds.style.display = "none";
+			}
+		}
 	</script>
 </body>
 </html>

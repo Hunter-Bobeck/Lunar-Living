@@ -435,6 +435,7 @@ a {
 .main_sidebar ul li.active:hover i {
   color: #fff;
 }
+
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 50%;
@@ -1443,4 +1444,8 @@ label {
 
 .error{
   display:none;
+}
+
+.statsChilds{
+  display: none;
 }
