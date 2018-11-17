@@ -7,6 +7,9 @@
 <body class="background background-dark">
 	<?php
 		$username = $_SESSION['username'];
+		if($_SESSION["usertype"] != 2){
+			$_SESSION['chatuser'] = $username;
+		}
 		$ch = curl_init('https://lunar-living.herokuapp.com/getUserDetails');
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
@@ -197,15 +200,19 @@
 			</div>
 			</div>
 		</div>
-		<div class='chat-body'>
-			<button class="open-button" onclick="openForm()">Chat</button>
-			<div class="chat-popup" id="myForm">
-			<div class="form-container">
-				<?php include 'chat.php'; ?>
-				<input class="btn cancel" onclick="closeForm()" value='Close' />
+		<?php
+		if($_SESSION["usertype"] != 2){
+			echo "<div class='chat-body'>
+			<button class='open-button' onclick=\"openForm()\">Chat</button>
+			<div class='chat-popup' id='myForm'>
+				<div class='form-container'>";
+		 	include 'chat.php'; 
+			echo"<input class='btn cancel' onclick=\"closeForm()\" value='Close' />
+				</div>
 			</div>
-			</div>
-		</div>
+			</div>";
+		}
+		?>
 	</div>
 	<?php include 'footer.php'; ?>
 	</main>
@@ -310,7 +317,11 @@
 				window.location.href = 'cancelAllRequest.php?aptID=' + aptId;
 			}
 	</script>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
-    <script src='../js/chat.js'></script>
+	<?php
+	if($_SESSION["usertype"] != 2){
+	echo"<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js'></script>
+	<script src='../js/chat.js'></script>";
+	}
+	?>
 </body>
 </html>
