@@ -3,7 +3,7 @@
 <?php include 'header.php'; ?>
 <body class='background background-lunar-landed'>
 	<main>
-	<?php include 'navbar.php'; ?>
+	<?php include 'signInNavbar.php'; ?>
 
 
 		<div id='spacer-newticket'></div>

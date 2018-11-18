@@ -4,7 +4,7 @@
 <body class='background background-astronauts'>
 	<main>
 		
-	<?php include 'navbar.php'; ?>
+	<?php include 'signInNavbar.php'; ?>
 
 		<div id='spacer-maintenance'></div>
 

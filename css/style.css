@@ -1261,6 +1261,10 @@ label {
 	padding-top: .1em;
 	font-size: 1.1em;
 }
+.event-link-selected {
+  color: #1eced5;
+  text-decoration: none;
+}
 
 /* event.php */
 

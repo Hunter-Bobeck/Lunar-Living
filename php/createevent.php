@@ -7,7 +7,7 @@
 <body class='background background-chilling'>
 	<main>
 		
-	<?php include 'navbar.php'; ?>
+	<?php include 'signInNavbar.php'; ?>
 
 		<div class='spacer-events'></div>
 
@@ -22,7 +22,7 @@
 				<br>
 				<h1 class='event-title'>New Event</h1>
 				<div class='createevent-form-container'>
-					<form>
+					<form action='createnewevent.php' method='post'>
 						<div class='form-group text-centered'>
 							<br>
 							<h4>Title</h4>
@@ -32,7 +32,7 @@
 							<br>
 							<h4>Date</h4>
 							<div class='input-group date' id='datepicker'>
-								<input type='text' class='form-control' placeholder='Event date'/>
+								<input type='text' class='form-control' placeholder='Event date' name='eventdate'/>
 								<span class='input-group-addon'>
 									<span class='glyphicon glyphicon-calendar'></span>
 								</span>
@@ -43,7 +43,7 @@
 								<textarea wrap='soft' id='createevent-description-input' name='createeventDescriptionInput' placeholder='Event description'></textarea>
 							</div>
 							<br>
-							<button class='btn btn-info btn-md'>Create</button>
+							<button type='submit' class='btn btn-info btn-md'>Create</button>
 						</div>
 					</form>
 				</div>
@@ -68,7 +68,7 @@
 		{
 	        $('#datepicker').datepicker(
 			{
-	            format: 'dd/mm/yyyy',
+	            format: 'mm/dd/yyyy',
 	            autoclose: true,
 	            todayHighlight: true,
 		        showOtherMonths: true,

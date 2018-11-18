@@ -41,7 +41,7 @@
 								echo"<li><a href='map.php'>Ticket Map</a></li>";
 							}
 							?>
-							<li><a href='#'>Events</a></li>
+							<li><a href='events.php'>Events</a></li>
 							<li><a href='laundry.php'>Laundry</a></li>
 							<li><a href='review.php'>Review</a></li>
 							<?php
