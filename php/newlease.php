@@ -1,10 +1,12 @@
+<?php
+	session_start();
+?>
 <!doctype html>
 <html lang='en'>
 <?php include 'header.php'; ?>
 <body class="background background-moon-in-space">
 <main>
 <?php include 'signInNavbar.php'; ?>
-
 
     <div id='spacer-newlease'></div>
     <div class='container container-form' id='container-newlease'>

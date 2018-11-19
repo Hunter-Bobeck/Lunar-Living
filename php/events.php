@@ -47,17 +47,17 @@
 							if(strpos($event->intrested, $username) !== false || strpos($event->maybe, $username) !== false || strpos($event->notIntrested, $username) !== false){
 								if(strpos($event->intrested, $username) !== false){
 									echo"<a class='event-link-selected' href='#'><i class='fa fa-calendar-check-o fa-2x fa-pull-left' aria-hidden='true'></i></a>
-									<a class='event-link' href=''><i class='fa fa-question-circle fa-2x' aria-hidden='true'></i></a>
-									<a class='event-link' href='#'><i class='fa fa-calendar-times-o fa-2x fa-pull-right' aria-hidden='true'></i></a>";
+									<a class='event-link' href='updatemaybe.php?eventID=". $event->eventId ."'><i class='fa fa-question-circle fa-2x' aria-hidden='true'></i></a>
+									<a class='event-link' href='updatenotintrested.php?eventID=". $event->eventId ."'><i class='fa fa-calendar-times-o fa-2x fa-pull-right' aria-hidden='true'></i></a>";
 								}
 								else if(strpos($event->maybe, $username) !== false){
-									echo"<a class='event-link' href='#'><i class='fa fa-calendar-check-o fa-2x fa-pull-left' aria-hidden='true'></i></a>
-									<a class='event-link-selected' href=''><i class='fa fa-question-circle fa-2x' aria-hidden='true'></i></a>
-									<a class='event-link' href='#'><i class='fa fa-calendar-times-o fa-2x fa-pull-right' aria-hidden='true'></i></a>";
+									echo"<a class='event-link' href='updateIntrested.php?eventID=". $event->eventId ."'><i class='fa fa-calendar-check-o fa-2x fa-pull-left' aria-hidden='true'></i></a>
+									<a class='event-link-selected' href='#'><i class='fa fa-question-circle fa-2x' aria-hidden='true'></i></a>
+									<a class='event-link' href='updatenotintrested.php?eventID=". $event->eventId ."'><i class='fa fa-calendar-times-o fa-2x fa-pull-right' aria-hidden='true'></i></a>";
 								}
 								else{
-									echo"<a class='event-link' href='#'><i class='fa fa-calendar-check-o fa-2x fa-pull-left' aria-hidden='true'></i></a>
-									<a class='event-link' href=''><i class='fa fa-question-circle fa-2x' aria-hidden='true'></i></a>
+									echo"<a class='event-link' href='updateIntrested.php?eventID=". $event->eventId ."'><i class='fa fa-calendar-check-o fa-2x fa-pull-left' aria-hidden='true'></i></a>
+									<a class='event-link' href='updatemaybe.php?eventID=". $event->eventId ."'><i class='fa fa-question-circle fa-2x' aria-hidden='true'></i></a>
 									<a class='event-link-selected' href='#'><i class='fa fa-calendar-times-o fa-2x fa-pull-right' aria-hidden='true'></i></a>";
 								}	
 							}

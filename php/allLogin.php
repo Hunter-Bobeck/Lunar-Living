@@ -12,7 +12,7 @@ session_start();
         $username = $_SESSION['username'];
         $first_name = $_SESSION['firstName'];
         //setup the request, you can also use CURLOPT_URL
-        $ch = curl_init('https://lunar-living.herokuapp.com/getUserLease');
+        $ch = curl_init('https://lunar-living.herokuapp.com/allLogins');
 
         // Returns the data/output as a string instead of raw data
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -22,8 +22,7 @@ session_start();
 
         //Set your auth headers
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            'Content-Type: application/json',
-            "username: $username"
+            'Content-Type: application/json'
             ));
 
         // get stringified data/output. See CURLOPT_RETURNTRANSFER
@@ -31,14 +30,7 @@ session_start();
 
         // get info about the request
         $info = curl_getinfo($ch);
-
-        if($data == 'false'){
-        echo "User Not Found";
-        }
-        else {
-            $apiData = json_decode($data);
-        }
-
+        $allLogins = json_decode($data);
         // close curl resource to free up system resources
         curl_close($ch);
 	?>
@@ -56,12 +48,12 @@ session_start();
                                 <?php
                                 if($_SESSION["usertype"] == 1){
                                     echo"<li><a href='user_lease.php'>Lease</a></li>
-                                    <li class='active'><a href='payment.php'>Payment</a></li>";
+                                    <li><a href='payment.php'>Payment</a></li>";
                                 }
                                 if($_SESSION["usertype"] == 2){
                                     echo"<li><a href='newlease.php'>New Lease</a></li>";
-                                    echo"<li><a href='allLogin.php'>All Users</a></li>";
-								    echo"<li><a href='allLease.php'>All Leases</a></li>"; 
+                                    echo"<li><a href='allLogin.php' class='active'>All Users</a></li>";
+								    echo"<li><a href='allLease.php'>All Leases</a></li>";
                                 }
                                 if($_SESSION["usertype"] == 2){
                                     echo"<li><a href='adminchat.php'>Chats</a></li>";
@@ -94,46 +86,43 @@ session_start();
                 </div>
                 <div class="col-sm-9">
                     <div class="container">
-                        <h2 class = 'lease_info'>Payments</h2>
-                        <a href='paymenthistory.php'><h4 class = 'shift-right link-prop'>&lt;&nbspPayment History<h4></a><br>
+                        <h2 class = 'lease_info'>All Users</h2>
                         <div class='row table-wrapper-scroll-y'>
                         <?php
-                        $leaseArray = $apiData->Lease;
+                        $loginArray = $allLogins;
                         $index = 1;
                         echo"
                         <table class='table table-dark table-hover'>
                             <thead>
                                 <tr>
                                 <th scope='col'>#</th>
-                                <th scope='col'>Apt Name</th>
-                                <th scope='col'>Payment Due</th>
-                                <th scope='col'>Pay</th>
+                                <th scope='col'>Username</th>
+                                <th scope='col'>User Type</th>
+                                <th scope='col'>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                         ";
-                        foreach($leaseArray as $lease){
-                            $ch = curl_init('https://lunar-living.herokuapp.com/paymentDue');
-                            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                            curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
-                            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-                                'Content-Type: application/json',
-                                "apt_name: $lease->aptID"
-                                ));
-                            $data = curl_exec($ch);
-                            $info = curl_getinfo($ch);
-                            $paymentData = json_decode($data);
-                            curl_close($ch);
+                        foreach($loginArray as $loginData){
                             echo"
                             <tr>
                                 <th scope='row'>". $index ."</th>
-                                <td>". $lease->aptID ."</td>
-                                <td>$". $paymentData->amount ."</td>";
-                                if($paymentData->amount == 0){
-                                    echo"<td><button class = 'btn btn-info btn-md' disabled>Pay</button></td>";
+                                <td>". $loginData->username ."</td>";
+                                switch($loginData->usertype){
+                                    case 1:
+                                        echo"<td>Tenant</td>";
+                                        break;
+                                    case 2:
+                                        echo"<td>Admin</td>";
+                                        break;
+                                    case 3:
+                                        echo"<td>Employee</td>";
+                                        break;
+                                }
+                                if($loginData->userstatus == 0){
+                                    echo"<td><button class = 'btn btn-info btn-md' onclick=\"enableUser('". $loginData->username ."')\">Enable</button></td>";
                                 }else{
-                                echo"
-                                <td><button class = 'btn btn-info btn-md' onclick = \"callPayment('". $lease->aptID ."','" . $_SESSION['username'] ."'," . $paymentData->amount .")\">Pay</button></td>";
+                                    echo"<td><button class = 'btn btn-info btn-md btn-danger' onclick=\"disableUser('". $loginData->username ."')\">Disable</button></td>";
                                 }
                                 echo"
                             </tr>
@@ -168,6 +157,12 @@ session_start();
 			else{
 				statsChilds.style.display = "none";
 			}
+		}
+        function enableUser(userinfo){
+			window.location.href = "enableuser.php?userinfo=" + userinfo;
+		}
+        function disableUser(userinfo){
+			window.location.href = "disableuser.php?userinfo=" + userinfo;
 		}
     </script>
 </body>
