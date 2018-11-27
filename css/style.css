@@ -1453,3 +1453,11 @@ label {
 .statsChilds{
   display: none;
 }
+
+.backLink{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 45px;
+  float: right;
+  padding: 5%;
+  color: #ffffff;
+}

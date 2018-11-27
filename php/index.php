@@ -182,7 +182,9 @@
 							<span class="fa fa-star checked"></span>
 							<span class="fa fa-star checked"></span>
 							<span class="fa fa-star"></span></p>
-							<p><button class='btn btn-info btn-md'>Submit a Review</button></p>
+							<?php
+							echo"<p><button class='btn btn-info btn-md' onclick='reviewCall(\"". $username ."\")'>Submit a Review</button></p>";
+							?>
 						</div>
 					</section>
 				</div>
@@ -478,6 +480,15 @@
 			}
 			else{
 			window.location.href = 'confirmappointment.php?date=' + date + '&time=' + time + '&userinfo=' + userinfo;
+			}
+		}
+		
+		function reviewCall(username){
+			if(username.length == 0){
+				window.location.href = 'login.php';
+			}
+			else{
+				window.location.href = 'review.php';
 			}
 		}
 	</script>
