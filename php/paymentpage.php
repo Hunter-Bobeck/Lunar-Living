@@ -30,6 +30,7 @@
 							}
 							if($_SESSION["usertype"] == 2){
 								echo"<li><a href='newlease.php'>New Lease</a></li>";
+								echo"<li><a href='appointments.php'>All Appointments</a></li>";
 							}
 							if($_SESSION["usertype"] == 2){
 								echo"<li><a href='adminchat.php'>Chats</a></li>";

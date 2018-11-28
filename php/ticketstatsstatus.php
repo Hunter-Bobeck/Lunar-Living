@@ -29,7 +29,8 @@ echo"
                                 if($_SESSION["usertype"] == 2){
                                     echo"<li><a href='newlease.php'>New Lease</a></li>";
                                     echo"<li><a href='allLogin.php'>All Users</a></li>";
-								    echo"<li><a href='allLease.php'>All Leases</a></li>";
+                                    echo"<li><a href='allLease.php'>All Leases</a></li>";
+                                    echo"<li><a href='appointments.php'>All Appointments</a></li>";
                                 }
                                 if($_SESSION["usertype"] == 2){
                                     echo"<li><a href='adminchat.php'>Chats</a></li>";
@@ -106,9 +107,9 @@ echo"
                             }
                         }
                         $dataPoints = array( 
-                            array("label"=>"Sky-East", "y"=>$created),
-                            array("label"=>"Sky-North", "y"=>$open),
-                            array("label"=>"Sky-West", "y"=>$closed),
+                            array("label"=>"Created", "y"=>$created),
+                            array("label"=>"Open", "y"=>$open),
+                            array("label"=>"Close", "y"=>$closed),
                         );
                     echo "<div id='chartContainerStatus' style='height: 370px; width: 100%;'></div>";                      
                     ?>

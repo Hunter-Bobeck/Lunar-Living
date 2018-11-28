@@ -29,6 +29,7 @@
 								echo"<li><a href='newlease.php'>New Lease</a></li>";
 								echo"<li><a href='allLogin.php'>All Users</a></li>";
 								echo"<li><a href='allLease.php'>All Leases</a></li>";
+								echo"<li><a href='appointments.php'>All Appointments</a></li>";
 							}
 							if($_SESSION["usertype"] == 2){
 								echo"<li class='active'><a href='adminchat.php'>Chats</a></li>";
