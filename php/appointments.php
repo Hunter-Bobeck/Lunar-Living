@@ -95,6 +95,7 @@ session_start();
                                 <th scope='col'>UserInfo</th>
                                 <th scope='col'>Date</th>
                                 <th scope='col'>Time</th>
+                                <th scope='col'>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -106,6 +107,11 @@ session_start();
                                 <td>". $appointment->userInfo ."</td>
                                 <td>". substr($appointment->visitDate, 0, 10) ."</td>
                                 <td>". $appointment->visitTime ."</td>";
+                                if($appointment->status == 0){
+                                    echo"<td><button class = 'btn btn-info btn-md' onclick=\"updateAppointment('". $appointment->appointmentID ."', '". $appointment->userInfo ."', 1)\">Accept</button></td>";
+                                }else{
+                                    echo"<td><button class = 'btn btn-info btn-md btn-danger' onclick=\"updateAppointment('". $appointment->appointmentID ."', '". $appointment->userInfo ."', 0)\">Reject</button></td>";
+                                }
                                 echo"
                             </tr>
                             ";
@@ -139,11 +145,8 @@ session_start();
 				statsChilds.style.display = "none";
 			}
 		}
-        function enableUser(userinfo){
-			window.location.href = "enableuser.php?userinfo=" + userinfo;
-		}
-        function disableUser(userinfo){
-			window.location.href = "disableuser.php?userinfo=" + userinfo;
+        function updateAppointment(appointmentID, userinfo, status){
+			window.location.href = "updateAppointment.php?userinfo=" + userinfo + "&appointmentID=" + appointmentID + "&status=" + status;
 		}
     </script>
 </body>

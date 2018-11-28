@@ -1423,6 +1423,7 @@ label {
   border: 1px solid #ccc;
   text-align: center;
   background-color: white;
+  border-radius: 50%;
 }
 
 .time-box:hover{
