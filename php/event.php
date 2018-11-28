@@ -41,7 +41,10 @@
 						<p class='event-date'>". substr($eventInfo->eventDate, 0, 10) ."</p>
 						<div class='event-description-holder'>
 							<p class='event-description'>". $eventInfo->describtion ."</p>
-						</div>";
+							<span class='attending-text'><span name='attendingCount'>66</span> people attending</span>
+						</div>
+						<br>";
+
 						if(strpos($eventInfo->intrested, $username) !== false || strpos($eventInfo->maybe, $username) !== false || strpos($eventInfo->notIntrested, $username) !== false){
 							if(strpos($eventInfo->intrested, $username) !== false){
 								echo"<a class='event-link-selected' href='#'><i class='event-icon fa fa-calendar-check-o fa-2x fa-pull-left' aria-hidden='true'></i></a>
