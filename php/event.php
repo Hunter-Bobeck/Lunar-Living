@@ -41,6 +41,9 @@
 						<p class='event-date'>". substr($eventInfo->eventDate, 0, 10) ."</p>
 						<div class='event-description-holder'>
 							<p class='event-description'>". $eventInfo->describtion ."</p>
+							<button class='btn btn-info btn-md event-edit-button'>Edit Description</button>
+							<br>
+							<br>
 							<span class='attending-text'><span name='attendingCount'>66</span> people attending</span>
 						</div>
 						<br>";

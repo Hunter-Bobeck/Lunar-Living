@@ -1320,6 +1320,9 @@ label {
 	display: inline;
 	font-style: italic;
 }
+.event-edit-button {
+	float: left;
+}
 
 /* createevent.php */
 
