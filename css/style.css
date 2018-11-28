@@ -1477,6 +1477,8 @@ label {
   font-size: 45px;
   float: right;
   color: #ffffff;
+  padding-right: 10%;
+  padding-top: 5%;
 }
 
 .cursor{

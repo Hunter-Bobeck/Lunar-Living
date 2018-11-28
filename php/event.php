@@ -25,7 +25,7 @@
 				curl_close($ch);
 				
 				echo"<div class='spacer-events'>
-					
+					<a href='events.php' class='backLink'>Back</a>
 				</div>
 
 				<div id='events-background'>
