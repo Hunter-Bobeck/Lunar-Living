@@ -74,7 +74,11 @@ echo"
                 <div class="col-sm-9">
                 <div class="container">
                         <h2 class = 'lease_info'>Ticket Management</h2>
-                        <div class='shift-right'><button class='btn btn-info btn-md' onclick="newticket()">Add New Ticket</button></div>
+                        <?php
+                        if($_SESSION["usertype"] == 1){
+                            echo"<div class='shift-right'><button class='btn btn-info btn-md' onclick=\"newticket()\">Add New Ticket</button></div>";
+                        }
+                        ?>
                         <br/>
                         <div>
                         <?php
