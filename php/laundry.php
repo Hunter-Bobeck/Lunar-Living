@@ -264,7 +264,12 @@ echo"
                 for (i = 1; i < 25; i++) {
                     var flag = currArray.includes(i.toString());
                     if(!flag){
-                        $('#time').append("<option value='" + i + "'>" + i + "</option>");
+                        if(i < 10){
+                            $('#time').append("<option value='" + i + "'>0" + i + ":00</option>");
+                        }
+                        else{
+                            $('#time').append("<option value='" + i + "'>" + i + ":00</option>");
+                        }
                     }
                 }
             }
