@@ -1199,6 +1199,13 @@ label {
 	text-align: left;
 	margin-left: 22%;
 	color: white;
+	text-decoration: none;
+}
+.events-header-in-link:hover {
+	font-weight: bold;
+}
+#events-header-link:hover {
+	text-decoration: none;
 }
 .events-grid-container {
 	display: grid;
@@ -1303,8 +1310,10 @@ label {
 	text-align: left;
 }
 .event-icon {
-	padding: 1em;
-	padding-bottom: 1.15em;
+	padding-left: 1.15em;
+	padding-right: 1.15em;
+	padding-top: .65em;
+	padding-bottom: .75em;
 }
 
 /* createevent.php */
@@ -1456,10 +1465,9 @@ label {
 }
 
 .backLink{
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'KoHo', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 45px;
   float: right;
-  padding: 5%;
   color: #ffffff;
 }
 
