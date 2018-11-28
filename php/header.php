@@ -8,7 +8,7 @@
     <!-- renders the page according to the device width -->
     <meta name='description' content='Rent a living space, in outer space.'>
     <!-- description [shown on searchengine result] -->
-    <meta name='keywords' content='Kidd, Living, space, rental, service, management, system, SpaceX, outer, Elon, Musk'>
+    <meta name='keywords' content='Lunar, Living, space, rental, service, management, system, SpaceX, outer, Elon, Musk'>
     <!-- keywords for searchengine optimization -->
     <meta name='author' content='IU SE G2'>
     <!-- author name -->
