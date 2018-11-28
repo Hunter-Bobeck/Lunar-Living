@@ -73,7 +73,7 @@ echo"
                 <div class="col-sm-9">
                 <div class="container">
                         <h2 class = 'lease_info'>Ticket Management</h2>
-                        <div class='shift-right'><button class='btn btn-info btn-md' id = 'bookLaundry'>Add New Ticket</button></div>
+                        <div class='shift-right'><button class='btn btn-info btn-md' onclick="newticket()">Add New Ticket</button></div>
                         <br/>
                         <div>
                         <?php
@@ -82,6 +82,17 @@ echo"
                         } else {
                             include 'TicketFilterBars/userFilterBar.php';
                         } 
+                        $ch = curl_init('https://lunar-living.herokuapp.com/getUserTickets');
+                        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                        curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
+                        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                            'Content-Type: application/json',
+                            "username: $username"
+                            ));
+                        $data = curl_exec($ch);
+                        $info = curl_getinfo($ch);
+                        $ticketArray = json_decode($data);
+                        curl_close($ch);
                         ?>
                         </div>
                         <br/>
@@ -94,13 +105,25 @@ echo"
                             <thead>
                                 <tr>
                                 <th scope='col'>#</th>
-                                <th scope='col'>ID</th>
+                                <th scope='col'>AptID</th>
                                 <th scope='col'>Title</th>
                                 <th scope='col'>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
                         ";
+                        foreach($ticketArray as $ticket){
+                            echo"
+                            <tr class='table-row cursor' data-href=\"maintenance.php?ticketID=".$ticket->ticketID ."\">
+                                <th scope='row'>". $ticket->ticketID ."</th>
+                                <td>". $ticket->aptID ."</td>
+                                <td>". $ticket->title ."</td>
+                                <td>". $ticket->ticketStatus ."</td>
+                            </tr>
+                            </a>
+                            ";
+                        $index++;
+                        }
                         echo"
                             </tbody>
                         </table>";
@@ -118,64 +141,6 @@ echo"
     <script src='../js/bootstrap.bundle.min.js'></script>		<!-- Bootstrap Bundle JS (necessary for dropdowns) -->
     <!-- <script src='js/bootstrap.min.js'></script> -->		<!-- Bootstrap JS � disabled because when enabled it has a conflict with Bootstrap Bundle JS that makes dropdowns require two clicks to dropdown; it doesn't seem that any needed functionality is lacking when this is disabled -->
     <script>
-		// Get the modal
-		var modal = document.getElementById('bookLaundryModal');
-		// Get the button that opens the modal
-		var btn = document.getElementById("bookLaundry");
-		// Get the <span> element that closes the modal
-		var span = document.getElementsByClassName("close")[0];
-		// When the user clicks the button, open the modal 
-		btn.onclick = function() {
-			modal.style.display = "block";
-		}
-		// When the user clicks on <span> (x), close the modal
-		span.onclick = function() {
-			modal.style.display = "none";
-		}
-		// When the user clicks anywhere outside of the modal, close it
-		window.onclick = function(event) {
-			if (event.target == modal) {
-				modal.style.display = "none";
-			}
-		}
-		function bookLaundry(){
-			var machineID = document.getElementById("machineSelect").value;
-			var time = document.getElementById("time").value;
-			window.location.href = 'booklaundry.php?machineSelect=' + machineID +"&time=" + time;
-		}
-        function changeTime(current, machine1, machine2, machine3, machine4) {
-            // Set selected value as variable
-            var selectValue = parseInt(current.options[current.selectedIndex].value)
-            // Empty the time select field
-            $('#time').empty();
-            
-            if(selectValue != 0){
-                switch(selectValue){
-                    case 1:
-                        var currArray = machine1.split(',');
-                        break;
-                    case 2:
-                        var currArray = machine2.split(',');
-                        break;
-                    case 3:
-                        var currArray = machine3.split(',');
-                        break;
-                    case 4:
-                        var currArray = machine4.split(',');
-                        break;
-                }
-                if(currArray[0] == 'empty'){
-                    currArray = []
-                }
-                // For each hour in the selected machine
-                for (i = 1; i < 25; i++) {
-                    var flag = currArray.includes(i.toString());
-                    if(!flag){
-                        $('#time').append("<option value='" + i + "'>" + i + "</option>");
-                    }
-                }
-            }
-        }
         function displayStats(){
 			var statsChilds = document.getElementById("statsChilds");
 			if(statsChilds.style.display == "none"){
@@ -185,6 +150,14 @@ echo"
 				statsChilds.style.display = "none";
 			}
 		}
+        function newticket(){
+            window.location.href = 'newticket.php';
+        }
+        $(document).ready(function($) {
+            $(".table-row").click(function() {
+                window.document.location = $(this).data("href");
+            });
+        });
 	</script>
 </body>
 </html>

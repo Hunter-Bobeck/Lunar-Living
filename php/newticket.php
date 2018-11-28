@@ -1,43 +1,115 @@
-﻿<!doctype html>
+﻿<?php
+	session_start();
+?>
+<!doctype html>
 <html lang='en'>
 <?php include 'header.php'; ?>
-<body class='background background-lunar-landed'>
-	<main>
-	<?php include 'signInNavbar.php'; ?>
-
-
-		<div id='spacer-newticket'></div>
-		<div class='container container-form' id='container-newticket'>
-			<div class='row justify-content-center align-items-center'>
-				<div class='col-md-7' id='newticket-column'>
-					<br>
-					<h5 class='text-centered' id='newticket-header'>New Ticket</h5>
-					<br>
-					<form class='form text-centered' action=''>
-						<div class='dropdown'>
-							<button class='btn btn-secondary dropdown-toggle' type='button' id='dropdownApartmentID' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Apartment ID</button>
-							<div class='dropdown-menu' aria-labelledby='dropdownApartmentID'>
-								<a class='dropdown-item' href='#'>placeholder option 1</a>
-								<a class='dropdown-item' href='#'>placeholder option 2</a>
+<body class='background background-lunar-landed'>";
+	<?php
+		$username = $_SESSION['username'];
+	?>
+<main class = "content_body">
+        <div class='container-fluid padding-zero'>
+            <?php include 'signInNavbar.php'; ?>
+        </div>
+		<?php
+			$ch = curl_init('https://lunar-living.herokuapp.com/getUserApt');
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
+			curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+				'Content-Type: application/json',
+				"username: $username"
+				));
+			$data = curl_exec($ch);
+			$info = curl_getinfo($ch);
+			$aptDataArray = json_decode($data);
+			curl_close($ch);
+		?>
+        <div class="container-fluid userlease_container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class='wrapper'>
+                        <aside class='main_sidebar'>
+                            <ul>
+                                <li><a href='profile.php'>Profile</a></li>
+                                <?php
+                                if($_SESSION["usertype"] == 1){
+                                    echo"<li><a href='user_lease.php'>Lease</a></li>
+                                    <li><a href='payment.php'>Payment</a></li>";
+                                }
+                                if($_SESSION["usertype"] == 2){
+                                    echo"<li><a href='newlease.php'>New Lease</a></li>";
+                                    echo"<li><a href='allLogin.php'>All Users</a></li>";
+								    echo"<li><a href='allLease.php'>All Leases</a></li>";
+                                }
+                                if($_SESSION["usertype"] == 2){
+                                    echo"<li><a href='adminchat.php'>Chats</a></li>";
+                                }
+                                ?>
+                                <li class='active'><a href='ticketStatus.php'>Tickets</a></li>
+                                <?php
+                                if($_SESSION["usertype"] == 2){
+                                    echo"<li><a href='map.php'>Ticket Map</a></li>";
+                                }
+                                ?>
+                                <li><a href='events.php'>Events</a></li>
+                                <li><a href='laundry.php'>Laundry</a></li>
+                                <li><a href='review.php'>Review</a></li>
+                                <?php
+                                if($_SESSION["usertype"] == 2){
+                                    echo"<li>
+                                        <a onclick='displayStats()' href='#'>Stats</a>
+                                        <ul id='statsChilds' class= 'statsChilds'>
+                                            <li><a href='paymentstats.php'>Payment Stats</a></li>
+                                            <li><a href='ticketstats.php'>Ticket Area Stats</a></li>
+                                            <li><a href='ticketstatsstatus.php'>Ticket Status Stats</a></li>
+                                        </ul>
+                                    </li>";
+                                }
+                                ?>
+                            </ul>
+                        </aside>
+                    </div>
+                </div>
+                <div class="col-sm-9">
+                <div class="container">
+                    <div id='spacer-newticket'></div>
+					<div class='container container-form' id='container-newticket'>
+						<div class='row justify-content-center align-items-center'>
+							<div class='col-md-7' id='newticket-column'>
+								<br>
+								<h5 class='text-centered' id='newticket-header'>New Ticket</h5>
+								<br>
+								<form class='form text-centered' action='newticketadd.php' method='post'>
+									<div class='dropdown'>
+										<span class = 'dropdown-menu'>Select Apt: </span>
+										<select id='aptSelect' name='aptSelect'>
+											<option value='0' class='dropdown-item'>Select Apt</option>
+											<?php
+												foreach($aptDataArray as $apt){
+													echo"<option value='". $apt->aptID ."' class='dropdown-item'>". $apt->aptID ."</option>";
+												}
+											?>
+										</select>
+									</div>
+									<br>
+									<div class='form-group'>
+										<input class='form-control' type='text' id='newticket-ticket-title' name='newticketTicketTitle' placeholder='Ticket title'>
+									</div>
+									<div class='form-group'>
+										<textarea wrap='soft' id='newticket-ticket-description' name='newticketTicketDescription' placeholder='Ticket description'></textarea>
+									</div>
+									<div class='form-group text-centered'>
+										<input class='btn btn-info btn-md' value='Submit Ticket' type='submit' name='newticketButtonSubmitTicket'>
+									</div>
+								</form>
 							</div>
 						</div>
-						<br>
-						<div class='form-group'>
-							<input class='form-control' type='text' id='newticket-ticket-title' name='newticketTicketTitle' placeholder='Ticket title'>
-						</div>
-						<div class='form-group'>
-							<textarea wrap='soft' id='newticket-ticket-description' name='newticketTicketDescription' placeholder='Ticket description'></textarea>
-						</div>
-						<div class='form-group text-centered'>
-							<input class='btn btn-info btn-md' value='Submit Ticket' type='submit' name='newticketButtonSubmitTicket'>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-		<br>
-		<br>
-		<?php include 'footer.php'; ?>
+					</div>
+                </div>
+            </div>
+        </div>
+        <?php include 'footer.php'; ?>
 	</main>
 
 	<!-- postJS -->

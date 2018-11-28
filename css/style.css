@@ -1461,3 +1461,7 @@ label {
   padding: 5%;
   color: #ffffff;
 }
+
+.cursor{
+  cursor:pointer;
+}
