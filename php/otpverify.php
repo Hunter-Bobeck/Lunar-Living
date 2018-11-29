@@ -1,5 +1,4 @@
 <?php
-
     session_start();
     $otp = $_POST['otpverificationOTP'];
     $username = $_SESSION['username'];
@@ -25,7 +24,9 @@
     $info = curl_getinfo($ch);
     curl_close($ch);
     if ($data == 'false') {
-        echo "OTP not same";
+        echo "<script>alert('OTP did not match');
+             window.location.href = 'login.php';
+        </script>";
     } else if ($data != 'false' and $_SESSION['newuser'] == 1){
         echo "<script>
              window.location.href = 'profile.php';

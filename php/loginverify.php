@@ -1,7 +1,7 @@
 <?php
     session_start();
     $username = $_POST['loginUsername'];
-    $password = $_POST['loginPassword'];
+    $password = md5($_POST['loginPassword']);
     $_SESSION['username'] = $username;
     //setup the request, you can also use CURLOPT_URL
     $ch = curl_init('https://lunar-living.herokuapp.com/login');
@@ -25,13 +25,17 @@
     $info = curl_getinfo($ch);
     curl_close($ch);
     if($data == 'false'){
-        header("Location: login.php");
+        echo "<script>alert('Can not find the user');
+             window.location.href = 'login.php';
+        </script>";
     }else {
         $dataArray = json_decode($data, true);
         $_SESSION["newuser"] = $dataArray["newuser"];
         $_SESSION["usertype"] = $dataArray["usertype"];
         $usertype = $_SESSION["usertype"];
-        header("Location: otpverification.php");
+        echo "<script>
+             window.location.href = 'otpverification.php';
+        </script>";
     }
     // close curl resource to free up system resources
 ?>
