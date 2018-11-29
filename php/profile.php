@@ -124,6 +124,7 @@
 				</div>
 			</div>
 			<?php
+			if($_SESSION["usertype"] != 2){
 				$username = $_SESSION['username'];
 				$ch = curl_init('https://lunar-living.herokuapp.com/getOxygenLevels');
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -136,8 +137,8 @@
 				$info = curl_getinfo($ch);
 				$oxygenData = json_decode($data);
 				curl_close($ch);
-			?>
-			<div class='col-sm-4'>
+			
+			echo"<div class='col-sm-4'>
 			<div class = 'row'>
 				<div class='col-sm-12 oxygen'>
 					<h2 class='text-centered oxygen-level'>Oxygen Level</h2>
@@ -151,8 +152,7 @@
 							<span class='close'>&times;</span>	
 						</div>
 						<div class='modal-body'>
-							<?php
-								echo "<br/><span>Select Apt: </span><select id='aptSelect' onChange='showDates(this,". json_encode($oxygenData) .")'>
+								<br/><span>Select Apt: </span><select id='aptSelect' onChange='showDates(this,". json_encode($oxygenData) .")'>
 										<option value='0'>Select Apt</option>";
 										foreach($oxygenData as $currLevel){
 											echo"<option value='". $currLevel->aptID ."'>". $currLevel->aptID ."</option>";
@@ -169,8 +169,7 @@
 								echo"<div class='form-group dates-picker' id ='dates-picker'>
 										<span>No Supply Needed on: </span>
 										<input id = 'dates' class='form-control' type='text' name='oxygenDateRange' placeholder='Start Date - End Date'><br/><br/>
-									</div>";
-							?>
+									</div>
 						</div>
 						<div class='modal-footer'>
 							<button class = 'update' onclick = 'saveOxygen()'>Save</button>
@@ -179,8 +178,7 @@
 				</div>
 			</div>
 			<div class = 'row'>
-				<div class='col-sm-2'>
-					<?php
+				<div class='col-sm-2'>";
 					foreach($oxygenData as $currLevel){
 						if($currLevel->start_date == null){
 							echo"<div><img src='../images/on.jpg' class='progress-bar-image'></div>";
@@ -197,10 +195,9 @@
 							}
 						}
 					}
-					?>
+					echo"
 				</div>
-				<div class='col-sm-10'>
-					<?php
+				<div class='col-sm-10'>";
 					foreach($oxygenData as $currLevel){
 						if($currLevel->amount > 80){
 							echo"<div class='progress-bar green stripes'>
@@ -227,10 +224,11 @@
 							</div>";
 						}
 					}
-					?>
-				</div>
+				echo"</div>
 			</div>
-			</div>
+			</div>";
+				}
+			?>
 		</div>
 		<?php
 		if($_SESSION["usertype"] != 2){
