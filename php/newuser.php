@@ -3,6 +3,7 @@
 <?php include 'header.php'; ?>
 <body class='background background-moon-in-space'>
 	<main>
+	<?php include 'signInNavbar.php'; ?>
 		<div id='spacer-newuser'></div>
 		<div class='container container-form' id='container-newuser'>
 			<div class='row justify-content-center align-items-center'>

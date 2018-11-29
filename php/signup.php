@@ -14,7 +14,7 @@ session_start();
 				<div class='col-md-7' id='signup-column'>
 					<div class='text-centered five-padding-bottom'><img src='../images\Logo - Signup.png' class='logo'></div>
 					<br>
-					<strong>Before signing up, it is required that you have signed a lease.</strong>
+					<strong>Sign Up requires to hold a lease.</strong>
 					<br>
 					<br>
 					<form class='form' method = 'post' action='signupdetails.php'>
