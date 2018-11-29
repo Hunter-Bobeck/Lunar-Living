@@ -31,6 +31,7 @@
 							if($_SESSION["usertype"] == 2){
 								echo"<li><a href='newlease.php'>New Lease</a></li>";
 								echo"<li><a href='appointments.php'>All Appointments</a></li>";
+								echo"<li><a href='allpromocodes.php'>All Promo Codes</a></li>";
 							}
 							if($_SESSION["usertype"] == 2){
 								echo"<li><a href='adminchat.php'>Chats</a></li>";
@@ -83,16 +84,16 @@
 					<div class="payment">
 						<form>
 							<div class="form-group owner">
-								<label for="owner">Owner Name</label>
-								<input type="text" class="form-control" id="owner">
+								<!--<label for="owner">Owner Name</label>-->
+								<input type="text" class="form-control" id="owner" placeholder='Owner Name'>
 							</div>
 							<div class="form-group CVV">
-								<label for="cvv">CVV</label>
-								<input type="text" class="form-control" id="cvv">
+								<!--<label for="cvv">CVV</label>-->
+								<input type="text" class="form-control" id="cvv" placeholder='CVV'>
 							</div>
 							<div class="form-group" id="card-number-field">
-								<label for="cardNumber">Card Number</label>
-								<input type="text" class="form-control" id="cardNumber">
+								<!--<label for="cardNumber">Card Number</label>-->
+								<input type="text" class="form-control" id="cardNumber" placeholder='Card Number'>
 							</div>
 							<div class="form-group" id="expiration-date">
 								<label>Expiration Date</label>
@@ -118,6 +119,9 @@
 									<option value="20"> 2022</option>
 									<option value="21"> 2023</option>
 								</select>
+							</div>
+							<div>
+								<input placeholder='Promo Code' class='promocode' id='promocodeinput'>&nbsp&nbsp&nbsp<a onclick="checkPromo()" class='promocodelink'>Apply</a>
 							</div>
 							<div class="form-group" id="credit_cards">
 								<img src="../images/visa.jpg" id="visa">
@@ -210,6 +214,10 @@
 			else{
 				statsChilds.style.display = "none";
 			}
+		}
+		function checkPromo(){
+			var promocode = document.getElementById('promocodeinput').value;
+			window.location = 'checkpromo.php?promocode=' + promocode;
 		}
 	</script>
 </body>

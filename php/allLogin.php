@@ -55,6 +55,7 @@ session_start();
                                     echo"<li class='active'><a href='allLogin.php'>All Users</a></li>";
                                     echo"<li><a href='allLease.php'>All Leases</a></li>";
                                     echo"<li><a href='appointments.php'>All Appointments</a></li>";
+                                    echo"<li><a href='allpromocodes.php'>All Promo Codes</a></li>";
                                 }
                                 if($_SESSION["usertype"] == 2){
                                     echo"<li><a href='adminchat.php'>Chats</a></li>";

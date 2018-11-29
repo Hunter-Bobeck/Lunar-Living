@@ -12,33 +12,22 @@ session_start();
         $username = $_SESSION['username'];
         $first_name = $_SESSION['firstName'];
         //setup the request, you can also use CURLOPT_URL
-        $ch = curl_init('https://lunar-living.herokuapp.com/getUserLease');
-
+        $ch = curl_init('https://lunar-living.herokuapp.com/getAllPromos');
         // Returns the data/output as a string instead of raw data
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
         // Good practice to let people know who's accessing their servers. See https://en.wikipedia.org/wiki/User_agent
         curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
 
         //Set your auth headers
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            'Content-Type: application/json',
-            "username: $username"
+            'Content-Type: application/json'
             ));
 
         // get stringified data/output. See CURLOPT_RETURNTRANSFER
         $data = curl_exec($ch);
-
         // get info about the request
         $info = curl_getinfo($ch);
-
-        if($data == 'false'){
-        echo "User Not Found";
-        }
-        else {
-            $apiData = json_decode($data);
-        }
-
+        $allPromos = json_decode($data);
         // close curl resource to free up system resources
         curl_close($ch);
 	?>
@@ -56,14 +45,14 @@ session_start();
                                 <?php
                                 if($_SESSION["usertype"] == 1){
                                     echo"<li><a href='user_lease.php'>Lease</a></li>
-                                    <li class='active'><a href='payment.php'>Payment</a></li>";
+                                    <li><a href='payment.php'>Payment</a></li>";
                                 }
                                 if($_SESSION["usertype"] == 2){
                                     echo"<li><a href='newlease.php'>New Lease</a></li>";
                                     echo"<li><a href='allLogin.php'>All Users</a></li>";
-                                    echo"<li><a href='allLease.php'>All Leases</a></li>"; 
+                                    echo"<li><a href='allLease.php'>All Leases</a></li>";
                                     echo"<li><a href='appointments.php'>All Appointments</a></li>";
-                                    echo"<li><a href='allpromocodes.php'>All Promo Codes</a></li>";
+								    echo"<li class='active'><a href='#'>All Promo Codes</a></li>";
                                 }
                                 if($_SESSION["usertype"] == 2){
                                     echo"<li><a href='adminchat.php'>Chats</a></li>";
@@ -96,51 +85,42 @@ session_start();
                 </div>
                 <div class="col-sm-9">
                     <div class="container">
-                        <h2 class = 'lease_info'>Payments</h2>
-                        <a href='paymenthistory.php'><h4 class = 'shift-right link-prop'>&lt;&nbspPayment History<h4></a><br>
+                        <h2 class = 'lease_info'>All Promo Codes</h2>
+                        <form action = 'newpromocode.php' method ='post'>
+                            <p class='promotitle'>Add New Promo Code</p>
+                            <input type='text' placeholder = 'Promo ID' class='promocodeInput' name='promoid'>
+                            <input type='text' placeholder = 'Max Use' class='promocodeInput'name='maxuse'>
+                            <input type='text' placeholder = 'Percentage Off' class='promocodeInput'name='off'>
+                            <input class = 'btn btn-info btn-md margin-left' type='submit' value='Add Promo'>
+                        </form>
                         <div class='row table-wrapper-scroll-y'>
                         <?php
-                        $leaseArray = $apiData->Lease;
-                        $index = 1;
                         echo"
                         <table class='table table-dark table-hover'>
                             <thead>
                                 <tr>
-                                <th scope='col'>#</th>
-                                <th scope='col'>Apt Name</th>
-                                <th scope='col'>Payment Due</th>
-                                <th scope='col'>Pay</th>
+                                <th scope='col'>Promo ID</th>
+                                <th scope='col'>Max use</th>
+                                <th scope='col'>Off Percentage</th>
+                                <th scope='col'>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
                         ";
-                        foreach($leaseArray as $lease){
-                            $ch = curl_init('https://lunar-living.herokuapp.com/paymentDue');
-                            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                            curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
-                            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-                                'Content-Type: application/json',
-                                "apt_name: $lease->aptID"
-                                ));
-                            $data = curl_exec($ch);
-                            $info = curl_getinfo($ch);
-                            $paymentData = json_decode($data);
-                            curl_close($ch);
+                        foreach($allPromos as $promo){
                             echo"
                             <tr>
-                                <th scope='row'>". $index ."</th>
-                                <td>". $lease->aptID ."</td>
-                                <td>$". $paymentData->amount ."</td>";
-                                if($paymentData->amount == 0){
-                                    echo"<td><button class = 'btn btn-info btn-md' disabled>Pay</button></td>";
+                                <th scope='row'>". $promo->promoID ."</th>
+                                <td>". $promo->maxuse ."</td>
+                                <td>". $promo->offBy ."</td>";
+                                if($promo->promoStatus == 0){
+                                    echo"<td><button class = 'btn btn-info btn-md' onclick=\"updateStatus('". $promo->promoID ."', 1)\">Enable</button></td>";
                                 }else{
-                                echo"
-                                <td><button class = 'btn btn-info btn-md' onclick = \"callPayment('". $lease->aptID ."','" . $_SESSION['username'] ."'," . $paymentData->amount .")\">Pay</button></td>";
+                                    echo"<td><button class = 'btn btn-info btn-md btn-danger' onclick=\"updateStatus('". $promo->promoID ."', 0)\">Disable</button></td>";
                                 }
                                 echo"
                             </tr>
                             ";
-                        $index++;
                         }
                         echo"
                             </tbody>
@@ -170,6 +150,9 @@ session_start();
 			else{
 				statsChilds.style.display = "none";
 			}
+		}
+        function updateStatus(promocode, status){
+			window.location.href = "updatepromo.php?promocode=" + promocode + "&status=" + status;
 		}
     </script>
 </body>
