@@ -129,7 +129,9 @@
 								<img src="../images/amex.jpg" id="amex">
 							</div>
 							<div class="form-group" id="pay-now">
-								<button type="submit" class="btn btn-default" id="confirm-purchase">Confirm</button>
+								<?php
+								echo"<button type='submit' class='btn btn-default' id='confirm-purchase'>Pay ". $_SESSION['amount'] ."</button>";
+								?>
 							</div>
 						</form>
 					</div>
