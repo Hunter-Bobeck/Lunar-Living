@@ -40,11 +40,13 @@
 				$info = curl_getinfo($ch);
 				$eventAllData = json_decode($data);
 				curl_close($ch);
+				$index = 0;
 				foreach($eventAllData as $event){
+					$currIndex = $index % 5;
 					echo "<div class='events-grid-item'>
-						<a class='event-link' href='event.php?eventID=". $event->eventId ."'>
+						<a class='event-link' href='event.php?eventID=". $event->eventId ."&index=". $currIndex ."'>
 							<p class='events-event-title'>". $event->title ."</p>
-							<img class='event-thumbnail' src='../images/event1.jpg'/>
+							<img class='event-thumbnail' src='../images/event". $currIndex .".jpg'/>
 							<p class='events-event-date'>". substr($event->eventDate, 0, 10) ."</p>";
 							if(strpos($event->intrested, $username) !== false || strpos($event->maybe, $username) !== false || strpos($event->notIntrested, $username) !== false){
 								if(strpos($event->intrested, $username) !== false){
@@ -71,6 +73,7 @@
 							echo"
 						</a>
 					</div>";
+					$index++;
 				}
 				?>
 			</div>

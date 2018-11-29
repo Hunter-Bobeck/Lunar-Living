@@ -9,8 +9,9 @@
 		
 	<?php include 'signInNavbar.php'; ?>
 		<?php
-			if (isset($_GET["eventID"])) {
+			if (isset($_GET["eventID"]) && isset($_GET["index"])) {
 				$eventID = $_GET["eventID"];
+				$index = $_GET["index"];
 				$username = $_SESSION['username'];
 				$ch = curl_init('https://lunar-living.herokuapp.com/getEventInfo');
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -23,7 +24,8 @@
 				$info = curl_getinfo($ch);
 				$eventInfo = json_decode($data);
 				curl_close($ch);
-				
+				$intrestedCount = sizeof(explode("~", $eventInfo->intrested)) - 1;
+				$maybeCount = sizeof(explode("~", $eventInfo->maybe)) - 1;
 				echo"<div class='spacer-events'>
 					<a href='events.php' class='backLink'>Back</a>
 				</div>
@@ -37,14 +39,15 @@
 					<br>
 					<div class='event-container'>
 						<h1 class='event-title'>". $eventInfo->title ."</h1>
-						<img class='event-banner' src='../images/Moon Golf - Banner.jpg'/>
+						<img class='event-banner' src='../images/eventbanner". $index .".jpg'/>
 						<p class='event-date'>". substr($eventInfo->eventDate, 0, 10) ."</p>
 						<div class='event-description-holder'>
 							<p class='event-description'>". $eventInfo->describtion ."</p>
 							<button class='btn btn-info btn-md event-edit-button'>Edit Description</button>
 							<br>
 							<br>
-							<span class='attending-text'><span name='attendingCount'>66</span> people attending</span>
+							<span class='attending-text'><span name='attendingCount'>". $intrestedCount ."</span> people attending</span><br>
+							<span class='attending-text'><span name='attendingCount'>". $maybeCount ."</span> people may attend</span>
 						</div>
 						<br>";
 
