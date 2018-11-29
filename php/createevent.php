@@ -9,7 +9,9 @@
 		
 	<?php include 'signInNavbar.php'; ?>
 
-		<div class='spacer-events'></div>
+		<div class='spacer-events'>
+			<a href='events.php' class='backLink'>Back</a>
+		</div>
 
 		<div id='events-background'>
 			<br>
