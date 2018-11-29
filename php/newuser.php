@@ -10,6 +10,9 @@
 				<div class='col-md-7' id='newuser-column'>
 					<div class='text-centered five-padding-bottom'><img src='../images\Logo - New User.png' class='logo'></div>
 					<br>
+					<strong>Sign Up requires to hold a lease.</strong>
+					<br>
+					<br>
 					<form class='form' method = 'post' action='checksignupuser.php'>
 						<div class='form-group'>
 							<input class='form-control' type='text' id='newuser-email-id' name='username' placeholder='Email ID'>
