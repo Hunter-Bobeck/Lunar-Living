@@ -76,7 +76,12 @@
                                             <table class = 'text-centered' id="dynamic_field">
                                                 <tr>
                     <!--                                <td><input type="text" name="newleaseEmailID" placeholder="Email ID #1" class="form-control email_list" /></td>-->
-                                                    <td><a class = 'btn btn-info btn-md' type="button" name="add" id="add" class="btn btn-success">Add Email</a></td>
+                                                    <td><a style = "background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    text-align: center; 
+    text-decoration: none;
+    display: inline-block;" type="button" name="add" id="add" class="btn btn-success" color= "black">Add Email</a></td>
                                                 </tr>
                                             </table>
                                             <div class='form-group text-centered'>

@@ -10,6 +10,9 @@
 <body class='background background-moon-in-space'>
     
 	<main>
+	<div class='container-fluid padding-zero'>
+            <?php include 'signInNavbar.php'; ?>
+        </div>
 		<div id='spacer-login'></div>
 		<div class='container container-form' id='container-login'>
 			<div class='row justify-content-center align-items-center'>
