@@ -8,7 +8,7 @@
   background-size: cover;
 }
 .background-moon-in-space {
-  background-image: url("../images/mars-wallpaper1.jpg");
+  background-image: url("../images/Moon in Space.jpg");
 }
 .background-lunar-landed {
   background-image: url("../images/Lunar Landed.jpg");
@@ -318,8 +318,12 @@ a {
   padding-top: 10px;
   padding-bottom: 15px;
   border-radius: 5px;
-  background-color: rgba(42, 43, 47, 1);
-  /* this color in hex (without alpha) is #2a2b2f */
+  background-color: rgba(
+    42,
+    43,
+    47,
+    1
+  ); /* this color in hex (without alpha) is #2a2b2f */
   color: rgba(
     171,
     199,
@@ -1482,11 +1486,16 @@ label {
   display: block;
   width: 115px;
   height: 40px;
-  background: #17a2b8;
+  background: #4e9caf;
   padding: 10px;
   text-align: center;
   border-radius: 5px;
   color: white;
   font-weight: bold;
-  border-radius: 10px;
+}
+
+.select-user{
+  height: 45px;
+  margin-bottom: 4%;
+  margin-left: 4%;
 }

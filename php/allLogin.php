@@ -89,6 +89,17 @@ session_start();
                 <div class="col-sm-9">
                     <div class="container">
                         <h2 class = 'lease_info'>All Users</h2>
+                        <form action = 'adduser.php' method ='post'>
+                            <p class='promotitle'>Add New User</p>
+                            <input type='text' placeholder = 'User Email-Id' class='promocodeInput' name='emailID'>
+                            <select class='select-user' name='usertype'>
+                                <option value = '0'>User Type</option>
+                                <option value = '1'>Tenant</option>
+                                <option value = '3'>Employee</option>
+                                <option value = '2'>Admin</option>
+                            </select>
+                            <input class = 'btn btn-info btn-md margin-left' type='submit' value='Add User'>
+                        </form>
                         <div class='row table-wrapper-scroll-y'>
                         <?php
                         $loginArray = $allLogins;

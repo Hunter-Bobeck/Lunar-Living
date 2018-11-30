@@ -121,17 +121,23 @@
                                             $userDetails = curl_exec($ch);
                                             if($userDetails == 'false'){
                                                 //echo "User Not Found";
+                                                echo"
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>". $member->username ."</td>
+                                                </tr>";
                                             }
                                             else {
                                                 $userInfo = json_decode($userDetails);
-                                            }
-                                            curl_close($ch);
-                                            echo"
+                                                echo"
                                                 <tr>
                                                     <td>". $userInfo->first_name ."</td>
                                                     <td>". $userInfo->last_name ."</td>
                                                     <td>". $member->username ."</td>
                                                 </tr>";
+                                            }
+                                            curl_close($ch);
                                         };
                                         echo"
                                         </tbody>
