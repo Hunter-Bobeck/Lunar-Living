@@ -1,10 +1,13 @@
 <!doctype html>
+
 <html lang='en'>
-<?php include 'header.php'; ?>
-<body class='background background-moon-in-space'>
+<link rel='stylesheet' href='../css/newuser.css'>
+<link rel='stylesheet' href='../css/style.css'>
+<?php include 'signInNavbar.php';?>
+<?php include 'header.php';?>
+<body class='background background-mars-in-space'>
 	<main>
-	<?php include 'signInNavbar.php'; ?>
-		<div id='spacer-newuser'></div>
+		<!-- <div id='spacer-newuser'></div>
 		<div class='container container-form' id='container-newuser'>
 			<div class='row justify-content-center align-items-center'>
 				<div class='col-md-7' id='newuser-column'>
@@ -25,12 +28,28 @@
 			</div>
 		</div>
 		<br>
-		<br>
-        <?php include 'footer.php'; ?>
+		<br> -->
+		<div class="login-page">
+  <div class="form">
+  <strong style = "font-weight:bold">NEW USER</strong>
+  <br>
+					<br>
+					<strong>Sign Up requires to hold a lease.</strong>
+					<br>
+					<br>
+    <form class="login-form" method = 'post' action='checksignupuser.php'>
+      <input type="text" type='text' id='newuser-email-id' name='username' placeholder='Email ID'/>
+      <button type='submit' name='newuserButtonSubmit' id = "newuserButtonSubmit">login</button>
+    </form>
+  </div>
+</div>
+<?php include 'footer.php';?>
+
 	</main>
 
 	<!-- postJS -->
-    <script src='../js/bootstrap.min.js'></script>		<!-- Bootstrap JS -->
+	<script src='../js/bootstrap.min.js'></script>		<!-- Bootstrap JS -->
+
 
 </body>
 </html>
