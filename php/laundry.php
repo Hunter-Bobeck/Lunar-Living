@@ -80,10 +80,10 @@ $laundryTimings = curl_exec($ch);
 $info = curl_getinfo($ch);
 $laundryTime = json_decode($laundryTimings);
 curl_close($ch);
-$machine1 = "empty";
-$machine2 = "empty";
-$machine3 = "empty";
-$machine4 = "empty";
+$machine1 = []];
+$machine2 = [];
+$machine3 = [];
+$machine4 = [];
 foreach ($laundryTime as $machine) {
     switch ($machine->machineID) {
         case 1:
