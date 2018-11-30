@@ -30,15 +30,17 @@
         curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
 
         $result = curl_exec($ch);
+        $newamount = json_decode($result)->amount;
+        curl_close($ch);
         $message = "Promo Applied Successfully";
         if($result == 'false'){
             $message = "Failed";
         }
         else{
-            $_SESSION['amount'] = $result->amount;
+            $_SESSION['amount'] = $newamount;
         }
         echo "<script type='text/javascript'>alert('$message');
-        window.location.href='paymentpage.php';</script>";
+        window.location.href='paymentpage.php?promo=1';</script>";
     }
     else{
         echo "<script type='text/javascript'>

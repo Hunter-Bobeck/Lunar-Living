@@ -5,6 +5,7 @@
         $title = $_POST['createventTitleInput'];
         $date = $_POST['eventdate'];
         $describtion = $_POST['createeventDescriptionInput'];
+        
         //setup the request, you can also use CURLOPT_URL
         $ch = curl_init('https://lunar-living.herokuapp.com/createEvent');
 

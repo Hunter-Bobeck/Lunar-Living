@@ -2,7 +2,7 @@
 	session_start();
 	if (isset($_GET['aptID'])) {
 		$_SESSION['aptID'] = $_GET["aptID"];
-    }
+	}
 ?>
 <!doctype html>
 <html lang='en'>
@@ -64,18 +64,20 @@
 			</div>
 			<div class='col-sm-9'>
 				<?php
-				$aptID = $_SESSION['aptID'];
-				$ch = curl_init('https://lunar-living.herokuapp.com/paymentDue');
-				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-				curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
-				curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-					'Content-Type: application/json',
-					"apt_name: $aptID"
-					));
-				$data = curl_exec($ch);
-				$info = curl_getinfo($ch);
-				$paymentData = json_decode($data);
-				$_SESSION['amount'] = $paymentData->amount;
+				if(!isset($_GET['promo'])){
+					$aptID = $_SESSION['aptID'];
+					$ch = curl_init('https://lunar-living.herokuapp.com/paymentDue');
+					curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+					curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
+					curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+						'Content-Type: application/json',
+						"apt_name: $aptID"
+						));
+					$data = curl_exec($ch);
+					$info = curl_getinfo($ch);
+					$paymentData = json_decode($data);
+					$_SESSION['amount'] = $paymentData->amount;
+				}
 				?>
 				<div class="creditCardForm">
 					<div class="heading">
