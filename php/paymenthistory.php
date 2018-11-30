@@ -104,12 +104,12 @@ $index = 1;
 echo "
                         <table class ='table table-bordered table_flat'>
                             <thead class = 'head_table'>
-                                <tr class = 'row_table_lease'>
-                                <th scope='col'>#</th>
-                                <th scope='col'>Apt Name</th>
-                                <th scope='col'>Paid By</th>
-                                <th scope='col'>Paid Amount</th>
-                                <th scope='col'>Date</th>
+                                <tr>
+                                <th scope='col' style = 'font-size: 20px'>#</th>
+                                <th scope='col' style = 'font-size: 20px'>Apt Name</th>
+                                <th scope='col' style = 'font-size: 20px'>Paid By</th>
+                                <th scope='col' style = 'font-size: 20px'>Paid Amount</th>
+                                <th scope='col' style = 'font-size: 20px'>Date</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -129,11 +129,11 @@ foreach ($leaseArray as $lease) {
     foreach ($paymentData as $payment) {
         echo "
                                 <tr class = 'row_table_lease'>
-                                    <th scope='row'>" . $payment->paymentID . "</th>
-                                    <td>" . $lease->aptID . "</td>
-                                    <td>" . $payment->username . "</td>
-                                    <td>$" . $payment->amount . "</td>
-                                    <td>" . substr($payment->paidOn, 0, 10) . "</td>
+                                    <th style = 'font-size: 20px' scope='row'>" . $payment->paymentID . "</th>
+                                    <td style = 'font-size: 20px'>" . $lease->aptID . "</td>
+                                    <td style = 'font-size: 20px'>" . $payment->username . "</td>
+                                    <td style = 'font-size: 20px'>$" . $payment->amount . "</td>
+                                    <td style = 'font-size: 20px'>" . substr($payment->paidOn, 0, 10) . "</td>
                                 </tr>
                                 ";
     }
