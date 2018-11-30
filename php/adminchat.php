@@ -63,7 +63,7 @@
 			</div>
 			<div class='col-sm-9'>
             <div class="container">
-                        <h2 class = 'lease_info'>Pending Chats</h2>
+                        <h2 class = 'lease_info'>Unread Chats</h2>
                         <div class='row table-wrapper-scroll-y'>
                         <?php
                         
