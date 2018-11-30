@@ -42,10 +42,11 @@
 						<img class='event-banner' src='../images/eventbanner". $index .".jpg'/>
 						<p class='event-date'>". substr($eventInfo->eventDate, 0, 10) ."</p>
 						<div class='event-description-holder'>
-							<p class='event-description'>". $eventInfo->describtion ."</p>
-							<button class='btn btn-info btn-md event-edit-button'>Edit Description</button>
-							<br>
-							<br>
+							<p class='event-description'>". $eventInfo->describtion ."</p>";
+							if($eventInfo->userinfo == $_SESSION['username']){
+								echo"<button class='btn btn-info btn-md event-edit-button' onclick=\"editEvent(". $eventID .")\">Edit Description</button><br>";
+							}
+							echo"<br>
 							<span class='attending-text'><span name='attendingCount'>". $intrestedCount ."</span> people attending</span><br>
 							<span class='attending-text'><span name='attendingCount'>". $maybeCount ."</span> people may attend</span>
 						</div>
@@ -89,6 +90,11 @@
     <script src='../js/jquery-3.3.1.js'></script>		<!-- Jquery JS (necessary for dropdowns) -->
     <script src='../js/bootstrap.bundle.min.js'></script>		<!-- Bootstrap Bundle JS (necessary for dropdowns) -->
     <!-- <script src='js/bootstrap.min.js'></script> -->		<!-- Bootstrap JS � disabled because when enabled it has a conflict with Bootstrap Bundle JS that makes dropdowns require two clicks to dropdown; it doesn't seem that any needed functionality is lacking when this is disabled -->
+	<script>
+		function editEvent(eventID){
+			window.location.href = "editevent.php?eventID=" + eventID;
+		}
+	</script>
 
 </body>
 </html>

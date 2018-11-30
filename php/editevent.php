@@ -13,35 +13,56 @@
 
 		<div id='events-background'>
 			<br>
-			<h1 id='events-header'>
-				Events
-			</h1>
+			<a id='events-header-link' href='events.php'>
+				<h1 id='events-header' class='events-header-in-link'>Events</h1>
+			</a>
 			<br>
 			<br>
-			<div class='createevent-container'>
+			<?php
+			if (isset($_GET["eventID"])) {
+				$eventID = $_GET["eventID"];
+				$index = $_GET["index"];
+				$username = $_SESSION['username'];
+				$ch = curl_init('https://lunar-living.herokuapp.com/getEventInfo');
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+				curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
+				curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+					'Content-Type: application/json',
+					"event_id: $eventID"
+					));
+				$data = curl_exec($ch);
+				$info = curl_getinfo($ch);
+				$eventInfo = json_decode($data);
+				curl_close($ch);
+			
+			echo"<div class='createevent-container'>
 				<br>
 				<h1 class='event-title'>Edit Event</h1>
 				<div class='createevent-form-container'>
-					<form action='createnewevent.php' method='post'>
+					<form action='updateevent.php' method='post'>
 						<div class='form-group text-centered'>
 							<br>
-							<h4>SHOW TITLE OF EVENT</h4>
+							<input name='eventId' style='display:none;' value ='". $eventID ."'>
 							<br>
-							<h4>SHOW DATE OF EVENT</h4>
+							<h4>". $eventInfo->title ."</h4>
+							<br>
+							<h4>". substr($eventInfo->eventDate, 0, 10) ."</h4>
 							<br>
 							<h4>Description</h4>
 							<div class='form-group'>
-								<textarea wrap='soft' id='createevent-description-input' name='createeventDescriptionInput' placeholder='Event description'></textarea>
+								<textarea wrap='soft' id='createevent-description-input' name='createeventDescriptionInput' placeholder='Event description'>". $eventInfo->describtion ."</textarea>
 							</div>
 							<br>
 							<button type='submit' class='btn btn-info btn-md'>Update Event</button>
-							<button type='submit' class='btn btn-warning btn-md'>Cancel Update</button>
-							<button type='submit' class='btn btn-danger btn-md'>Cancel Event</button>
+							
+							<a class='btn btn-danger btn-md' onclick=\"deleteEvent(". $eventID .")\">Cancel Event</a>
 						</div>
 					</form>
 				</div>
 				<br>
-			</div>
+			</div>";
+			}
+			?>
 			<br>
 			<br>
 		</div>
@@ -72,6 +93,9 @@
 		        orientation: 'button'
 	        });
 	    });
+		function deleteEvent(eventID){
+			window.location.href='deleteevent.php?eventID=' + eventID;
+		}
 	</script>
 
 </body>
