@@ -103,11 +103,11 @@ foreach ($laundryTime as $machine) {
 echo "<div class='col-sm-3 margin-zero'>
                                 <div class='tour'>";
 if (count($machine1) == 24) {
-    echo "<a class='tour-img' style='background-image: url(../images/laundry1.png);'>
+    echo "<a class='tour-img' style='background-image: url(../images/laundry.png);'>
                                             <p class='price'><span id=lease>Sorry</span></p>
                                         </a>";
 } else {
-    echo "<a class='tour-img' style='background-image: url(../images/laundry1.png);'>
+    echo "<a class='tour-img' style='background-image: url(../images/laundry.png);'>
                                             <p class='price'><span id=lease>Available</span></p>
                                         </a>";
 }
@@ -117,11 +117,11 @@ echo "
                             <div class='col-sm-3 margin-zero'>
                                 <div class='tour'>";
 if (count($machine2) == 24) {
-    echo "<a class='tour-img' style='background-image: url(../images/laundry1.png);'>
+    echo "<a class='tour-img' style='background-image: url(../images/laundry.png);'>
                                             <p class='price'><span id=lease>Sorry</span></p>
                                         </a>";
 } else {
-    echo "<a class='tour-img' style='background-image: url(../images/laundry1.png);'>
+    echo "<a class='tour-img' style='background-image: url(../images/laundry.png);'>
                                             <p class='price'><span id=lease>Available</span></p>
                                         </a>";
 }
@@ -131,11 +131,11 @@ echo "
                             <div class='col-sm-3 margin-zero'>
                                 <div class='tour'>";
 if (count($machine3) == 24) {
-    echo "<a class='tour-img' style='background-image: url(../images/laundry1.png);'>
+    echo "<a class='tour-img' style='background-image: url(../images/laundry.png);'>
                                             <p class='price'><span id=lease>Sorry</span></p>
                                         </a>";
 } else {
-    echo "<a class='tour-img' style='background-image: url(../images/laundry1.png);'>
+    echo "<a class='tour-img' style='background-image: url(../images/laundry.png);'>
                                             <p class='price'><span id=lease>Available</span></p>
                                         </a>";
 }
@@ -145,11 +145,11 @@ echo "
                             <div class='col-sm-3 margin-zero'>
                                 <div class='tour'>";
 if (count($machine4) == 24) {
-    echo "<a class='tour-img' style='background-image: url(../images/laundry1.png);'>
+    echo "<a class='tour-img' style='background-image: url(../images/laundry.png);'>
                                             <p class='price'><span id=lease>Sorry</span></p>
                                         </a>";
 } else {
-    echo "<a class='tour-img' style='background-image: url(../images/laundry1.png);'>
+    echo "<a class='tour-img' style='background-image: url(../images/laundry.png);'>
                                             <p class='price'><span id=lease>Available</span></p>
                                         </a>";
 }
