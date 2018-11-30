@@ -1,9 +1,11 @@
 <?php
-    session_start();
+session_start();
 ?>
 <!doctype html>
 <html lang='en'>
-<?php include 'header.php'; ?>
+<?php include 'header.php';?>
+<link rel='stylesheet' href='../css/user_lease.css'>
+
 <style>
 li:hover:not(.active) {
     background-color: #111;
@@ -15,14 +17,14 @@ background-color:steelblue;
 }
 </style>
 <?php
-echo"
+echo "
 <body class='background background-dark'>";
-		$username = $_SESSION['username'];
-		$first_name = $_SESSION['firstName'];
-	?>
+$username = $_SESSION['username'];
+$first_name = $_SESSION['firstName'];
+?>
 	<main class = "content_body">
         <div class='container-fluid padding-zero'>
-            <?php include 'signInNavbar.php'; ?>
+            <?php include 'signInNavbar.php';?>
         </div>
         <div class="container-fluid userlease_container">
             <div class="row">
@@ -32,33 +34,33 @@ echo"
                             <ul>
                                 <li><a href='profile.php'>Profile</a></li>
                                 <?php
-                                if($_SESSION["usertype"] == 1){
-                                    echo"<li><a href='user_lease.php'>Lease</a></li>
+if ($_SESSION["usertype"] == 1) {
+    echo "<li><a href='user_lease.php'>Lease</a></li>
                                     <li><a href='payment.php'>Payment</a></li>";
-                                }
-                                if($_SESSION["usertype"] == 2){
-                                    echo"<li><a href='newlease.php'>New Lease</a></li>";
-                                    echo"<li><a href='allLogin.php'>All Users</a></li>";
-                                    echo"<li><a href='allLease.php'>All Leases</a></li>";
-                                    echo"<li><a href='appointments.php'>All Appointments</a></li>";
-                                    echo"<li><a href='allpromocodes.php'>All Promo Codes</a></li>";
-                                }
-                                if($_SESSION["usertype"] == 2){
-                                    echo"<li><a href='adminchat.php'>Chats</a></li>";
-                                }
-                                ?>
+}
+if ($_SESSION["usertype"] == 2) {
+    echo "<li><a href='newlease.php'>New Lease</a></li>";
+    echo "<li><a href='allLogin.php'>All Users</a></li>";
+    echo "<li><a href='allLease.php'>All Leases</a></li>";
+    echo "<li><a href='appointments.php'>All Appointments</a></li>";
+    echo "<li><a href='allpromocodes.php'>All Promo Codes</a></li>";
+}
+if ($_SESSION["usertype"] == 2) {
+    echo "<li><a href='adminchat.php'>Chats</a></li>";
+}
+?>
                                 <li class='active'><a href='ticketStatus.php'>Tickets</a></li>
                                 <?php
-                                if($_SESSION["usertype"] == 2){
-                                    echo"<li><a href='map.php'>Ticket Map</a></li>";
-                                }
-                                ?>
+if ($_SESSION["usertype"] == 2) {
+    echo "<li><a href='map.php'>Ticket Map</a></li>";
+}
+?>
                                 <li><a href='events.php'>Events</a></li>
                                 <li><a href='laundry.php'>Laundry</a></li>
                                 <li><a href='review.php'>Review</a></li>
                                 <?php
-                                if($_SESSION["usertype"] == 2){
-                                    echo"<li>
+if ($_SESSION["usertype"] == 2) {
+    echo "<li>
                                         <a onclick='displayStats()' href='#'>Stats</a>
                                         <ul id='statsChilds' class= 'statsChilds'>
                                             <li><a href='paymentstats.php'>Payment Stats</a></li>
@@ -66,60 +68,59 @@ echo"
                                             <li><a href='ticketstatsstatus.php'>Ticket Status Stats</a></li>
                                         </ul>
                                     </li>";
-                                }
-                                ?>
+}
+?>
                             </ul>
                         </aside>
                     </div>
                 </div>
                 <div class="col-sm-9">
                 <div class="container">
-                        <h2 class = 'lease_info'>Ticket Management</h2>
+                <span class = 'user_lease_info'>Ticket Management</span>
                         <?php
-                        if($_SESSION["usertype"] == 1){
-                            echo"<div class='shift-right'><button class='btn btn-info btn-md' onclick=\"newticket()\">Add New Ticket</button></div>";
-                        }
-                        ?>
+if ($_SESSION["usertype"] == 1) {
+    echo "<div><button class = 'btn' style = 'background-color:red; color:white; align-content:right;' onclick=\"newticket()\">Add New Ticket</button></div>";
+}
+?>
                         <br/>
                         <div>
                         <?php
-                        if($_SESSION["usertype"] == 2){ 
-                            include 'TicketFilterBars/adminFilterBar.php';
-                            $ch = curl_init('https://lunar-living.herokuapp.com/getAllTickets');
-                            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                            curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
-                            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-                                'Content-Type: application/json',
-                                "username: $username"
-                                ));
-                            $data = curl_exec($ch);
-                            $info = curl_getinfo($ch);
-                            $ticketArray = json_decode($data);
-                            curl_close($ch);
-                        } else {
-                            include 'TicketFilterBars/userFilterBar.php';
-                            $ch = curl_init('https://lunar-living.herokuapp.com/getUserTickets');
-                            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                            curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
-                            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-                                'Content-Type: application/json',
-                                "username: $username"
-                                ));
-                            $data = curl_exec($ch);
-                            $info = curl_getinfo($ch);
-                            $ticketArray = json_decode($data);
-                            curl_close($ch);
-                        } 
-                        ?>
+if ($_SESSION["usertype"] == 2) {
+    include 'TicketFilterBars/adminFilterBar.php';
+    $ch = curl_init('https://lunar-living.herokuapp.com/getAllTickets');
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        'Content-Type: application/json',
+        "username: $username",
+    ));
+    $data = curl_exec($ch);
+    $info = curl_getinfo($ch);
+    $ticketArray = json_decode($data);
+    curl_close($ch);
+} else {
+    include 'TicketFilterBars/userFilterBar.php';
+    $ch = curl_init('https://lunar-living.herokuapp.com/getUserTickets');
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        'Content-Type: application/json',
+        "username: $username",
+    ));
+    $data = curl_exec($ch);
+    $info = curl_getinfo($ch);
+    $ticketArray = json_decode($data);
+    curl_close($ch);
+}
+?>
                         </div>
                         <br/>
-                        <div style = "background-color: rgba(255,255,255,0.3); text-align: center">
-                        <h1 style = "color:white; ">Ticket Management</h1>
+                        <div style = "text-align: center">
                         <?php
-                        $index = 1;
-                        echo"
-                        <table class='table table-dark table-hover'>
-                            <thead>
+$index = 1;
+echo "
+                        <table class ='table table-bordered table_flat'>
+                            <thead class = 'head_table'>
                                 <tr>
                                 <th scope='col'>#</th>
                                 <th scope='col'>AptID</th>
@@ -129,28 +130,28 @@ echo"
                             </thead>
                             <tbody>
                         ";
-                        foreach($ticketArray as $ticket){
-                            echo"
-                            <tr class='table-row cursor' data-href=\"maintenance.php?ticketID=".$ticket->ticketID ."\">
-                                <th scope='row'>". $ticket->ticketID ."</th>
-                                <td>". $ticket->aptID ."</td>
-                                <td>". $ticket->title ."</td>
-                                <td>". $ticket->ticketStatus ."</td>
+foreach ($ticketArray as $ticket) {
+    echo "
+                            <tr class = 'row_table_lease' data-href=\"maintenance.php?ticketID=" . $ticket->ticketID . "\">
+                                <th scope='row'>" . $ticket->ticketID . "</th>
+                                <td>" . $ticket->aptID . "</td>
+                                <td>" . $ticket->title . "</td>
+                                <td>" . $ticket->ticketStatus . "</td>
                             </tr>
                             </a>
                             ";
-                        $index++;
-                        }
-                        echo"
+    $index++;
+}
+echo "
                             </tbody>
                         </table>";
-                        ?>
+?>
                          </div>
                     </div>
                 </div>
             </div>
         </div>
-        <?php include 'footer.php'; ?>
+        <?php include 'footer.php';?>
 	</main>
 
 	<!-- postJS -->

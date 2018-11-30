@@ -10,6 +10,9 @@
 .background-moon-in-space {
   background-image: url("../images/Moon in Space.jpg");
 }
+.background-mars-in-space {
+  background-image: url("../images/mars-wallpaper1.jpg");
+}
 .background-lunar-landed {
   background-image: url("../images/Lunar Landed.jpg");
 }
@@ -1486,16 +1489,11 @@ label {
   display: block;
   width: 115px;
   height: 40px;
-  background: #4e9caf;
+  background: #17a2b8;
   padding: 10px;
   text-align: center;
   border-radius: 5px;
   color: white;
   font-weight: bold;
-}
-
-.select-user{
-  height: 45px;
-  margin-bottom: 4%;
-  margin-left: 4%;
+  border-radius: 10px;
 }
