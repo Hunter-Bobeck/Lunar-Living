@@ -130,9 +130,9 @@ foreach ($leaseArray as $lease) {
     curl_close($ch);
     echo "
                             <tr class = 'row_table_lease'>
-                                <th scope='row' style = 'font-weight: bold; font-size: 20px;'>" . $index . "</th>
-                                <td style = 'font-weight: bold; font-size: 20px;'>" . $lease->aptID . "</td>
-                                <td style = 'font-weight: bold; font-size: 20px;'>$" . $paymentData->amount . "</td>";
+                                <th scope='row' style = ' font-size: 20px;'>" . $index . "</th>
+                                <td style = ' font-size: 20px;'>" . $lease->aptID . "</td>
+                                <td style = ' font-size: 20px;'>$" . $paymentData->amount . "</td>";
     if ($paymentData->amount == 0) {
         echo "<td><button class = 'btn btn-info btn-md' disabled>Pay</button></td>";
     } else {
