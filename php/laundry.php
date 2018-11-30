@@ -1,18 +1,20 @@
 <?php
-    session_start();
+session_start();
 ?>
 <!doctype html>
 <html lang='en'>
-<?php include 'header.php'; ?>
+<?php include 'header.php';?>
+<link rel='stylesheet' href='../css/user_lease.css'>
+
 <?php
-echo"
+echo "
 <body class='background background-dark'>";
-		$username = $_SESSION['username'];
-		$first_name = $_SESSION['firstName'];
-	?>
+$username = $_SESSION['username'];
+$first_name = $_SESSION['firstName'];
+?>
 	<main class = "content_body">
         <div class='container-fluid padding-zero'>
-            <?php include 'signInNavbar.php'; ?>
+            <?php include 'signInNavbar.php';?>
         </div>
         <div class="container-fluid userlease_container">
             <div class="row">
@@ -22,33 +24,33 @@ echo"
                             <ul>
                                 <li><a href='profile.php'>Profile</a></li>
                                 <?php
-                                if($_SESSION["usertype"] == 1){
-                                    echo"<li><a href='user_lease.php'>Lease</a></li>
+if ($_SESSION["usertype"] == 1) {
+    echo "<li><a href='user_lease.php'>Lease</a></li>
                                     <li><a href='payment.php'>Payment</a></li>";
-                                }
-                                if($_SESSION["usertype"] == 2){
-                                    echo"<li><a href='newlease.php'>New Lease</a></li>";
-                                    echo"<li><a href='allLogin.php'>All Users</a></li>";
-                                    echo"<li><a href='allLease.php'>All Leases</a></li>";
-                                    echo"<li><a href='appointments.php'>All Appointments</a></li>";
-                                    echo"<li><a href='allpromocodes.php'>All Promo Codes</a></li>";
-                                }
-                                if($_SESSION["usertype"] == 2){
-                                    echo"<li><a href='adminchat.php'>Chats</a></li>";
-                                }
-                                ?>
+}
+if ($_SESSION["usertype"] == 2) {
+    echo "<li><a href='newlease.php'>New Lease</a></li>";
+    echo "<li><a href='allLogin.php'>All Users</a></li>";
+    echo "<li><a href='allLease.php'>All Leases</a></li>";
+    echo "<li><a href='appointments.php'>All Appointments</a></li>";
+    echo "<li><a href='allpromocodes.php'>All Promo Codes</a></li>";
+}
+if ($_SESSION["usertype"] == 2) {
+    echo "<li><a href='adminchat.php'>Chats</a></li>";
+}
+?>
                                 <li><a href='ticketStatus.php'>Tickets</a></li>
                                 <?php
-                                if($_SESSION["usertype"] == 2){
-                                    echo"<li><a href='map.php'>Ticket Map</a></li>";
-                                }
-                                ?>
+if ($_SESSION["usertype"] == 2) {
+    echo "<li><a href='map.php'>Ticket Map</a></li>";
+}
+?>
                                 <li><a href='events.php'>Events</a></li>
                                 <li class='active'><a href='laundry.php'>Laundry</a></li>
                                 <li><a href='review.php'>Review</a></li>
                                 <?php
-                                if($_SESSION["usertype"] == 2){
-                                    echo"<li>
+if ($_SESSION["usertype"] == 2) {
+    echo "<li>
                                         <a onclick='displayStats()' href='#'>Stats</a>
                                         <ul id='statsChilds' class= 'statsChilds'>
                                             <li><a href='paymentstats.php'>Payment Stats</a></li>
@@ -56,134 +58,130 @@ echo"
                                             <li><a href='ticketstatsstatus.php'>Ticket Status Stats</a></li>
                                         </ul>
                                     </li>";
-                                }
-                                ?>
+}
+?>
                             </ul>
                         </aside>
                     </div>
                 </div>
                 <div class="col-sm-9">
                 <div class="container">
-                        <h2 class = 'lease_info'>Laundry Service</h2>
-                        <div class='shift-right'><button class='btn btn-info btn-md' id = 'bookLaundry'>Book a Machine</button></div>
+                <span class = 'user_lease_info'>Laundry Service</span>
+                        <div><button class='btn' style = 'color:white;background-color:crimson' id = 'bookLaundry'>Book a Machine</button></div>
                         <div class='row'>
                             <?php
-                            $ch = curl_init('https://lunar-living.herokuapp.com/getAllLaundryTimes');
-                            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                            curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
-                            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-                                'Content-Type: application/json',
-                                ));
-                            $laundryTimings = curl_exec($ch);
-                            $info = curl_getinfo($ch);
-                            $laundryTime = json_decode($laundryTimings);
-                            curl_close($ch);
-                            $machine1 = "empty";
-                            $machine2 = "empty";
-                            $machine3 = "empty";
-                            $machine4 = "empty";
-                            foreach($laundryTime as $machine){
-                                switch($machine->machineID){
-                                    case 1:
-                                        $machine1 = $machine->timings;
-                                        break;
-                                    case 2:
-                                        $machine2 = $machine->timings;
-                                        break;
-                                    case 3:
-                                        $machine3 = $machine->timings;
-                                        break;
-                                    case 4:
-                                        $machine4 = $machine->timings;
-                                        break;
-                                }
-                            }
-                            echo"<div class='col-sm-3 margin-zero'>
+$ch = curl_init('https://lunar-living.herokuapp.com/getAllLaundryTimes');
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+));
+$laundryTimings = curl_exec($ch);
+$info = curl_getinfo($ch);
+$laundryTime = json_decode($laundryTimings);
+curl_close($ch);
+$machine1 = "empty";
+$machine2 = "empty";
+$machine3 = "empty";
+$machine4 = "empty";
+foreach ($laundryTime as $machine) {
+    switch ($machine->machineID) {
+        case 1:
+            $machine1 = $machine->timings;
+            break;
+        case 2:
+            $machine2 = $machine->timings;
+            break;
+        case 3:
+            $machine3 = $machine->timings;
+            break;
+        case 4:
+            $machine4 = $machine->timings;
+            break;
+    }
+}
+echo "<div class='col-sm-3 margin-zero'>
                                 <div class='tour'>";
-                                    if(count($machine1) == 24){
-                                        echo"<a class='tour-img' style='background-image: url(../images/laundry.png);'>
+if (count($machine1) == 24) {
+    echo "<a class='tour-img' style='background-image: url(../images/laundry1.png);'>
                                             <p class='price'><span id=lease>Sorry</span></p>
                                         </a>";
-                                    }
-                                    else{
-                                        echo"<a class='tour-img' style='background-image: url(../images/laundry.png);'>
+} else {
+    echo "<a class='tour-img' style='background-image: url(../images/laundry1.png);'>
                                             <p class='price'><span id=lease>Available</span></p>
                                         </a>";
-                                    }
-                                    echo"
+}
+echo "
                                 </div>
                             </div>
                             <div class='col-sm-3 margin-zero'>
                                 <div class='tour'>";
-                                    if(count($machine2) == 24){
-                                        echo"<a class='tour-img' style='background-image: url(../images/laundry.png);'>
+if (count($machine2) == 24) {
+    echo "<a class='tour-img' style='background-image: url(../images/laundry1.png);'>
                                             <p class='price'><span id=lease>Sorry</span></p>
                                         </a>";
-                                    }
-                                    else{
-                                        echo"<a class='tour-img' style='background-image: url(../images/laundry.png);'>
+} else {
+    echo "<a class='tour-img' style='background-image: url(../images/laundry1.png);'>
                                             <p class='price'><span id=lease>Available</span></p>
                                         </a>";
-                                    }
-                                    echo"
+}
+echo "
                                 </div>
                             </div>
                             <div class='col-sm-3 margin-zero'>
                                 <div class='tour'>";
-                                    if(count($machine3) == 24){
-                                        echo"<a class='tour-img' style='background-image: url(../images/laundry.png);'>
+if (count($machine3) == 24) {
+    echo "<a class='tour-img' style='background-image: url(../images/laundry1.png);'>
                                             <p class='price'><span id=lease>Sorry</span></p>
                                         </a>";
-                                    }
-                                    else{
-                                        echo"<a class='tour-img' style='background-image: url(../images/laundry.png);'>
+} else {
+    echo "<a class='tour-img' style='background-image: url(../images/laundry1.png);'>
                                             <p class='price'><span id=lease>Available</span></p>
                                         </a>";
-                                    }
-                                    echo"
+}
+echo "
                                 </div>
                             </div>
                             <div class='col-sm-3 margin-zero'>
                                 <div class='tour'>";
-                                    if(count($machine4) == 24){
-                                        echo"<a class='tour-img' style='background-image: url(../images/laundry.png);'>
+if (count($machine4) == 24) {
+    echo "<a class='tour-img' style='background-image: url(../images/laundry1.png);'>
                                             <p class='price'><span id=lease>Sorry</span></p>
                                         </a>";
-                                    }
-                                    else{
-                                        echo"<a class='tour-img' style='background-image: url(../images/laundry.png);'>
+} else {
+    echo "<a class='tour-img' style='background-image: url(../images/laundry1.png);'>
                                             <p class='price'><span id=lease>Available</span></p>
                                         </a>";
-                                    }
-                                    echo"
+}
+echo "
                                 </div>
                             </div>";
-                            ?>
+?>
                             <div id='bookLaundryModal' class='modal'>
                                 <!-- Modal content -->
                                 <div class='modal-content'>
                                     <div class='modal-header'>
                                         <h2>Book Laundry</h2>
-                                        <span class='close'>&times;</span>	
+                                        <span class='close'>&times;</span>
                                     </div>
                                     <div class='modal-body'>
                                         <?php
-                                            echo "</br><span>Select Machine:&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                            <select id='machineSelect' onChange=\"changeTime(this,'". $machine1 ."', '" . $machine2  . "', '" . $machine3 . "', '" . $machine4 . "')\">
+echo "</br><span>Select Machine:&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                            <select id='machineSelect' onChange=\"changeTime(this,'" . $machine1 . "', '" . $machine2 . "', '" . $machine3 . "', '" . $machine4 . "')\">
                                             <option value='0'>Select Machine</option>";
-                                                if(count($machine1) < 24){
-                                                    echo"<option value='1'>Machine 1</option>";
-                                                }
-                                                if(count($machine2) < 24){
-                                                    echo"<option value='2'>Machine 2</option>";
-                                                }
-                                                if(count($machine3) < 24){
-                                                    echo"<option value='3'>Machine 3</option>";
-                                                }
-                                                if(count($machine4) < 24){
-                                                    echo"<option value='4'>Machine 4</option>";
-                                                }
-                                                echo"   
+if (count($machine1) < 24) {
+    echo "<option value='1'>Machine 1</option>";
+}
+if (count($machine2) < 24) {
+    echo "<option value='2'>Machine 2</option>";
+}
+if (count($machine3) < 24) {
+    echo "<option value='3'>Machine 3</option>";
+}
+if (count($machine4) < 24) {
+    echo "<option value='4'>Machine 4</option>";
+}
+echo "
                                             </select>
                                             </br></br>
                                             <span>Select Time:&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -192,7 +190,7 @@ echo"
                                             </select>
                                             </br></br>
                                             ";
-                                        ?>
+?>
                                     </div>
                                     <div class='modal-footer'>
                                         <button class = 'update' onclick = 'bookLaundry()'>Book</button>
@@ -204,7 +202,7 @@ echo"
                 </div>
             </div>
         </div>
-        <?php include 'footer.php'; ?>
+        <?php include 'footer.php';?>
 	</main>
 
 	<!-- postJS -->
@@ -218,7 +216,7 @@ echo"
 		var btn = document.getElementById("bookLaundry");
 		// Get the <span> element that closes the modal
 		var span = document.getElementsByClassName("close")[0];
-		// When the user clicks the button, open the modal 
+		// When the user clicks the button, open the modal
 		btn.onclick = function() {
 			modal.style.display = "block";
 		}
@@ -242,7 +240,7 @@ echo"
             var selectValue = parseInt(current.options[current.selectedIndex].value)
             // Empty the time select field
             $('#time').empty();
-            
+
             if(selectValue != 0){
                 switch(selectValue){
                     case 1:
