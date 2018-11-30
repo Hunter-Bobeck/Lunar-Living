@@ -1486,10 +1486,11 @@ label {
   display: block;
   width: 115px;
   height: 40px;
-  background: #4e9caf;
+  background: #17a2b8;
   padding: 10px;
   text-align: center;
   border-radius: 5px;
   color: white;
   font-weight: bold;
+  border-radius: 10px;
 }

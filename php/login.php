@@ -6,47 +6,49 @@
 ?>
 <!doctype html>
 <html lang='en'>
-<?php include 'header.php'; ?>
-<body class='background background-moon-in-space'>
+<link rel='stylesheet' href='../css/login.css'>
+<body class = "background background-mars-in-space">
     
-	<main>
-	<div class='container-fluid padding-zero'>
-            <?php include 'signInNavbar.php'; ?>
-        </div>
-		<div id='spacer-login'></div>
-		<div class='container container-form' id='container-login'>
-			<div class='row justify-content-center align-items-center'>
-				<div class='col-md-7' id='login-column'>
-					<div class='text-centered five-padding-bottom'><img src='../images\Logo - Login.png' class='logo'></div>
-					<br>
-					<form class='form' action = 'loginverify.php' method = 'post'>
-						<div class='form-group'>
-							<input class='form-control' type='text' id='login-username' name='loginUsername' placeholder='Username'>
-						</div>
-						<div class='form-group'>
-							<input class='form-control' type='password' id='login-password' name='loginPassword' placeholder='Password'>
-						</div>
-						<div class='form-group text-centered'>
-							<input class='btn btn-info btn-md' value='Login' type='submit' name='loginButtonLogin' id="loginButtonLogin">
-						</div>
-          </form>
-            <form class="" action="newuser.php">
-              <div class='form-group text-centered'>
-                <input class='btn btn-info btn-md' value='Signup' type='submit' name='loginButtonSignup'>
-              </div>
-            </form>
-
-				</div>
-			</div>
-		</div>
-		<br>
-		<br>
-		<?php include 'footer.php'; ?>
-	</main>
+    
+    <main>
+<div class='row justify-content-center align-items-center'>
+<form action = 'loginverify.php' method = 'post'>
+<div class="login-wrapper">
+  <div class="login-left">
+    <img src="../images/mars-wallpaper.jpg">
+    <div class="h1">Enter Lunar Living</div>
+  </div>
+  <div class="login-right">
+    <div class="h2">Login</div>
+    <div class="form-group">
+      <input type='text' id='login-username' name='loginUsername' placeholder='Username'>
+      <label for="Email">Email</label>    
+    </div>
+    <div class="form-group">
+      <input type='password' id='login-password' name='loginPassword' placeholder='Password'>
+      <label for="Password">Password</label>    
+    </div>
+    <div class="button-area">
+      <button class="btn btn-secondary" value='Login' type='submit' name='loginButtonLogin' id="loginButtonLogin">Login</button>
+      <button class="btn btn-primary" value='Signup' type='submit' name='loginButtonSignup' formaction = 'newuser.php'>Sign Up</button>
+    </div>
+  </div>
+</div>
+</form>
+    </main>
 
 <!-- postJS -->
-    <script src='../js/bootstrap.min.js'></script>		<!-- Bootstrap JS -->
+    <script src='../js/bootstrap.min.js'></script>      <!-- Bootstrap JS -->
+    <script type="text/javascript"> 
+    var openLoginRight = document.querySelector('.h1');
+var loginWrapper = document.querySelector('.login-wrapper');
 
+openLoginRight.addEventListener('click', function(){
+  loginWrapper.classList.toggle('open'); 
+});
+    </script>
+
+</main>
 
 </body>
 

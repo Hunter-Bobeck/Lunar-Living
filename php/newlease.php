@@ -76,7 +76,7 @@
                                             <table class = 'text-centered' id="dynamic_field">
                                                 <br>
                                                 <tr>
-                                                    <td><a type="button"  class = "buttonlease" name="add" id="add" color= "black">Add Email</a></td>
+                                                    <td><a type="button" style = "" class = "buttonlease" name="add" id="add" color= "black">Add Email</a></td>
                                                 </tr>
                                             </table>
                                             <br>
