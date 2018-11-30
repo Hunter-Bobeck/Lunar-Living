@@ -80,7 +80,7 @@ $laundryTimings = curl_exec($ch);
 $info = curl_getinfo($ch);
 $laundryTime = json_decode($laundryTimings);
 curl_close($ch);
-$machine1 = []];
+$machine1 = [];
 $machine2 = [];
 $machine3 = [];
 $machine4 = [];
