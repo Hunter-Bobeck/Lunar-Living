@@ -74,16 +74,12 @@
                                         <div class='form-group text-centered'>
                                             <input class='form-control' type='text' id='newlease-apartment-id' name='newleaseApartmentID' placeholder='Apartment ID'>
                                             <table class = 'text-centered' id="dynamic_field">
+                                                <br>
                                                 <tr>
-                    <!--                                <td><input type="text" name="newleaseEmailID" placeholder="Email ID #1" class="form-control email_list" /></td>-->
-                                                    <td><a style = "background-color: #f44336;
-    color: white;
-    padding: 14px 25px;
-    text-align: center; 
-    text-decoration: none;
-    display: inline-block;" type="button" name="add" id="add" class="btn btn-success" color= "black">Add Email</a></td>
+                                                    <td><a type="button"  class = "buttonlease" name="add" id="add" color= "black">Add Email</a></td>
                                                 </tr>
                                             </table>
+                                            <br>
                                             <div class='form-group text-centered'>
                                                 <input class='btn btn-info btn-md' value='Create Lease' type='submit' name='newleaseButtonCreateLease'>
                                             </div>

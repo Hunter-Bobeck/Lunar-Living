@@ -1,7 +1,7 @@
 /* general */
 
 @import url("https://fonts.googleapis.com/css?family=Ramabhadra");
-@import url('https://fonts.googleapis.com/css?family=KoHo');
+@import url("https://fonts.googleapis.com/css?family=KoHo");
 
 .background {
   background-color: black;
@@ -23,12 +23,12 @@
   background-image: url("../images/Astronauts with Earth.jpg");
 }
 .background-chilling {
-	background-image: url("../images/Moon in Space.jpg");
+  background-image: url("../images/Moon in Space.jpg");
 }
 @media only screen and (min-width: 1400px) {
-	.background-chilling {
-		background-image: url("../images/Chilling.jpg");
-	}
+  .background-chilling {
+    background-image: url("../images/Chilling.jpg");
+  }
 }
 
 .background-dark {
@@ -82,7 +82,7 @@ a {
 }
 @media only screen and (min-width: 700px) {
   #spacer-login {
-    margin-top:100px;
+    margin-top: 100px;
   }
   #container-login {
     width: 400px;
@@ -124,17 +124,16 @@ a {
 }
 #container-signup {
   width: 250px;
-  margin-bottom: 5%; 
+  margin-bottom: 5%;
 }
 @media only screen and (min-width: 700px) {
   #spacer-signup {
-    margin-top:100px;
+    margin-top: 100px;
   }
   #container-signup {
     width: 400px;
   }
 }
-
 /* profile.php */
 #spacer-profile {
   height: 140px;
@@ -150,7 +149,6 @@ a {
     width: 400px;
   }
 }
-
 /* index.php */
 /* image modal (ref.: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal_img) */
 .hover-image {
@@ -249,8 +247,12 @@ a {
   height: 30px;
 }
 #container-index {
-  background-color: rgba(223, 223, 224, 0.8);
-  /* this color in hex (without alpha) is #dfdfe0 */
+  background-color: rgba(
+    223,
+    223,
+    224,
+    0.8
+  ); /* this color in hex (without alpha) is #dfdfe0 */
   border-radius: 25px;
   padding: 15px;
   padding-top: 10px;
@@ -273,14 +275,14 @@ a {
   }
 }
 #bridge-kid-container {
-	text-align: center;
+  text-align: center;
 }
 #bridge-kid {
-	width: 20%;
-	height: auto;
+  width: 20%;
+  height: auto;
 }
 #review-heading {
-	font-size: 2em;
+  font-size: 2em;
 }
 /* newlease.php */
 #spacer-newlease {
@@ -352,8 +354,7 @@ a {
   margin-right: 0px;
   border-radius: 5px;
   background-color: rgba(38, 38, 40, 1);
-  /* this color in hex (without alpha) is #262628 */
-  /* this color in hex (without alpha) is #abc7d7 */
+  /* this color in hex (without alpha) is #262628 */ /* this color in hex (without alpha) is #abc7d7 */
 }
 .container-maintenance-ticket-content > h6 {
   font-size: 14px;
@@ -436,7 +437,6 @@ a {
 .main_sidebar ul li.active:hover i {
   color: #fff;
 }
-
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 50%;
@@ -497,11 +497,11 @@ h5 {
   position: fixed;
   /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 100px;
-  /* Location of the box */
+  padding-top: 100px; /* Location of the box */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
+  width: 100%;
+  /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0, 0, 0); /* Fallback color */
@@ -1096,7 +1096,6 @@ label {
 .shine span {
   position: relative;
 }
-
 .shine span::after {
   content: "";
   opacity: 0;
@@ -1147,7 +1146,6 @@ label {
 .blue span {
   background-color: #34c2e3;
 }
-
 .orange span {
   background-color: #fecf23;
   background-image: linear-gradient(top, #fecf23, #fd9215);
@@ -1161,8 +1159,7 @@ label {
   font-family: "Times New Roman", Times, serif;
   color: white;
 }
-
-.save-oxygen{
+.save-oxygen {
   float: right;
   margin-right: 5%;
   color: #8eec00;
@@ -1171,14 +1168,12 @@ label {
   text-decoration: underline;
   font-size: 20px;
 }
-
-.oxygen button:hover{
+.oxygen button:hover {
   color: #00bbf0;
   cursor: pointer;
 }
 /* events.php */
 /* grids reference: https://www.w3schools.com/css/css_grid.asp */
-
 .spacer-events {
   height: 65px;
 }
@@ -1188,163 +1183,158 @@ label {
   }
 }
 #events-background {
-	background-color: rgba(33, 150, 243, 0);
+  background-color: rgba(33, 150, 243, 0);
 }
 @media only screen and (min-width: 1400px) {
   #events-background {
-    background-color: rgba(33, 150, 243, .4);
+    background-color: rgba(33, 150, 243, 0.4);
   }
 }
 #events-header {
-	font-family: "KoHo", sans-serif;
-	text-align: left;
-	margin-left: 22%;
-	color: white;
-	text-decoration: none;
+  font-family: "KoHo", sans-serif;
+  text-align: left;
+  margin-left: 22%;
+  color: white;
+  text-decoration: none;
 }
 .events-header-in-link:hover {
-	font-weight: bold;
+  font-weight: bold;
 }
 #events-header-link:hover {
-	text-decoration: none;
+  text-decoration: none;
 }
 .events-grid-container {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-	margin-left: 22%;
-	margin-right: 22%;
-	padding: 10px;
-    background-color: rgba(33, 150, 243, 0);
-	border-radius: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-left: 22%;
+  margin-right: 22%;
+  padding: 10px;
+  background-color: rgba(33, 150, 243, 0);
+  border-radius: 25px;
 }
 @media only screen and (min-width: 1600px) {
   .events-grid-container {
-	grid-template-columns: repeat(4, minmax(200px, 1fr));
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
   }
 }
 .events-grid-item {
-	font-family: "KoHo", sans-serif;
-	text-align: center;
-	border: 1px solid rgba(0, 0, 0, 0.8);
-	padding: 0px;
-	margin: .6em;
-	color: white;
-	overflow: hidden;
-	background-color: rgba(33, 150, 243, .4);
-	border-radius: 0px;
+  font-family: "KoHo", sans-serif;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 0px;
+  margin: 0.6em;
+  color: white;
+  overflow: hidden;
+  background-color: rgba(33, 150, 243, 0.4);
+  border-radius: 0px;
 }
 @media only screen and (min-width: 1400px) {
   .events-grid-item {
-	border: 1px solid rgba(0, 0, 0, 0.8);
-	padding: 20px;
-	background-color: rgba(12, 12, 12, .9);
-	border-radius: 25px;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    background-color: rgba(12, 12, 12, 0.9);
+    border-radius: 25px;
   }
 }
 .event-link:link {
-    color: white;
+  color: white;
 }
 .event-link:visited {
-    color: white;
+  color: white;
 }
 .event-link:hover {
-    color: #1eced5;
-	text-decoration: none;
+  color: #1eced5;
+  text-decoration: none;
 }
 .event-link:active {
-    color: white;
+  color: white;
 }
 .events-event-title {
-	font-size: 1.5em;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+  font-size: 1.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .event-thumbnail {
-	width: 10em;
-	height: auto;
-	border-radius: 25px;
+  width: 10em;
+  height: auto;
+  border-radius: 25px;
 }
 .events-event-date {
-	padding-top: .1em;
-	font-size: 1.1em;
+  padding-top: 0.1em;
+  font-size: 1.1em;
 }
 .event-link-selected {
   color: #1eced5;
   text-decoration: none;
 }
-
 /* event.php */
-
 .event-container {
-	margin-left: 33%;
-	margin-right: 33%;
-	text-align: center;
-	background-color: rgba(33, 150, 243, .4);
-	border-radius: 25px;
-	font-family: "KoHo", sans-serif;
-	color: white;
+  margin-left: 33%;
+  margin-right: 33%;
+  text-align: center;
+  background-color: rgba(33, 150, 243, 0.4);
+  border-radius: 25px;
+  font-family: "KoHo", sans-serif;
+  color: white;
 }
 @media only screen and (min-width: 1400px) {
   .event-container {
-	background-color: rgba(12, 12, 12, .9);
+    background-color: rgba(12, 12, 12, 0.9);
   }
 }
 .event-title {
-	padding: .1em;
+  padding: 0.1em;
 }
 .event-banner {
-	width: 100%;
-	height: auto;
+  width: 100%;
+  height: auto;
 }
 .event-date {
-	padding-top: .6em;
-	font-size: 1.5em;
+  padding-top: 0.6em;
+  font-size: 1.5em;
 }
 .event-description-holder {
-	padding-top: 1.5em;
-	padding-left: 3em;
-	padding-right: 3em;
-	padding-bottom: 0em;
+  padding-top: 1.5em;
+  padding-left: 3em;
+  padding-right: 3em;
+  padding-bottom: 0em;
 }
 .event-description {
-	text-align: left;
+  text-align: left;
 }
 .event-icon {
-	padding-left: 1.15em;
-	padding-right: 1.15em;
-	padding-top: .65em;
-	padding-bottom: .75em;
+  padding-left: 1.15em;
+  padding-right: 1.15em;
+  padding-top: 0.65em;
+  padding-bottom: 0.75em;
 }
 .attending-text {
-	float: left;
-	display: inline;
-	font-style: italic;
+  float: left;
+  display: inline;
+  font-style: italic;
 }
 .event-edit-button {
-	float: left;
+  float: left;
 }
-
 /* createevent.php */
-
 .createevent-container {
-	margin-left: 33%;
-	margin-right: 33%;
-	text-align: center;
-	background-color: rgba(12, 12, 12, .9);
-	border-radius: 25px;
-	font-family: "KoHo", sans-serif;
-	color: white;
+  margin-left: 33%;
+  margin-right: 33%;
+  text-align: center;
+  background-color: rgba(12, 12, 12, 0.9);
+  border-radius: 25px;
+  font-family: "KoHo", sans-serif;
+  color: white;
 }
 .createevent-form-container {
-	padding-left: 5em;
-	padding-right: 5em;
+  padding-left: 5em;
+  padding-right: 5em;
 }
 #createevent-description-input {
-	width: 100%;
-	height: 10em;
+  width: 100%;
+  height: 10em;
 }
-
 /* navbarscapes */
 .navbar {
   background-color: rgba(
@@ -1376,12 +1366,8 @@ label {
   width: 100%;
   height: 60px;
   line-height: 60px;
-  background-color: rgba(
-    223,
-    223,
-    224,
-    0.8
-  ); /* this color in hex (without alpha) is #dfdfe0 */
+  background-color: rgba(223, 223, 224, 0.8);
+  /* this color in hex (without alpha) is #dfdfe0 */
 }
 .footer > .container {
   padding-right: 15px;
@@ -1389,29 +1375,26 @@ label {
   color: black;
 }
 .nav-item {
-	font-family: "KoHo", sans-serif;
-	font-weight: bold;
+  font-family: "KoHo", sans-serif;
+  font-weight: bold;
 }
 .nav-link:hover {
-    color: #2196f3 !important;
+  color: #2196f3 !important;
 }
 .login-link {
-	font-family: "KoHo", sans-serif;
-	font-weight: bold;
+  font-family: "KoHo", sans-serif;
+  font-weight: bold;
 }
 .login-link:hover {
-	text-decoration: none;
-    color: #2196f3 !important;
+  text-decoration: none;
+  color: #2196f3 !important;
 }
-
-.oxygenDetailsOn{
+.oxygenDetailsOn {
   display: none;
 }
-
-.oxygenDetailsOff{
+.oxygenDetailsOff {
   display: none;
 }
-
 .red-dot {
   height: 25px;
   width: 25px;
@@ -1419,23 +1402,20 @@ label {
   border-radius: 50%;
   display: inline-block;
 }
-
 .green-dot {
   height: 25px;
   width: 25px;
   background-color: #4caf50;
   border-radius: 50%;
   display: inline-block;
-  margin-left: 2%; 
+  margin-left: 2%;
 }
-
-.dates-picker{
+.dates-picker {
   display: none;
 }
-
-.time-box{
+.time-box {
   width: 23%;
-  float: left; 
+  float: left;
   margin: 1%;
   padding: 1%;
   border: 1px solid #ccc;
@@ -1443,74 +1423,73 @@ label {
   background-color: white;
   border-radius: 50%;
 }
-
-.time-box:hover{
+.time-box:hover {
   box-shadow: 3px 3px 15px #666;
-  border-color:#C76C0C;
-  background: #C76C0C;
+  border-color: #c76c0c;
+  background: #c76c0c;
   color: #fff;
   cursor: pointer;
-  
-  /*Opacity*/
+  /* Opacity */
   zoom: 1;
   filter: alpha(opacity=100);
   opacity: 1;
 }
-
-.time-box p{
+.time-box p {
   margin: 0;
 }
-
-.appointment-userinfo{
+.appointment-userinfo {
   display: none;
 }
-
-.error{
-  display:none;
-}
-
-.statsChilds{
+.error {
   display: none;
 }
-
-.backLink{
-  font-family: 'KoHo', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+.statsChilds {
+  display: none;
+}
+.backLink {
+  font-family: "KoHo", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   font-size: 45px;
   float: right;
   color: #ffffff;
   padding-right: 10%;
   padding-top: 5%;
 }
-
-.cursor{
-  cursor:pointer;
+.cursor {
+  cursor: pointer;
 }
-
-.promocode{
+.promocode {
   margin-top: 4%;
   line-height: 40px;
   height: auto;
   padding: 0 16px;
 }
-
-.promocodelink{
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.promocodelink {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   cursor: pointer;
 }
-
-.promocodeInput{
+.promocodeInput {
   margin-bottom: 4%;
   margin-left: 4%;
   line-height: 40px;
   height: auto;
   padding: 0 20px;
 }
-
-.margin-left{
+.margin-left {
   margin-left: 4%;
 }
-
-.promotitle{
+.promotitle {
   font-size: 25px;
   color: #ffb82c;
+}
+.buttonlease {
+  display: block;
+  width: 115px;
+  height: 40px;
+  background: #4e9caf;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
 }
