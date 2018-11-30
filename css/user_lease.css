@@ -123,3 +123,20 @@ body {
   top: 0;
   right: 0;
 }
+.user_lease_info {
+  font-size: 4em;
+  z-index: 100;
+  text-shadow: 0.04em 0.04em 0 #9cb8b3;
+}
+.table_flat {
+  width: 800px;
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.head_table {
+  background-color: #55608f;
+}
+.row_table_lease {
+  background-color: rgba(255, 255, 255, 0.3);
+}

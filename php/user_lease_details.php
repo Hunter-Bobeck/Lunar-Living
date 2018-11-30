@@ -10,6 +10,7 @@ if (isset($_GET['aptID']) && isset($_GET['groupNo']) && isset($_GET['startDate']
 <!doctype html>
 <html lang='en'>
 <?php include 'header.php';?>
+<link rel='stylesheet' href='../css/user_lease.css'>
 <body class="background background-dark">
     <?php
 $username = $_SESSION['username'];
@@ -69,7 +70,7 @@ if ($_SESSION["usertype"] == 2) {
                 </div>
                 <div class="col-sm-8">
                     <div class="container">
-                        <h2 class = 'lease_info'>Signed Lease</h2>
+                        <span class = 'user_lease_info'>Signed Lease</span><br><>
                         <div class='row'>
                         <?php
 echo "
@@ -100,8 +101,8 @@ if ($groupMembers == 'false') {
 }
 curl_close($ch);
 echo "
-                                    <table class='table table-bordered'>
-                                        <thead>
+                                    <table class='table table-bordered table_flat'>
+                                        <thead class = 'head_table'>
                                         <tr>
                                             <th>FirstName</th>
                                             <th>Lastname</th>
@@ -121,7 +122,7 @@ foreach ($apiMembers as $member) {
     if ($userDetails == 'false') {
         //echo "User Not Found";
         echo "
-                                                <tr>
+                                                <tr class = 'row_table_lease'>
                                                     <td></td>
                                                     <td></td>
                                                     <td>" . $member->username . "</td>
@@ -129,7 +130,7 @@ foreach ($apiMembers as $member) {
     } else {
         $userInfo = json_decode($userDetails);
         echo "
-                                                <tr>
+                                                <tr class = 'row_table_lease'>
                                                     <td>" . $userInfo->first_name . "</td>
                                                     <td>" . $userInfo->last_name . "</td>
                                                     <td>" . $member->username . "</td>
