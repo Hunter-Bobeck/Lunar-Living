@@ -27,7 +27,7 @@
 				$intrestedCount = sizeof(explode("~", $eventInfo->intrested)) - 1;
 				$maybeCount = sizeof(explode("~", $eventInfo->maybe)) - 1;
 				echo"<div class='spacer-events'>
-					<a href='events.php' class='backLink'>Back</a>
+					
 				</div>
 
 				<div id='events-background'>
