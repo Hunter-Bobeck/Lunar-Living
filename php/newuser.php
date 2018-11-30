@@ -39,7 +39,7 @@
 					<br>
     <form class="login-form" method = 'post' action='checksignupuser.php'>
       <input type="text" type='text' id='newuser-email-id' name='username' placeholder='Email ID'/>
-      <button type='submit' name='newuserButtonSubmit' id = "newuserButtonSubmit">login</button>
+      <button type='submit' name='newuserButtonSubmit' id = "newuserButtonSubmit">Submit</button>
     </form>
   </div>
 </div>
