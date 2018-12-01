@@ -26,7 +26,7 @@ span:after {
   -webkit-mask-image: url(//f.cl.ly/items/1t1C0W3y040g1J172r3h/mask.png);
 }
 
-body {
+.side-col {
   text-align: center;
 }
 

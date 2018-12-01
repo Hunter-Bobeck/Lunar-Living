@@ -53,33 +53,33 @@ curl_close($ch);
                             <ul>
                                 <li><a href='profile.php'>Profile</a></li>
                                 <?php
-if ($_SESSION["usertype"] == 1) {
-    echo "<li><a href='user_lease.php'>Lease</a></li>
-                                    <li class='active'><a href='payment.php'>Payment</a></li>";
-}
-if ($_SESSION["usertype"] == 2) {
-    echo "<li><a href='newlease.php'>New Lease</a></li>";
-    echo "<li><a href='allLogin.php'>All Users</a></li>";
-    echo "<li><a href='allLease.php'>All Leases</a></li>";
-    echo "<li><a href='appointments.php'>All Appointments</a></li>";
-    echo "<li><a href='allpromocodes.php'>All Promo Codes</a></li>";
-}
-if ($_SESSION["usertype"] == 2) {
-    echo "<li><a href='adminchat.php'>Chats</a></li>";
-}
-?>
-                                <li><a href='ticketStatus.php'>Tickets</a></li>
-                                <?php
-if ($_SESSION["usertype"] == 2) {
-    echo "<li><a href='map.php'>Ticket Map</a></li>";
-}
-?>
+                                if ($_SESSION["usertype"] == 1) {
+                                    echo "<li><a href='user_lease.php'>Lease</a></li>
+                                                                    <li class='active'><a href='payment.php'>Payment</a></li>";
+                                }
+                                if ($_SESSION["usertype"] == 2) {
+                                    echo "<li><a href='newlease.php'>New Lease</a></li>";
+                                    echo "<li><a href='allLogin.php'>All Users</a></li>";
+                                    echo "<li><a href='allLease.php'>All Leases</a></li>";
+                                    echo "<li><a href='appointments.php'>All Appointments</a></li>";
+                                    echo "<li><a href='allpromocodes.php'>All Promo Codes</a></li>";
+                                }
+                                if ($_SESSION["usertype"] == 2) {
+                                    echo "<li><a href='adminchat.php'>Chats</a></li>";
+                                }
+                                ?>
+                                                                <li><a href='ticketStatus.php'>Tickets</a></li>
+                                                                <?php
+                                if ($_SESSION["usertype"] == 2) {
+                                    echo "<li><a href='map.php'>Ticket Map</a></li>";
+                                }
+                                ?>
                                 <li><a href='events.php'>Events</a></li>
                                 <li><a href='laundry.php'>Laundry</a></li>
                                 <li><a href='review.php'>Review</a></li>
                                 <?php
-if ($_SESSION["usertype"] == 2) {
-    echo "<li>
+                                if ($_SESSION["usertype"] == 2) {
+                                    echo "<li>
                                         <a onclick='displayStats()' href='#'>Stats</a>
                                         <ul id='statsChilds' class= 'statsChilds'>
                                             <li><a href='paymentstats.php'>Payment Stats</a></li>
@@ -87,21 +87,21 @@ if ($_SESSION["usertype"] == 2) {
                                             <li><a href='ticketstatsstatus.php'>Ticket Status Stats</a></li>
                                         </ul>
                                     </li>";
-}
-?>
+                                }
+                                ?>
                             </ul>
                         </aside>
                     </div>
                 </div>
-                <div class="col-sm-9">
+                <div class="col-sm-9 side-col">
                     <div class="container">
                     <span class = 'user_lease_info'>Payments</span>
                     <a href="payment.php" class="button_payment" role="button">Payment</a><br><br><br>
                         <div class='row table-wrapper-scroll-y'>
                         <?php
-$leaseArray = $apiData->Lease;
-$index = 1;
-echo "
+                        $leaseArray = $apiData->Lease;
+                        $index = 1;
+                        echo "
                         <table class ='table table-bordered table_flat'>
                             <thead class = 'head_table'>
                                 <tr>
@@ -114,20 +114,20 @@ echo "
                             </thead>
                             <tbody>
                         ";
-foreach ($leaseArray as $lease) {
-    $ch = curl_init('https://lunar-living.herokuapp.com/paymentHistory');
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-        'Content-Type: application/json',
-        "apt_name: $lease->aptID",
-    ));
-    $data = curl_exec($ch);
-    $info = curl_getinfo($ch);
-    $paymentData = json_decode($data);
-    curl_close($ch);
-    foreach ($paymentData as $payment) {
-        echo "
+                        foreach ($leaseArray as $lease) {
+                            $ch = curl_init('https://lunar-living.herokuapp.com/paymentHistory');
+                            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                            curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
+                            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                                'Content-Type: application/json',
+                                "apt_name: $lease->aptID",
+                            ));
+                            $data = curl_exec($ch);
+                            $info = curl_getinfo($ch);
+                            $paymentData = json_decode($data);
+                            curl_close($ch);
+                            foreach ($paymentData as $payment) {
+                                echo "
                                 <tr class = 'row_table_lease'>
                                     <th style = 'font-size: 20px' scope='row'>" . $payment->paymentID . "</th>
                                     <td style = 'font-size: 20px'>" . $lease->aptID . "</td>
@@ -136,13 +136,13 @@ foreach ($leaseArray as $lease) {
                                     <td style = 'font-size: 20px'>" . substr($payment->paidOn, 0, 10) . "</td>
                                 </tr>
                                 ";
-    }
-    $index++;
-}
-echo "
+                                }
+                                $index++;
+                            }
+                            echo "
                             </tbody>
                         </table>";
-?>
+                        ?>
                         </div>
                     </div>
                 </div>
