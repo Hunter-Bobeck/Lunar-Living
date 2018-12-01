@@ -129,7 +129,7 @@ curl_close($ch);
                 </div>
                 <div class="col-sm-9 side-col">
                     <div class="container">
-                    <span data-shadow-text="Text-Shadow">Signed Leases</span><br><br><br>
+                    <span data-shadow-text="Text-Shadow" class='user_lease_info'>Signed Leases</span><br><br><br>
                     <div class='row'>
                         <?php
                         $leaseArray = $apiData->Lease;

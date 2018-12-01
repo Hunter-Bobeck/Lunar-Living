@@ -13,9 +13,9 @@ if (isset($_GET['aptID']) && isset($_GET['groupNo']) && isset($_GET['startDate']
 <link rel='stylesheet' href='../css/user_lease.css'>
 <body class="background background-dark">
     <?php
-$username = $_SESSION['username'];
-$first_name = $_SESSION['firstName'];
-?>
+    $username = $_SESSION['username'];
+    $first_name = $_SESSION['firstName'];
+    ?>
 	<main class = "content_body">
         <div class='container-fluid padding-zero'>
         <?php include 'signInNavbar.php';?>
@@ -28,33 +28,33 @@ $first_name = $_SESSION['firstName'];
                             <ul>
                                 <li><a href='profile.php'>Profile</a></li>
                                 <?php
-if ($_SESSION["usertype"] == 1) {
-    echo "<li class='active'><a href='user_lease.php'>Lease</a></li>
-                                    <li><a href='payment.php'>Payment</a></li>";
-}
-if ($_SESSION["usertype"] == 2) {
-    echo "<li><a href='newlease.php'>New Lease</a></li>";
-    echo "<li><a href='allLogin.php'>All Users</a></li>";
-    echo "<li><a href='allLease.php'>All Leases</a></li>";
-    echo "<li><a href='appointments.php'>All Appointments</a></li>";
-    echo "<li><a href='allpromocodes.php'>All Promo Codes</a></li>";
-}
-if ($_SESSION["usertype"] == 2) {
-    echo "<li><a href='adminchat.php'>Chats</a></li>";
-}
-?>
+                                if ($_SESSION["usertype"] == 1) {
+                                    echo "<li class='active'><a href='user_lease.php'>Lease</a></li>
+                                                                    <li><a href='payment.php'>Payment</a></li>";
+                                }
+                                if ($_SESSION["usertype"] == 2) {
+                                    echo "<li><a href='newlease.php'>New Lease</a></li>";
+                                    echo "<li><a href='allLogin.php'>All Users</a></li>";
+                                    echo "<li><a href='allLease.php'>All Leases</a></li>";
+                                    echo "<li><a href='appointments.php'>All Appointments</a></li>";
+                                    echo "<li><a href='allpromocodes.php'>All Promo Codes</a></li>";
+                                }
+                                if ($_SESSION["usertype"] == 2) {
+                                    echo "<li><a href='adminchat.php'>Chats</a></li>";
+                                }
+                                ?>
                                 <li><a href='ticketStatus.php'>Tickets</a></li>
                                 <?php
-if ($_SESSION["usertype"] == 2) {
-    echo "<li><a href='map.php'>Ticket Map</a></li>";
-}
-?>
+                                if ($_SESSION["usertype"] == 2) {
+                                    echo "<li><a href='map.php'>Ticket Map</a></li>";
+                                }
+                                ?>
                                 <li><a href='events.php'>Events</a></li>
                                 <li><a href='laundry.php'>Laundry</a></li>
                                 <li><a href='review.php'>Review</a></li>
                                 <?php
-if ($_SESSION["usertype"] == 2) {
-    echo "<li>
+                                if ($_SESSION["usertype"] == 2) {
+                                    echo "<li>
                                         <a onclick='displayStats()' href='#'>Stats</a>
                                         <ul id='statsChilds' class= 'statsChilds'>
                                             <li><a href='paymentstats.php'>Payment Stats</a></li>
@@ -62,18 +62,18 @@ if ($_SESSION["usertype"] == 2) {
                                             <li><a href='ticketstatsstatus.php'>Ticket Status Stats</a></li>
                                         </ul>
                                     </li>";
-}
-?>
+                            }
+                            ?>
                             </ul>
                         </aside>
                     </div>
                 </div>
-                <div class="col-sm-8">
+                <div class="col-sm-8 side-col">
                     <div class="container">
-                        <span class = 'user_lease_info'>Signed Lease</span><br><>
+                        <span class = 'user_lease_info'>Signed Lease</span><br><br>
                         <div class='row'>
                         <?php
-echo "
+                        echo "
                             <div class='col-sm-4'>
                                 <div class='tour'>
                                     <a href='#' class='tour-img' style='background-image: url(../images/apt.jpg);'>
@@ -86,21 +86,21 @@ echo "
                                 <p>End Date: " . substr($end_date, 0, 10) . "</p>
                                 <div class='panel-body'>
                                     <h4>Lease Members</h4>";
-$ch = curl_init('https://lunar-living.herokuapp.com/getMembers');
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
-curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-    'Content-Type: application/json',
-    "group_number: $groupNo",
-));
-$groupMembers = curl_exec($ch);
-if ($groupMembers == 'false') {
-    echo "User Not Found";
-} else {
-    $apiMembers = json_decode($groupMembers);
-}
-curl_close($ch);
-echo "
+                                    $ch = curl_init('https://lunar-living.herokuapp.com/getMembers');
+                                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                                    curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
+                                    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                                        'Content-Type: application/json',
+                                        "group_number: $groupNo",
+                                    ));
+                                    $groupMembers = curl_exec($ch);
+                                    if ($groupMembers == 'false') {
+                                        echo "User Not Found";
+                                    } else {
+                                        $apiMembers = json_decode($groupMembers);
+                                    }
+                                    curl_close($ch);
+                                    echo "
                                     <table class='table table-bordered table_flat'>
                                         <thead class = 'head_table'>
                                         <tr>

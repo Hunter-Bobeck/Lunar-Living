@@ -1,5 +1,5 @@
-span,
-span:after {
+.user_lease_info,
+.user_lease_info:after {
   font-weight: 900;
   color: #5045ec;
   white-space: nowrap;
@@ -9,13 +9,13 @@ span:after {
   padding: 0.2em 0 0.25em 0;
 }
 
-span {
+.user_lease_info {
   font-size: 4em;
   z-index: 100;
   text-shadow: 0.04em 0.04em 0 #9cb8b3;
 }
 
-span:after {
+.user_lease_info:after {
   content: attr(data-shadow-text);
   color: rgba(0, 0, 0, 0.35);
   text-shadow: none;
@@ -28,6 +28,7 @@ span:after {
 
 .side-col {
   text-align: center;
+  color: #fdfdfd;
 }
 
 .container-block {
