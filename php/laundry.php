@@ -80,10 +80,10 @@ $first_name = $_SESSION['firstName'];
                             $info = curl_getinfo($ch);
                             $laundryTime = json_decode($laundryTimings);
                             curl_close($ch);
-                            $machine1 = [];
-                            $machine2 = [];
-                            $machine3 = [];
-                            $machine4 = [];
+                            $machine1 = "";
+                            $machine2 = "";
+                            $machine3 = "";
+                            $machine4 = "";
                             foreach ($laundryTime as $machine) {
                                 switch ($machine->machineID) {
                                     case 1:
