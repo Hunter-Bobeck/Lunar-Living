@@ -87,30 +87,62 @@ $first_name = $_SESSION['firstName'];
                         <?php
                         if ($_SESSION["usertype"] == 2) {
                             include 'TicketFilterBars/adminFilterBar.php';
-                            $ch = curl_init('https://lunar-living.herokuapp.com/getAllTickets');
-                            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                            curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
-                            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-                                'Content-Type: application/json',
-                                "username: $username",
-                            ));
-                            $data = curl_exec($ch);
-                            $info = curl_getinfo($ch);
-                            $ticketArray = json_decode($data);
-                            curl_close($ch);
+                            if(isset($_GET['flag']) == 1){
+                                $query = $_SESSION['query'];
+                                $ch = curl_init('https://lunar-living.herokuapp.com/hitQuery');
+                                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                                curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
+                                curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                                    'Content-Type: application/json',
+                                    "query: $query",
+                                ));
+                                $data = curl_exec($ch);
+                                $info = curl_getinfo($ch);
+                                $ticketArray = json_decode($data);
+                                curl_close($ch);
+                            }
+                            else{
+                                $ch = curl_init('https://lunar-living.herokuapp.com/getAllTickets');
+                                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                                curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
+                                curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                                    'Content-Type: application/json',
+                                    "username: $username",
+                                ));
+                                $data = curl_exec($ch);
+                                $info = curl_getinfo($ch);
+                                $ticketArray = json_decode($data);
+                                curl_close($ch);
+                            }
                         } else {
                             include 'TicketFilterBars/userFilterBar.php';
-                            $ch = curl_init('https://lunar-living.herokuapp.com/getUserTickets');
-                            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                            curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
-                            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-                                'Content-Type: application/json',
-                                "username: $username",
-                            ));
-                            $data = curl_exec($ch);
-                            $info = curl_getinfo($ch);
-                            $ticketArray = json_decode($data);
-                            curl_close($ch);
+                            if(isset($_GET['flag']) == 1){
+                                $query = $_SESSION['query'];
+                                $ch = curl_init('https://lunar-living.herokuapp.com/hitQuery');
+                                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                                curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
+                                curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                                    'Content-Type: application/json',
+                                    "query: $query",
+                                ));
+                                $data = curl_exec($ch);
+                                $info = curl_getinfo($ch);
+                                $ticketArray = json_decode($data);
+                                curl_close($ch);
+                            }
+                            else{
+                                $ch = curl_init('https://lunar-living.herokuapp.com/getUserTickets');
+                                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                                curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');
+                                curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                                    'Content-Type: application/json',
+                                    "username: $username",
+                                ));
+                                $data = curl_exec($ch);
+                                $info = curl_getinfo($ch);
+                                $ticketArray = json_decode($data);
+                                curl_close($ch);
+                            }
                         }
                         ?>
                         </div>
@@ -132,14 +164,14 @@ $first_name = $_SESSION['firstName'];
                         ";
                         foreach ($ticketArray as $ticket) {
                             echo "
-                                                    <tr class = 'row_table_lease' data-href=\"maintenance.php?ticketID=" . $ticket->ticketID . "\">
-                                                        <th scope='row'>" . $ticket->ticketID . "</th>
-                                                        <td>" . $ticket->aptID . "</td>
-                                                        <td>" . $ticket->title . "</td>
-                                                        <td>" . $ticket->ticketStatus . "</td>
-                                                    </tr>
-                                                    </a>
-                                                    ";
+                                <tr class = 'row_table_lease' data-href=\"maintenance.php?ticketID=" . $ticket->ticketID . "\">
+                                    <th scope='row'>" . $ticket->ticketID . "</th>
+                                    <td>" . $ticket->aptID . "</td>
+                                    <td>" . $ticket->title . "</td>
+                                    <td>" . $ticket->ticketStatus . "</td>
+                                </tr>
+                                </a>
+                                ";
                             $index++;
                         }
                         echo "
