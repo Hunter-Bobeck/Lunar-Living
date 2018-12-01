@@ -4,15 +4,13 @@
 <!doctype html>
 <html lang='en'>
 <?php include 'header.php'; ?>
-<body class='background background-lunar-landed'>";
-	<?php
-		$username = $_SESSION['username'];
-	?>
+<body class='background background-lunar-landed'>
 <main class = "content_body">
         <div class='container-fluid padding-zero'>
             <?php include 'signInNavbar.php'; ?>
         </div>
-		<?php
+        <?php
+            $username = $_SESSION['username'];
 			$ch = curl_init('https://lunar-living.herokuapp.com/getUserApt');
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 			curl_setopt($ch, CURLOPT_USERAGENT, 'YourScript/0.1 (contact@email)');

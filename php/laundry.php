@@ -102,7 +102,7 @@ $first_name = $_SESSION['firstName'];
                             }
                             echo "<div class='col-sm-3 margin-zero'>
                                     <div class='tour'>";
-                            if (count($machine1) == 24) {
+                            if (count(explode (",", $machine1->timings)) == 24) {
                                 echo "<a class='tour-img' style='background-image: url(../images/laundry.png);'>
                                             <p class='price'><span id=lease>Sorry</span></p>
                                         </a>";
@@ -116,7 +116,7 @@ $first_name = $_SESSION['firstName'];
                             </div>
                             <div class='col-sm-3 margin-zero'>
                                 <div class='tour'>";
-                                if (count($machine2) == 24) {
+                                if (count(explode (",", $machine2->timings)) == 24) {
                                     echo "<a class='tour-img' style='background-image: url(../images/laundry.png);'>
                                                 <p class='price'><span id=lease>Sorry</span></p>
                                             </a>";
@@ -130,7 +130,7 @@ $first_name = $_SESSION['firstName'];
                             </div>
                             <div class='col-sm-3 margin-zero'>
                                 <div class='tour'>";
-                                if (count($machine3) == 24) {
+                                if (count(explode (",", $machine3->timings)) == 24) {
                                     echo "<a class='tour-img' style='background-image: url(../images/laundry.png);'>
                                                 <p class='price'><span id=lease>Sorry</span></p>
                                             </a>";
@@ -144,7 +144,7 @@ $first_name = $_SESSION['firstName'];
                             </div>
                             <div class='col-sm-3 margin-zero'>
                                 <div class='tour'>";
-                                if (count($machine4) == 24) {
+                                if (count(explode (",", $machine4->timings)) == 24) {
                                     echo "<a class='tour-img' style='background-image: url(../images/laundry.png);'>
                                                 <p class='price'><span id=lease>Sorry</span></p>
                                             </a>";

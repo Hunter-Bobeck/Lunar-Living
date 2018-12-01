@@ -200,14 +200,15 @@ $first_name = $_SESSION['firstName'];
 				statsChilds.style.display = "none";
 			}
 		}
-        function newticket(){
-            window.location.href = 'newticket.php';
-        }
-        $(document).ready(function($) {
+        /*$(document).ready(function($) {
             $(".table-row").click(function() {
                 window.document.location = $(this).data("href");
             });
-        });
+        });*/
+        function newticket(){
+            window.location.href = 'newticket.php';
+        }
+        
 	</script>
 </body>
 </html>
