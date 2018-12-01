@@ -32,10 +32,10 @@
         $result = curl_exec($ch);
         $message = "Ticket Created";
         echo "<script type='text/javascript'>alert('$message');
-        window.location.href='newticket.php';</script>";
+        window.location.href='ticketStatus.php';</script>";
     }
     else{
         echo "<script type='text/javascript'>alert('Failed');
-        window.location.href='newticket.php';</script>";
+        window.location.href='index.php';</script>";
     }
 ?>
