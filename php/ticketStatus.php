@@ -79,7 +79,7 @@ $first_name = $_SESSION['firstName'];
                 <span class = 'user_lease_info'>Ticket Management</span>
                         <?php
                         if ($_SESSION["usertype"] == 1) {
-                            echo "<div><button class = 'btn' style = 'background-color:red; color:white; align-content:right;' onclick=\"newticket()\">Add New Ticket</button></div>";
+                            echo "<form action='newticket.php' method='get'><button class = 'btn' style = 'background-color:red; color:white; align-content:right;' type='submit'>Add New Ticket</button></form>";
                         }
                         ?>
                         <br/>
@@ -205,10 +205,6 @@ $first_name = $_SESSION['firstName'];
 				statsChilds.style.display = "none";
 			}
 		}
-        function newticket(){
-            window.location.href = 'newticket.php';
-        }
-        
-	</script>
+    </script>
 </body>
 </html>

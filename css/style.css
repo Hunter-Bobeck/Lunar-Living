@@ -1508,3 +1508,15 @@ label {
 #clickable tr{
   cursor: pointer;
 }
+
+.animation-background{
+  background: #060e1b;
+  overflow: hidden;
+}
+
+#canvas {
+  opacity: 0.5;
+  position:absolute;
+  top:0;
+  left:0;
+}
