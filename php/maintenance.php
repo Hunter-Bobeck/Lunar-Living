@@ -97,10 +97,7 @@
 									echo"<button class='btn btn-info btn-md button-maintenance-ticket' type='submit' onclick=\"changeStatus('CREATED','" . $ticketID . "')\">REOPEN</button>";
 								}
 								else if($ticketDetails->ticketStatus == 'CREATED'){
-									echo"<button class='btn btn-info btn-md button-maintenance-ticket' type='submit' onclick=\"changeStatus('CLOSED','" . $ticketID . "')\">CLOSE</button>";
-								}
-								else{
-									echo"<button class='btn btn-info btn-md button-maintenance-ticket' type='submit' onclick=\"changeStatus('CLOSED','" . $ticketID . "')\" disabled>CLOSE</button>";
+									echo"<button class='btn btn-info btn-md button-maintenance-ticket' type='submit' onclick=\"changeStatus('CANCELED','" . $ticketID . "')\">CANCEL</button>";
 								}
 							echo"</div>";
 							}
@@ -124,7 +121,7 @@
 									echo"<button class='btn btn-info btn-md button-maintenance-ticket' type='submit' onclick=\"changeStatus('CLOSED','" . $ticketID . "')\">CLOSE</button>";
 								}
 								else {
-									echo"<button class='btn btn-info btn-md button-maintenance-ticket' type='submit' onclick=\"changeStatus('CLOSED','" . $ticketID . "')\" disabled>CLOSE</button>";
+									echo"<button class='btn btn-info btn-md button-maintenance-ticket' type='submit' onclick=\"changeStatus('OPEN','" . $ticketID . "')\" disabled>REOPEN</button>";
 								}
 							echo"</div>";
 							}

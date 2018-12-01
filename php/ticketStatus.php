@@ -151,7 +151,7 @@ $first_name = $_SESSION['firstName'];
                         <?php
                         $index = 1;
                         echo "
-                        <table class ='table table-bordered table_flat'>
+                        <table class ='table table-bordered table_flat' id='clickable'>
                             <thead class = 'head_table'>
                                 <tr>
                                 <th scope='col'>#</th>
@@ -191,6 +191,11 @@ $first_name = $_SESSION['firstName'];
     <script src='../js/bootstrap.bundle.min.js'></script>		<!-- Bootstrap Bundle JS (necessary for dropdowns) -->
     <!-- <script src='js/bootstrap.min.js'></script> -->		<!-- Bootstrap JS � disabled because when enabled it has a conflict with Bootstrap Bundle JS that makes dropdowns require two clicks to dropdown; it doesn't seem that any needed functionality is lacking when this is disabled -->
     <script>
+        $(document).ready(function($) {
+            $("#clickable tr").click(function() {
+                window.document.location = $(this).data("href");
+            });
+        });
         function displayStats(){
 			var statsChilds = document.getElementById("statsChilds");
 			if(statsChilds.style.display == "none"){
@@ -200,11 +205,6 @@ $first_name = $_SESSION['firstName'];
 				statsChilds.style.display = "none";
 			}
 		}
-        /*$(document).ready(function($) {
-            $(".table-row").click(function() {
-                window.document.location = $(this).data("href");
-            });
-        });*/
         function newticket(){
             window.location.href = 'newticket.php';
         }

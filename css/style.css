@@ -1504,3 +1504,7 @@ label {
   margin-bottom: 4%;
   margin-left: 4%;
 }
+
+#clickable tr{
+  cursor: pointer;
+}
