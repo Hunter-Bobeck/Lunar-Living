@@ -1498,3 +1498,9 @@ label {
   font-weight: bold;
   border-radius: 10px;
 }
+
+.select-user{
+  height: 45px;
+  margin-bottom: 4%;
+  margin-left: 4%;
+}
