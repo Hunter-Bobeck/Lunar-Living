@@ -121,10 +121,10 @@
 ?>
 	<main>
 	<?php include 'signInNavbar.php'; ?>
-		<img class='mySlides' src='../images/mars-city1.jpeg'>
+		<img class='mySlides' src='../images/mars-city1.jpg'>
 		<img class='mySlides' src='../images/mars-city2.jpg'>
 		<img class='mySlides' src='../images/mars-city3.jpg'>
-		<img class='mySlides' src='../images/mars-city4.jpeg'>
+		<img class='mySlides' src='../images/mars-city4.jpg'>
 		<img class='mySlides' src='../images/mars-city5.jpg'>
 		<div id='spacer-index-after-banner'></div>
 		<div class='container-fluid'>
@@ -155,7 +155,7 @@
 	        				<div>
 								<div class='form-group text-centered'>
 									<div class='input-group date' id='datepicker'>
-										<input type='text' class='form-control' placeholder='Please Select a date' onchange='setTimings()' id='selectdate'/>
+										<input type='text' class='form-control' placeholder='Please select a date' onchange='setTimings()' id='selectdate'/>
 										<span class='input-group-addon'>
 											<span class='glyphicon glyphicon-calendar'></span>
 										</span>
