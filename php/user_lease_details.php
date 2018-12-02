@@ -76,7 +76,7 @@ if (isset($_GET['aptID']) && isset($_GET['groupNo']) && isset($_GET['startDate']
                         echo "
                             <div class='col-sm-4'>
                                 <div class='tour'>
-                                    <a href='#' class='tour-img' style='background-image: url(../images/apt.jpg);'>
+                                    <a href='#' class='tour-img' style='background-image: url(../images/apt-det.jpg);'>
                                         <p class='price'><span id='lease'>Apt " . $aptID . "</span></p>
                                     </a>
                                 </div>
