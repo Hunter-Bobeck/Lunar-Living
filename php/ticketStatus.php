@@ -86,7 +86,7 @@ $first_name = $_SESSION['firstName'];
                         <br/>
                         <div>
                         <?php
-                        if ($_SESSION["usertype"] == 2) {
+                        if ($_SESSION["usertype"] != 1) {
                             include 'TicketFilterBars/adminFilterBar.php';
                             if(isset($_GET['flag']) == 1){
                                 $query = $_SESSION['query'];
