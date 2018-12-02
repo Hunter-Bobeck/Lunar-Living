@@ -121,7 +121,7 @@
 ?>
 	<main>
 	<?php include 'signInNavbar.php'; ?>
-		<img class='mySlides' src='../images/mars-city1.jpeg'>
+		<img class='mySlides' src='../images/mars-city1.jpg'>
 		<img class='mySlides' src='../images/mars-city2.jpg'>
 		<img class='mySlides' src='../images/mars-city3.jpg'>
 		<img class='mySlides' src='../images/mars-city4.jpeg'>
