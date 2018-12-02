@@ -151,7 +151,7 @@
 							<div class='contact-heading'>
 								<strong>Schedule an Appointment</strong>
 							</div>
-							<br
+							<br>
 	        				<div>
 								<div class='form-group text-centered'>
 									<div class='input-group date' id='datepicker'>
