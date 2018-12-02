@@ -1520,3 +1520,69 @@ label {
   top:0;
   left:0;
 }
+
+.ds-hover-1 {
+  display: inline-block;
+  position: relative;
+  margin: 0px;
+  overflow: hidden;
+  background: #000;
+}
+
+.ds-hover-1 img {
+  display: block;
+  max-width: 100%;
+  height:300px;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+.ds-hover-1:hover img {
+  opacity: 0.5;
+}
+.ds-hover-1::after {
+  content: attr(ds-title);
+  position: absolute;
+  height: 1%;
+  right:1%;
+  color: rgb(6, 7, 7);
+    z-index: 1;
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.5);
+  font-weight: 300;
+  font-size: 40px;
+  text-transform: uppercase;
+  padding: 5%;
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  transform: translateY(-100%);
+    -webkit-transition: -webkit-transform 0.3s ease-in-out; 
+  -moz-transition: -moz-transform 0.3s ease-in-out; 
+  transition: transform 0.3s ease-in-out; 
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.ds-hover-1::before {
+  content: attr(ds-desc);
+  position: absolute;
+  height: 100%;
+  color: #fff;
+  z-index: 1;
+  top: 27%;
+  width: initial;
+  background: rgba(255,102,0,0.5);
+  font-size: 16px;
+  padding: 2% 5% 5% 5%;
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  transform: translateY(100%);
+    -webkit-transition: -webkit-transform 0.3s ease-in-out; 
+  -moz-transition: -moz-transform 0.3s ease-in-out; 
+  transition: transform 0.3s ease-in-out; 
+}
+.ds-hover-1:hover::after,
+.ds-hover-1:hover::before {
+  -webkit-transform: translateY(0%);
+  -moz-transform: translateY(0%);
+  transform: translateY(0%);
+}

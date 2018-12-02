@@ -137,13 +137,17 @@ curl_close($ch);
                         $index = 1;
                         foreach ($leaseArray as $lease) {
                             echo "
-                                <div class='col-sm-3'>
-                                    <div class='tour'>
-                                        <a class='tour-img' style='background-image: url(../images/apt.jpg);' href='user_lease_details.php?aptID=" . $lease->aptID . "&groupNo=" . $lease->groupNo . "&startDate=" . substr($lease->start_date, 0, 10) . "&endDate=" . substr($lease->end_date, 0, 10) . "'>
-                                            <p class='price'><span id=lease" . $index . ">Apt " . $lease->aptID . "</span></p>
-                                        </a>
-                                    </div>
-                                </div>";
+                                <div class='col-sm-3'>";
+                                    //<div class='tour'>
+                                        //<a class='tour-img' style='background-image: url(../images/apt.jpg);' href='user_lease_details.php?aptID=" . $lease->aptID . "&groupNo=" . $lease->groupNo . "&startDate=" . substr($lease->start_date, 0, 10) . "&endDate=" . substr($lease->end_date, 0, 10) . "'>
+                                          //  <p class='price'><span id=lease" . $index . ">Apt " . $lease->aptID . "</span></p>
+                                        //</a>
+                                        echo"
+                                        <a class='ds-hover-1' ds-title='Apt " . $lease->aptID . "' ds-desc='Click for details' href='user_lease_details.php?aptID=" . $lease->aptID . "&groupNo=" . $lease->groupNo . "&startDate=" . substr($lease->start_date, 0, 10) . "&endDate=" . substr($lease->end_date, 0, 10) . "'>
+                                            <img src='../images/apt.jpg' alt='Alt text Here'>
+                                        </a>";
+                                    //</div>
+                                echo"</div>";
                             $index++;
                         }
                         ?>
