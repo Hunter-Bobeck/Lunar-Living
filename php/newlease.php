@@ -35,7 +35,7 @@
                                 ?>
                                 <li><a href='ticketStatus.php'>Tickets</a></li>
                                 <?php
-                                if($_SESSION["usertype"] == 2){
+                                if($_SESSION["usertype"] != 1){
                                     echo"<li><a href='map.php'>Ticket Map</a></li>";
                                 }
                                 ?>

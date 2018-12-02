@@ -36,33 +36,33 @@ session_start();
 						<ul>
 							<li class='active'><a href='#'>Profile</a></li>
 							<?php
-if ($_SESSION["usertype"] == 1) {
-    echo "<li><a href='user_lease.php'>Lease</a></li>
-								<li><a href='payment.php'>Payment</a></li>";
-}
-if ($_SESSION["usertype"] == 2) {
-    echo "<li><a href='newlease.php'>New Lease</a></li>";
-    echo "<li><a href='allLogin.php'>All Users</a></li>";
-    echo "<li><a href='allLease.php'>All Leases</a></li>";
-    echo "<li><a href='appointments.php'>All Appointments</a></li>";
-    echo "<li><a href='allpromocodes.php'>All Promo Codes</a></li>";
-}
-if ($_SESSION["usertype"] == 2) {
-    echo "<li><a href='adminchat.php'>Chats</a></li>";
-}
-?>
+							if ($_SESSION["usertype"] == 1) {
+								echo "<li><a href='user_lease.php'>Lease</a></li>
+															<li><a href='payment.php'>Payment</a></li>";
+							}
+							if ($_SESSION["usertype"] == 2) {
+								echo "<li><a href='newlease.php'>New Lease</a></li>";
+								echo "<li><a href='allLogin.php'>All Users</a></li>";
+								echo "<li><a href='allLease.php'>All Leases</a></li>";
+								echo "<li><a href='appointments.php'>All Appointments</a></li>";
+								echo "<li><a href='allpromocodes.php'>All Promo Codes</a></li>";
+							}
+							if ($_SESSION["usertype"] == 2) {
+								echo "<li><a href='adminchat.php'>Chats</a></li>";
+							}
+							?>
 							<li><a href='ticketStatus.php'>Tickets</a></li>
 							<?php
-if ($_SESSION["usertype"] == 2) {
-    echo "<li><a href='map.php'>Ticket Map</a></li>";
-}
-?>
+							if($_SESSION["usertype"] != 1){
+								echo "<li><a href='map.php'>Ticket Map</a></li>";
+							}
+							?>
 							<li><a href='events.php'>Events</a></li>
 							<li><a href='laundry.php'>Laundry</a></li>
 							<li><a href='review.php'>Review</a></li>
 							<?php
-if ($_SESSION["usertype"] == 2) {
-    echo "<li>
+							if ($_SESSION["usertype"] == 2) {
+								echo "<li>
 									<a onclick='displayStats()' href='#'>Stats</a>
 									<ul id='statsChilds' class= 'statsChilds'>
 										<li><a href='paymentstats.php'>Payment Stats</a></li>
@@ -70,8 +70,8 @@ if ($_SESSION["usertype"] == 2) {
 										<li><a href='ticketstatsstatus.php'>Ticket Status Stats</a></li>
 									</ul>
 								</li>";
-}
-?>
+								}
+							?>
 						</ul>
 					</aside>
 				</div>
@@ -80,9 +80,9 @@ if ($_SESSION["usertype"] == 2) {
 				<div class='card'>
 					<img src='../images/profile.jpg' alt='ProfileImage' style='width:100%'>
 					<?php
-echo "<h2>" . $userInfoData->first_name . " " . $userInfoData->last_name . "</h2>
-					<p>" . $userInfoData->gender . "</p>"
-?>
+						echo "<h2>" . $userInfoData->first_name . " " . $userInfoData->last_name . "</h2>
+							<p>" . $userInfoData->gender . "</p>"
+					?>
 					<button class='update' id='updateProfileBtn'>Update Profile</button>
 				</div>
 				<div id='updateProfileModal' class='modal'>
@@ -94,29 +94,29 @@ echo "<h2>" . $userInfoData->first_name . " " . $userInfoData->last_name . "</h2
 						</div>
 						<div class='modal-body'>
 							<?php
-echo "</br><span>First Name:&nbsp;&nbsp;&nbsp;&nbsp;</span><input id= 'first_name' value=" . $userInfoData->first_name . "></br></br>
-								<span>Last Name:&nbsp;&nbsp;&nbsp;&nbsp;</span><input id= 'last_name' value=" . $userInfoData->last_name . "></br></br>
-								<span>Gender:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-								<select id= 'gender'>";
-switch ($userInfoData->gender) {
-    case 'Male':
-        echo "<option value='Male' selected = 'selected'>Male</option>
-											<option value='Female'>Female</option>
-											<option value='Other'>Other</option>";
-        break;
-    case 'Female':
-        echo "<option value='Male'>Male</option>
-											<option value='Female' selected = 'selected'>Female</option>
-											<option value='Other'>Other</option>";
-        break;
-    case 'Other':
-        echo "<option value='Male'>Male</option>
-											<option value='Female'>Female</option>
-											<option value='Other' selected = 'selected'>Other</option>";
-        break;
-}
-echo "</select></br></br>";
-?>
+								echo "</br><span>First Name:&nbsp;&nbsp;&nbsp;&nbsp;</span><input id= 'first_name' value=" . $userInfoData->first_name . "></br></br>
+																<span>Last Name:&nbsp;&nbsp;&nbsp;&nbsp;</span><input id= 'last_name' value=" . $userInfoData->last_name . "></br></br>
+																<span>Gender:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+																<select id= 'gender'>";
+								switch ($userInfoData->gender) {
+									case 'Male':
+										echo "<option value='Male' selected = 'selected'>Male</option>
+																			<option value='Female'>Female</option>
+																			<option value='Other'>Other</option>";
+										break;
+									case 'Female':
+										echo "<option value='Male'>Male</option>
+																			<option value='Female' selected = 'selected'>Female</option>
+																			<option value='Other'>Other</option>";
+										break;
+									case 'Other':
+										echo "<option value='Male'>Male</option>
+																			<option value='Female'>Female</option>
+																			<option value='Other' selected = 'selected'>Other</option>";
+										break;
+								}
+								echo "</select></br></br>";
+							?>
 						</div>
 						<div class='modal-footer'>
 							<button class = 'update' onclick = 'updateUser()'>Update</button>

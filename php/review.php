@@ -97,9 +97,9 @@ session_start();
                                 echo "<li><a href='adminchat.php'>Chats</a></li>";
                             }
                             ?>
-                                                        <li><a href='ticketStatus.php'>Tickets</a></li>
-                                                        <?php
-                            if ($_SESSION["usertype"] == 2) {
+                            <li><a href='ticketStatus.php'>Tickets</a></li>
+                            <?php
+                            if($_SESSION["usertype"] != 1){
                                 echo "<li><a href='map.php'>Ticket Map</a></li>";
                             }
                             ?>
