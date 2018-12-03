@@ -7,6 +7,7 @@
 ?>
 <!doctype html>
 <html lang='en'>
+<link rel='stylesheet' href='../css/user_lease.css'>
 <?php include 'header.php'; ?>
 <?php
 echo"
@@ -67,8 +68,8 @@ echo"
                         </aside>
                     </div>
                 </div>
-                <div class="col-sm-9">
-                    <h2 class = 'lease_info'>Payment Stats</h2>
+                <div class="col-sm-9 side-col">
+                    <h2 class = 'user_lease_info margin-bottom'>Payment Stats</h2>
                     <?php
                     if($year){
                         echo"<div class='margin-bottom'><button class='btn btn-success' onclick='toggleOnByYear()'>Yearly Stats</button>

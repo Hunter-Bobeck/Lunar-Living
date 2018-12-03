@@ -6,6 +6,7 @@ session_start();
 <!doctype html>
 <html lang='en'>
 <?php include 'header.php'; ?>
+<link rel='stylesheet' href='../css/user_lease.css'>
 <body class='animation-background'>
 <canvas id="canvas"></canvas>
     <?php
@@ -84,15 +85,15 @@ session_start();
                         </aside>
                     </div>
                 </div>
-                <div class="col-sm-9">
+                <div class="col-sm-9 side-col">
                     <div class="container">
-                        <h2 class = 'lease_info'>All Promo Codes</h2>
+                        <h2 class = 'user_lease_info margin-bottom'>All Promo Codes</h2>
                         <form action = 'newpromocode.php' method ='post'>
                             <p class='promotitle'>Add New Promo Code</p>
                             <input type='text' placeholder = 'Promo ID' class='promocodeInput' name='promoid'>
-                            <input type='text' placeholder = 'Max Use' class='promocodeInput'name='maxuse'>
+                            <input type='text' placeholder = 'Max Use' class='promocodeInput' name='maxuse'>
                             <input type='text' placeholder = 'Percentage Off' class='promocodeInput'name='off'>
-                            <input class = 'btn btn-info btn-md margin-left' type='submit' value='Add Promo'>
+                            <input class = 'btn btn-info btn-md margin-left' style='height:45px;' type='submit' value='Add Promo'>
                         </form>
                         <div class='row table-wrapper-scroll-y'>
                         <?php

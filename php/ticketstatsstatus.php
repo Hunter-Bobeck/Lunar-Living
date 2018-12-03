@@ -4,6 +4,7 @@
 <!doctype html>
 <html lang='en'>
 <?php include 'header.php'; ?>
+<link rel='stylesheet' href='../css/user_lease.css'>
 <?php
 echo"
 <body class='animation-background'>
@@ -63,8 +64,8 @@ echo"
                         </aside>
                     </div>
                 </div>
-                <div class="col-sm-9">
-                    <h2 class = 'lease_info'>Ticket Stats</h2>
+                <div class="col-sm-9 side-col">
+                    <h2 class = 'user_lease_info margin-bottom'>Ticket Stats</h2>
                     <?php
                         $ch = curl_init('https://lunar-living.herokuapp.com/getTicketAvgStats');
                         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

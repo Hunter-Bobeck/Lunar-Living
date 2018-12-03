@@ -6,6 +6,7 @@ session_start();
 <!doctype html>
 <html lang='en'>
 <?php include 'header.php'; ?>
+<link rel='stylesheet' href='../css/user_lease.css'>
 <body class='animation-background'>
 <canvas id="canvas"></canvas>
     <?php
@@ -87,9 +88,9 @@ session_start();
                         </aside>
                     </div>
                 </div>
-                <div class="col-sm-9">
+                <div class="col-sm-9 side-col">
                     <div class="container">
-                        <h2 class = 'lease_info'>All Users</h2>
+                        <h2 class = 'user_lease_info margin-bottom'>All Users</h2>
                         <form action = 'adduser.php' method ='post'>
                             <p class='promotitle'>Add New User</p>
                             <input type='text' placeholder = 'User Email-Id' class='promocodeInput' name='emailID'>
@@ -99,7 +100,7 @@ session_start();
                                 <option value = '3'>Employee</option>
                                 <option value = '2'>Admin</option>
                             </select>
-                            <input class = 'btn btn-info btn-md margin-left' type='submit' value='Add User'>
+                            <input class = 'btn btn-info btn-md margin-left' style='height:45px;' type='submit' value='Add User'>
                         </form>
                         <div class='row table-wrapper-scroll-y'>
                         <?php

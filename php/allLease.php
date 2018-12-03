@@ -6,6 +6,7 @@ session_start();
 <!doctype html>
 <html lang='en'>
 <?php include 'header.php'; ?>
+<link rel='stylesheet' href='../css/user_lease.css'>
 <body class='animation-background'>
 <canvas id="canvas"></canvas>
     <?php
@@ -87,9 +88,9 @@ session_start();
                         </aside>
                     </div>
                 </div>
-                <div class="col-sm-9">
+                <div class="col-sm-9 side-col">
                     <div class="container">
-                        <h2 class = 'lease_info'>All Lease Contract</h2>
+                        <h2 class = 'user_lease_info margin-bottom'>All Lease Contract</h2>
                         <div class='row table-wrapper-scroll-y'>
                         <?php
                         $index = 1;

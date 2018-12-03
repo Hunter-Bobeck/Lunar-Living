@@ -1478,6 +1478,7 @@ label {
   line-height: 40px;
   height: auto;
   padding: 0 20px;
+  width: 150px;
 }
 .margin-left {
   margin-left: 4%;
@@ -1485,6 +1486,7 @@ label {
 .promotitle {
   font-size: 25px;
   color: #ffb82c;
+  float: left;
 }
 .buttonlease {
   display: block;

@@ -5,6 +5,7 @@
 <html lang='en'>
 <?php include 'header.php'; ?>
 <body class='animation-background'>
+<link rel='stylesheet' href='../css/user_lease.css'>
 <canvas id="canvas"></canvas>
 	<?php
         $username = $_SESSION['username'];
@@ -62,9 +63,9 @@
 					</aside>
 				</div>
 			</div>
-			<div class='col-sm-9'>
+			<div class='col-sm-9 side-col'>
             <div class="container">
-                        <h2 class = 'lease_info'>Unread Chats</h2>
+                        <h2 class = 'user_lease_info margin-bottom'>Unread Chats</h2>
                         <div class='row table-wrapper-scroll-y'>
                         <?php
                         
