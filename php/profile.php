@@ -180,51 +180,51 @@ if ($_SESSION["usertype"] != 2) {
 			</div>
 			<div class = 'row'>
 				<div class='col-sm-2'>";
-    foreach ($oxygenData as $currLevel) {
-        if ($currLevel->start_date == null) {
-            echo "<div><img src='../images/on.jpg' class='progress-bar-image'></div>";
-        } else {
-            $startTime = strtotime($currLevel->start_date);
-            $endTime = strtotime($currLevel->end_date);
-            $currTime = time();
-            if ((($currTime >= $startTime) && ($currTime <= $endTime))) {
-                echo "<div><img src='../images/stop.png' class='progress-bar-image'></div>";
-            } else {
-                echo "<div><img src='../images/on.jpg' class='progress-bar-image'></div>";
-            }
-        }
-    }
-    echo "
+				foreach ($oxygenData as $currLevel) {
+					if ($currLevel->start_date == null) {
+						echo "<div><img src='../images/on.jpg' class='progress-bar-image'></div>";
+					} else {
+						$startTime = strtotime($currLevel->start_date);
+						$endTime = strtotime($currLevel->end_date);
+						$currTime = time();
+						if ((($currTime >= $startTime) && ($currTime <= $endTime))) {
+							echo "<div><img src='../images/stop.png' class='progress-bar-image'></div>";
+						} else {
+							echo "<div><img src='../images/on.jpg' class='progress-bar-image'></div>";
+						}
+					}
+				}
+				echo "
 				</div>
 				<div class='col-sm-10'>";
-    foreach ($oxygenData as $currLevel) {
-        if ($currLevel->amount > 80) {
-            echo "<div class='progress-bar green stripes'>
+				foreach ($oxygenData as $currLevel) {
+					if ($currLevel->amount > 80) {
+						echo "<div class='progress-bar green stripes'>
 							<span style='width: " . $currLevel->amount . "%'>" . $currLevel->aptID . "</span>
 							<span style='width: " . $currLevel->amount . "%'></span>
 							</div>";
-        } else if ($currLevel->amount > 50) {
-            echo "<div class='progress-bar blue stripes'>
+					} else if ($currLevel->amount > 50) {
+						echo "<div class='progress-bar blue stripes'>
 							<span style='width: " . $currLevel->amount . "%'>" . $currLevel->aptID . "</span>
 							<span style='width: " . $currLevel->amount . "%'></span>
 							</div>";
-        } else if ($currLevel->amount > 20) {
-            echo "<div class='progress-bar orange stripes'>
+					} else if ($currLevel->amount > 20) {
+						echo "<div class='progress-bar orange stripes'>
 							<span style='width: " . $currLevel->amount . "%'></span>
 							<span style='width: " . $currLevel->amount . "%'>" . $currLevel->aptID . "</span>
 							</div>";
-        } else {
-            echo "<div class='progress-bar red stripes'>
+					} else {
+						echo "<div class='progress-bar red stripes'>
 							<span style='width: " . $currLevel->amount . "%'>" . $currLevel->aptID . "</span>
 							<span style='width: " . $currLevel->amount . "%'></span>
 							</div>";
-        }
-    }
-    echo "</div>
-			</div>
-			</div>";
-}
-?>
+					}
+				}
+				echo "</div>
+						</div>
+						</div>";
+			}
+			?>
 		</div>
 		<?php
 if ($_SESSION["usertype"] != 2) {
@@ -433,10 +433,10 @@ if ($_SESSION["usertype"] != 2) {
 		fn();
 	</script>
 	<?php
-if ($_SESSION["usertype"] != 2) {
-    echo "<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js'></script>
-	<script src='../js/chat.js'></script>";
-}
+	if ($_SESSION["usertype"] != 2) {
+		echo "<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js'></script>
+		<script src='../js/chat.js'></script>";
+	}
 ?>
 </body>
 </html>
